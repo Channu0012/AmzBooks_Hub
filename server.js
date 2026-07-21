@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const ADMIN_TOKEN = process.env.ADMIN_TOKEN || 'your_secret_token';
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN || 'channu0012';
 const DB_FILE = path.join(__dirname, 'database.json');
 
 /* ───────────────────────────────────────────────────────────────
