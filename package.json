@@ -1,7 +1,7 @@
 {
-  "name": "affiliate-marketing-hub",
+  "name": "amzbooks-hub",
   "version": "1.0.0",
-  "description": "Affiliate Marketing Hub for Indian Budget Tech Market",
+  "description": "AmzBooks Hub — Premium Curated Amazon Kindle & Kobo Deal Directory",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

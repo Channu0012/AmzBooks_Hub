@@ -732,8 +732,8 @@ app.get('/product/:slug', (req, res) => {
       .slice(0, 3);
 
     // Dynamic replacements
-    const title = `${product.name} Price in India, Specs & Honest Review | BudgetTech`;
-    const desc = `Compare lowest price for ${product.name} on Amazon and Flipkart. Read full active specifications, pros, cons, ratings, and expert recommendations.`;
+    const title = `${product.name} Kindle Price in India, Specs & Honest Review | AmzBooks Hub`;
+    const desc = `Compare lowest price for ${product.name} on Amazon Kindle and Flipkart Kobo. Read full specifications, pros, cons, ratings, and expert book recommendations.`;
     
     html = html
       .replace(/{{TITLE}}/g, title)
@@ -765,13 +765,13 @@ app.get('/compare', (req, res) => {
     const compared = products.filter(p => p.active && slugs.includes(p.slug));
 
     // Dynamic titles
-    let title = 'Compare Budget Tech Products side-by-side | BudgetTech';
-    let desc = 'Compare budget earbuds, smartwatches, and neckbands side-by-side in India. Check winner specs, prices, and direct affiliate deals.';
+    let title = 'Compare Bestselling E-Books Side-by-Side | AmzBooks Hub';
+    let desc = 'Compare Kindle and Kobo e-books side-by-side in India. Check winner specs, page counts, author details, prices, and direct affiliate deals.';
     
     if (compared.length > 0) {
       const names = compared.map(p => p.name).join(' vs ');
-      title = `${names} — Which is Better? Detailed Specifications & Price Comparison | BudgetTech`;
-      desc = `Compare ${names} side-by-side in India. See detailed winner specifications, batteries, audio drivers, ratings, and best buying options.`;
+      title = `${names} — Which is Better? E-Book Specs & Price Comparison | AmzBooks Hub`;
+      desc = `Compare ${names} side-by-side in India. See detailed winner specifications, page counts, authors, ratings, and best buying options.`;
     }
 
     // Pass the list of all available active products for selection dropdowns

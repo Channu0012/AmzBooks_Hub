@@ -876,6 +876,26 @@
       "timestamp": "2026-07-21T14:02:15.403Z",
       "timestampFormatted": "2026-07-21 14:02:15 UTC",
       "maskedSlug": "ato***its"
+    },
+    {
+      "id": 2,
+      "clickId": "12ea8d366c2fd314",
+      "slug": "atomic-habits",
+      "platform": "amazon",
+      "productName": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+      "destinationUrl": "https://www.amazon.in/dp/B07D2RYQQH?tag=amzbooks-21",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "referer": "",
+      "clientIP": "::1",
+      "userAgent": "node",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:13:50.107Z",
+      "timestampFormatted": "2026-07-21 14:13:50 UTC",
+      "maskedSlug": "ato***its"
     }
   ],
   "impressionLogs": [
@@ -1164,6 +1184,58 @@
       "browser": "Other",
       "os": "Other",
       "timestamp": "2026-07-21T14:02:15.395Z"
+    },
+    {
+      "id": 23,
+      "type": "page_view",
+      "slug": "subscribe",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:13:50.044Z"
+    },
+    {
+      "id": 24,
+      "type": "page_view",
+      "slug": "compare",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:13:50.053Z"
+    },
+    {
+      "id": 25,
+      "type": "page_view",
+      "slug": "atomic-habits",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:13:50.067Z"
+    },
+    {
+      "id": 26,
+      "type": "page_view",
+      "slug": "psychology-of-money",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:13:50.080Z"
     }
   ],
   "subscribers": []

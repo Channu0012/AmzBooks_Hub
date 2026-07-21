@@ -1623,7 +1623,7 @@
 
       var compareSlugs = [];
       try {
-        var stored = sessionStorage.getItem('budgettech_compare_slugs');
+        var stored = sessionStorage.getItem('amzbooks_compare_slugs');
         if (stored) {
           compareSlugs = JSON.parse(stored);
         }
@@ -1923,7 +1923,7 @@
         }
 
         try {
-          sessionStorage.setItem('budgettech_compare_slugs', JSON.stringify(compareSlugs));
+          sessionStorage.setItem('amzbooks_compare_slugs', JSON.stringify(compareSlugs));
         } catch(e) {}
 
         updateFloatingCompareBar();
@@ -1967,7 +1967,7 @@
       window.clearSelectedCompare = function() {
         compareSlugs = [];
         try {
-          sessionStorage.removeItem('budgettech_compare_slugs');
+          sessionStorage.removeItem('amzbooks_compare_slugs');
         } catch(e) {}
         updateFloatingCompareBar();
       };

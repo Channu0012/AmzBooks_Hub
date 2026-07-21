@@ -1546,8 +1546,12 @@
           a: 'You can save a total of ₹' + savings.toLocaleString('en-IN') + ' today, which represents a verified discount of ' + product.discount + '% off the regular MRP of ₹' + product.mrp.toLocaleString('en-IN') + '.'
         },
         {
-          q: 'What are the standout features of the ' + product.name + '?',
-          a: 'Our physical laboratory tests highlight: ' + product.pros.join(', ') + ' as the prime purchase drivers.'
+          q: 'What are the key highlights of ' + product.name + '?',
+          a: 'Our editorial book review highlights: ' + product.pros.join(', ') + ' as the top reasons to read this book.'
+        },
+        {
+          q: 'Can I read ' + product.name + ' on any phone or e-reader device?',
+          a: 'Yes! Once ordered on Kindle or Kobo, it instantly syncs to your Amazon Kindle or Kobo app on any smartphone, iPad, tablet, or e-reader.'
         }
       ];
 
