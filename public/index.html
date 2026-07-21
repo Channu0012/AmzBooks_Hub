@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Compare the best-selling e-books and Kindle deals. Find the lowest verified prices on self-help, business, technology, finance, and sci-fi e-books. Get real-time Amazon Kindle and Flipkart Kobo deal tracking.">
-  <title>AmzBooks Hub — Premium Amazon E-Book Copy Store &amp; Kindle Deals</title>
+  <meta name="description" content="Compare the best-selling e-books and Kindle deals. Find verified lowest prices on self-help, business, technology, finance, and sci-fi e-books. Real-time Amazon Kindle and Flipkart Kobo deal tracking.">
+  <title>AmzBooks Hub — Bestselling Kindle E-Books &amp; Deal Tracking Store</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <!-- Modern Premium Typography -->
+  <!-- Premium Modern Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
@@ -15,27 +15,43 @@
       padding: 0;
     }
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #EAEDED; /* Amazon product listing backdrop grey */
-      color: #0F1111;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      padding-bottom: 80px; /* space for sticky tools */
+    :root {
+      --bg-dark: #131921;
+      --bg-slate: #232F3E;
+      --gold-main: #FFA41C;
+      --gold-light: #FFE093;
+      --gold-dark: #D8B400;
+      --card-bg: #FFFFFF;
+      --text-main: #0F1111;
+      --text-sub: #565959;
+      --red-accent: #CC0C39;
+      --green-accent: #007600;
+      --blue-accent: #007185;
+      --radius: 14px;
     }
 
-    /* ── HEADER NAVIGATION (Amazon-style Dark Theme) ─────────────────────── */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #EAEDED;
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 90px;
+    }
+
+    /* ── TOP NAVIGATION ─────────────────────────── */
     .top-nav {
-      background: #131921; /* Amazon dark navy blue */
-      padding: 12px 24px;
+      background: var(--bg-dark);
+      padding: 14px 24px;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 4px solid #FFA41C; /* Amazon gold accent line */
+      border-bottom: 4px solid var(--gold-main);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
     }
 
     .nav-container {
-      max-width: 1300px;
+      max-width: 1320px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -44,28 +60,29 @@
 
     .nav-logo {
       font-family: 'Outfit', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
+      font-size: 24px;
+      font-weight: 900;
       color: #FFFFFF;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      letter-spacing: -0.5px;
     }
 
     .nav-logo-highlight {
-      color: #FFA41C;
+      color: var(--gold-main);
     }
 
     .nav-logo-icon-svg {
-      width: 24px;
-      height: 24px;
-      stroke: #FFA41C;
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold-main);
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 28px;
       align-items: center;
     }
 
@@ -73,24 +90,23 @@
       color: #DDDDDD;
       text-decoration: none;
       font-size: 14.5px;
-      font-weight: 600;
+      font-weight: 700;
       transition: color 0.15s ease;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
     }
 
     .nav-link:hover {
-      color: #FFA41C;
+      color: var(--gold-main);
     }
 
     .nav-link.active {
       color: #FFFFFF;
-      border-bottom: 2px solid #FFA41C;
+      border-bottom: 2px solid var(--gold-main);
       padding-bottom: 2px;
     }
 
-    /* Mobile Hamburger Menu */
     .mobile-nav-toggle {
       display: none;
       background: transparent;
@@ -101,20 +117,20 @@
     }
 
     .mobile-nav-toggle svg {
-      width: 26px;
-      height: 26px;
-      stroke: #FFA41C;
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold-main);
     }
 
     /* ── HERO BANNER SECTION ──────────────────────────── */
     .hero-section {
-      background: linear-gradient(180deg, #232F3E 0%, #131921 100%);
+      background: linear-gradient(180deg, var(--bg-slate) 0%, var(--bg-dark) 100%);
       color: #FFFFFF;
-      padding: 48px 24px 64px;
+      padding: 52px 24px 72px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      box-shadow: inset 0 -15px 30px rgba(0,0,0,0.15);
+      box-shadow: inset 0 -15px 30px rgba(0,0,0,0.2);
     }
 
     .hero-section::before {
@@ -124,7 +140,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 164, 28, 0.08) 0%, transparent 60%);
+      background: radial-gradient(circle at 50% 50%, rgba(255, 164, 28, 0.1) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -135,41 +151,43 @@
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #FFA41C;
+      color: var(--gold-main);
       background: rgba(255, 164, 28, 0.15);
       border: 1px solid rgba(255, 164, 28, 0.3);
-      padding: 6px 16px;
+      padding: 6px 18px;
       border-radius: 100px;
       margin-bottom: 20px;
+      backdrop-filter: blur(8px);
     }
 
     .hero-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 40px;
+      font-size: 44px;
       font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 14px;
-      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.8px;
     }
 
     .hero-title-highlight {
-      background: linear-gradient(120deg, #FFE093 0%, #FFA41C 100%);
+      background: linear-gradient(120deg, #FFE093 0%, var(--gold-main) 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
-      font-size: 15.5px;
+      font-size: 16px;
       color: #CCCCCC;
-      max-width: 640px;
-      margin: 0 auto 24px;
+      max-width: 680px;
+      margin: 0 auto 28px;
       line-height: 1.6;
+      font-weight: 500;
     }
 
-    /* Hero Live Search Box */
+    /* Live Search Box */
     .hero-search-box {
-      max-width: 580px;
+      max-width: 620px;
       margin: 0 auto 28px;
       position: relative;
       display: flex;
@@ -178,38 +196,37 @@
 
     .hero-search-input {
       width: 100%;
-      padding: 14px 46px 14px 20px;
+      padding: 16px 50px 16px 24px;
       border-radius: 100px;
-      border: 2px solid #FFA41C;
-      background: rgba(255, 255, 255, 0.96);
-      color: #0F1111;
-      font-size: 15px;
+      border: 2px solid var(--gold-main);
+      background: #FFFFFF;
+      color: var(--text-main);
+      font-size: 15.5px;
       font-weight: 600;
       outline: none;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      transition: background 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .hero-search-input:focus {
-      background: #FFFFFF;
-      box-shadow: 0 6px 24px rgba(255, 164, 28, 0.35);
+      box-shadow: 0 10px 35px rgba(255, 164, 28, 0.4);
     }
 
     .hero-search-icon {
       position: absolute;
-      right: 18px;
-      width: 20px;
-      height: 20px;
-      stroke: #565959;
+      right: 20px;
+      width: 22px;
+      height: 22px;
+      stroke: var(--text-sub);
       pointer-events: none;
     }
 
     .hero-search-clear {
       position: absolute;
-      right: 44px;
+      right: 48px;
       background: none;
       border: none;
-      font-size: 18px;
+      font-size: 20px;
       color: #8D9090;
       cursor: pointer;
       display: none;
@@ -217,7 +234,7 @@
     }
 
     .hero-search-clear:hover {
-      color: #0F1111;
+      color: var(--text-main);
     }
 
     .hero-trust-bar {
@@ -233,18 +250,18 @@
       gap: 6px;
       font-size: 13.5px;
       color: #E6E6E6;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .trust-icon-svg {
       width: 16px;
       height: 16px;
-      stroke: #FFA41C;
+      stroke: var(--gold-main);
     }
 
     /* ── CATEGORY TAB FILTER PANEL ─────────────────── */
     .filter-container {
-      max-width: 1300px;
+      max-width: 1320px;
       margin: -24px auto 0;
       padding: 0 24px;
       position: relative;
@@ -271,11 +288,11 @@
       border-radius: 100px;
       border: 1px solid #D5D9D9;
       background: #F0F2F2;
-      color: #0F1111;
+      color: var(--text-main);
       font-weight: 700;
       font-size: 13.5px;
       cursor: pointer;
-      transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
       outline: none;
       box-shadow: 0 2px 5px rgba(213,217,217,0.5);
     }
@@ -286,32 +303,46 @@
     }
 
     .category-tab.active {
-      background: #131921;
+      background: var(--bg-dark);
       color: #FFFFFF;
-      border-color: #131921;
-      box-shadow: 0 4px 10px rgba(19, 25, 33, 0.25);
+      border-color: var(--bg-dark);
+      box-shadow: 0 4px 12px rgba(19, 25, 33, 0.3);
     }
 
     .category-tab.active svg {
-      stroke: #FFA41C;
+      stroke: var(--gold-main);
+    }
+
+    .category-tab-count {
+      font-size: 11px;
+      background: rgba(255, 164, 28, 0.2);
+      color: var(--gold-main);
+      padding: 2px 7px;
+      border-radius: 100px;
+      font-weight: 800;
+    }
+
+    .category-tab.active .category-tab-count {
+      background: var(--gold-main);
+      color: var(--bg-dark);
     }
 
     /* ── PRODUCT GRID SECTION ─────────────────────────── */
     .products-section {
-      max-width: 1300px;
+      max-width: 1320px;
       margin: 0 auto;
-      padding: 32px 24px 48px;
+      padding: 36px 24px 48px;
     }
 
     .section-header {
       margin-bottom: 24px;
       border-bottom: 1px solid #D5D9D9;
-      padding-bottom: 12px;
+      padding-bottom: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 14px;
     }
 
     .section-title-group {
@@ -321,18 +352,17 @@
 
     .section-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 800;
-      color: #0F1111;
+      color: var(--text-main);
     }
 
     .section-subtitle {
       font-size: 13.5px;
-      color: #565959;
+      color: var(--text-sub);
       font-weight: 500;
     }
 
-    /* Sort Control */
     .sort-control-box {
       display: flex;
       align-items: center;
@@ -342,25 +372,25 @@
     .sort-label {
       font-size: 13px;
       font-weight: 700;
-      color: #565959;
+      color: var(--text-sub);
       white-space: nowrap;
     }
 
     .sort-select {
-      padding: 8px 14px;
-      border-radius: 8px;
+      padding: 9px 16px;
+      border-radius: 100px;
       border: 1px solid #D5D9D9;
       background: #FFFFFF;
-      color: #0F1111;
+      color: var(--text-main);
       font-size: 13.5px;
-      font-weight: 600;
+      font-weight: 700;
       outline: none;
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     .sort-select:focus {
-      border-color: #FFA41C;
+      border-color: var(--gold-main);
     }
 
     .product-grid {
@@ -369,21 +399,21 @@
       gap: 24px;
     }
 
-    /* ── PREMIUM AMAZON PRODUCT CARD ─────────────────────────── */
+    /* ── PREMIUM PRODUCT CARD ─────────────────────────── */
     .product-card {
-      background: #FFFFFF;
-      border-radius: 12px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
       border: 1px solid #E3E6E6;
       overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
       position: relative;
     }
 
     .product-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
     }
 
     .product-badge-bar {
@@ -404,7 +434,7 @@
       text-transform: uppercase;
       color: #FFFFFF;
       text-align: center;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.15);
     }
 
     .choice-badge-container {
@@ -412,12 +442,12 @@
       top: 38px;
       left: 0;
       z-index: 5;
-      background: #232F3E;
+      background: var(--bg-slate);
       color: #FFFFFF;
       padding: 4px 10px 4px 8px;
       font-size: 11.5px;
       font-weight: 600;
-      border-left: 3px solid #FFA41C;
+      border-left: 3px solid var(--gold-main);
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
       box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
@@ -427,14 +457,14 @@
     }
 
     .choice-highlight {
-      color: #FFA41C;
+      color: var(--gold-main);
       font-weight: 800;
     }
 
     .card-image-area {
       width: 100%;
-      height: 240px;
-      background: #FFFFFF;
+      height: 250px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
       padding-top: 36px;
       display: flex;
       align-items: center;
@@ -448,31 +478,31 @@
       max-height: 85%;
       object-fit: contain;
       transition: transform 0.3s ease;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
     }
 
     .product-card:hover .product-img {
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     .card-discount-tag {
       position: absolute;
       top: 38px;
       right: 12px;
-      background: #CC0C39;
+      background: var(--red-accent);
       color: #FFFFFF;
       font-size: 12.5px;
       font-weight: 800;
       padding: 5px 9px;
       border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
 
     .price-drop-indicator {
       position: absolute;
       bottom: 12px;
       left: 12px;
-      background: #007600;
+      background: var(--green-accent);
       color: #FFFFFF;
       font-size: 10.5px;
       font-weight: 700;
@@ -484,7 +514,6 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
-    /* ── CARD BODY DETAILS ── */
     .card-body {
       padding: 20px;
       display: flex;
@@ -497,8 +526,8 @@
       justify-content: space-between;
       align-items: center;
       font-size: 11.5px;
-      font-weight: 700;
-      color: #565959;
+      font-weight: 800;
+      color: var(--text-sub);
       text-transform: uppercase;
       letter-spacing: 0.8px;
       margin-bottom: 6px;
@@ -506,8 +535,8 @@
 
     .card-product-name {
       font-size: 17px;
-      font-weight: 700;
-      color: #0F1111;
+      font-weight: 800;
+      color: var(--text-main);
       margin-bottom: 8px;
       line-height: 1.35;
       text-decoration: none;
@@ -538,7 +567,7 @@
     .star-filled-svg {
       width: 15px;
       height: 15px;
-      fill: #FFA41C;
+      fill: var(--gold-main);
     }
 
     .star-empty-svg {
@@ -549,7 +578,7 @@
 
     .card-rating-text {
       font-size: 12.5px;
-      color: #007185;
+      color: var(--blue-accent);
       font-weight: 600;
       text-decoration: none;
     }
@@ -573,13 +602,13 @@
 
     .card-price {
       font-size: 26px;
-      font-weight: 800;
-      color: #0F1111;
+      font-weight: 900;
+      color: var(--text-main);
     }
 
     .card-mrp-group {
       font-size: 12.5px;
-      color: #565959;
+      color: var(--text-sub);
       margin-left: 2px;
     }
 
@@ -589,15 +618,14 @@
 
     .card-savings {
       font-size: 12px;
-      font-weight: 700;
-      color: #CC0C39;
+      font-weight: 800;
+      color: var(--red-accent);
       margin-left: auto;
       background: #FDF0F2;
       padding: 2px 6px;
       border-radius: 4px;
     }
 
-    /* Digital E-Book Urgency Box Fix */
     .card-urgency-box {
       border-top: 1px dashed #E3E6E6;
       border-bottom: 1px dashed #E3E6E6;
@@ -610,7 +638,7 @@
     }
 
     .speed-delivery {
-      color: #007600;
+      color: var(--green-accent);
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -618,8 +646,8 @@
     }
 
     .kindle-badge-tag {
-      background: #232F3E;
-      color: #FFA41C;
+      background: var(--bg-slate);
+      color: var(--gold-main);
       font-size: 9.5px;
       font-weight: 900;
       padding: 1px 6px;
@@ -629,7 +657,7 @@
     }
 
     .stock-indicator {
-      color: #007185;
+      color: var(--blue-accent);
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -639,7 +667,7 @@
     .stock-dot-pulse {
       width: 7px;
       height: 7px;
-      background-color: #007600;
+      background-color: var(--green-accent);
       border-radius: 50%;
       animation: pulse-dot-green 1.4s infinite;
     }
@@ -652,11 +680,11 @@
     .card-specs-list {
       list-style: none;
       font-size: 13px;
-      color: #0F1111;
+      color: var(--text-main);
       margin-bottom: 16px;
       background: #F7F8F8;
-      border-radius: 6px;
-      padding: 8px 12px;
+      border-radius: 8px;
+      padding: 10px 12px;
       border: 1px solid #F0F2F2;
     }
 
@@ -671,14 +699,14 @@
     .specs-check-svg {
       width: 14px;
       height: 14px;
-      stroke: #007600;
+      stroke: var(--green-accent);
     }
 
     .card-cta-area {
       margin-top: auto;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .card-btn {
@@ -688,7 +716,7 @@
       gap: 6px;
       padding: 11px 16px;
       border-radius: 100px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 13.5px;
       text-decoration: none;
       text-align: center;
@@ -703,9 +731,9 @@
 
     .card-btn-amazon {
       background: linear-gradient(to bottom, #FFE093, #FFC43D);
-      border-color: #D8B400;
-      color: #0F1111;
-      box-shadow: 0 2px 4px rgba(216,180,0,0.15);
+      border-color: var(--gold-dark);
+      color: var(--text-main);
+      box-shadow: 0 2px 4px rgba(216,180,0,0.2);
     }
 
     .card-btn-amazon:hover {
@@ -714,37 +742,39 @@
     }
 
     .card-btn-flipkart {
-      background: linear-gradient(to bottom, #FFB84D, #FFA41C);
+      background: linear-gradient(to bottom, #FFB84D, var(--gold-main));
       border-color: #C47F00;
-      color: #0F1111;
-      box-shadow: 0 2px 4px rgba(196,127,0,0.15);
+      color: var(--text-main);
+      box-shadow: 0 2px 4px rgba(196,127,0,0.2);
     }
 
     .card-btn-flipkart:hover {
-      background: linear-gradient(to bottom, #FFA41C, #E69100);
+      background: linear-gradient(to bottom, var(--gold-main), #E69100);
       filter: brightness(0.97);
     }
 
-    .card-details-link {
-      display: block;
-      text-align: center;
-      font-size: 13px;
+    .quick-view-btn {
+      background: transparent;
+      border: 1px solid #D5D9D9;
+      color: var(--blue-accent);
+      font-size: 12.5px;
       font-weight: 700;
-      color: #007185;
-      text-decoration: none;
-      padding: 4px 0;
-      transition: color 0.15s ease;
+      padding: 6px 12px;
+      border-radius: 100px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s ease;
     }
 
-    .card-details-link:hover {
+    .quick-view-btn:hover {
+      background: #F0F2F2;
       color: #C7511F;
-      text-decoration: underline;
     }
 
     .card-compare-row {
       border-top: 1px solid #E3E6E6;
       padding-top: 10px;
-      margin-top: 10px;
+      margin-top: 8px;
       display: flex;
       justify-content: center;
     }
@@ -763,74 +793,73 @@
     .card-compare-checkbox {
       width: 16px;
       height: 16px;
-      accent-color: #FFA41C;
+      accent-color: var(--gold-main);
       cursor: pointer;
       border-radius: 4px;
       border: 1px solid #8D9090;
     }
 
-    /* ── DYNAMIC SKELETON LOADERS ── */
-    .skeleton-card {
-      background: #FFFFFF;
-      border-radius: 12px;
-      border: 1px solid #E3E6E6;
-      height: 540px;
-      overflow: hidden;
-    }
-
-    .skeleton-badge {
-      height: 28px;
-      background: #E3E6E6;
-    }
-
-    .skeleton-image {
-      height: 200px;
-      background: linear-gradient(90deg, #F0F2F2 25%, #E3E6E6 50%, #F0F2F2 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s infinite;
-    }
-
-    .skeleton-body {
-      padding: 20px;
-    }
-
-    .skeleton-line {
-      height: 12px;
-      background: linear-gradient(90deg, #F0F2F2 25%, #E3E6E6 50%, #F0F2F2 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s infinite;
-      border-radius: 4px;
-      margin-bottom: 12px;
-    }
-
-    .skeleton-line-short { width: 40%; }
-    .skeleton-line-medium { width: 75%; }
-    .skeleton-line-price { height: 36px; border-radius: 6px; margin-bottom: 18px; }
-
-    .skeleton-button-row {
+    /* ── QUICK VIEW MODAL ──────────────────────── */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(19, 25, 33, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 3000;
       display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 16px;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
     }
 
-    .skeleton-button {
-      height: 38px;
-      background: linear-gradient(90deg, #F0F2F2 25%, #E3E6E6 50%, #F0F2F2 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s infinite;
-      border-radius: 100px;
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
     }
 
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
+    .modal-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      max-width: 680px;
+      width: 92%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 32px;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      transform: translateY(20px);
+      transition: transform 0.25s ease;
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 26px;
+      border: none;
+      background: none;
+      color: var(--text-sub);
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .modal-close:hover {
+      color: var(--text-main);
     }
 
     /* ── INLINE LEAD MAGNET ─────────────────── */
     .inline-lead-magnet {
       grid-column: 1 / -1;
-      background: linear-gradient(135deg, #232F3E 0%, #131921 100%);
+      background: linear-gradient(135deg, var(--bg-slate) 0%, var(--bg-dark) 100%);
       color: #FFFFFF;
       border-radius: 16px;
       padding: 36px;
@@ -844,7 +873,7 @@
     .magnet-icon-svg {
       width: 48px;
       height: 48px;
-      stroke: #FFA41C;
+      stroke: var(--gold-main);
       margin: 0 auto 16px;
       display: block;
     }
@@ -886,17 +915,17 @@
     }
 
     .magnet-input:focus {
-      border-color: #FFA41C;
+      border-color: var(--gold-main);
       background: rgba(255, 255, 255, 0.12);
     }
 
     .magnet-btn {
       padding: 12px 28px;
       background: linear-gradient(to bottom, #FFE093, #FFC43D);
-      border: 1px solid #D8B400;
-      color: #0F1111;
+      border: 1px solid var(--gold-dark);
+      color: var(--text-main);
       border-radius: 100px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
       font-size: 14px;
       transition: filter 0.15s ease;
@@ -916,7 +945,7 @@
 
     /* ── POPULAR ACCESSORIES SECTION ──────────── */
     .cross-sell-section {
-      max-width: 1300px;
+      max-width: 1320px;
       margin: 32px auto 48px;
       padding: 0 24px;
     }
@@ -925,7 +954,7 @@
       font-family: 'Outfit', sans-serif;
       font-size: 22px;
       font-weight: 800;
-      color: #0F1111;
+      color: var(--text-main);
       margin-bottom: 18px;
       border-bottom: 1px solid #D5D9D9;
       padding-bottom: 8px;
@@ -943,7 +972,7 @@
     .cross-sell-card {
       background: #FFFFFF;
       border: 1px solid #E3E6E6;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 16px;
       display: flex;
       align-items: center;
@@ -954,26 +983,26 @@
     }
 
     .cross-sell-card:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     }
 
     .cross-sell-icon-box {
-      background: #F7F8F8;
+      background: var(--gold-main);
       width: 60px;
       height: 60px;
-      border-radius: 8px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid #F0F2F2;
-      color: #565959;
+      color: #FFFFFF;
+      flex-shrink: 0;
     }
 
     .cross-sell-icon-svg {
-      width: 32px;
-      height: 32px;
-      stroke: #565959;
+      width: 30px;
+      height: 30px;
+      stroke: #FFFFFF;
     }
 
     .cross-sell-info {
@@ -983,21 +1012,21 @@
     }
 
     .cross-sell-name {
-      font-size: 14.5px;
-      font-weight: 700;
-      color: #0F1111;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
     }
 
     .cross-sell-price {
       font-size: 13.5px;
-      color: #565959;
+      color: var(--text-sub);
       font-weight: 600;
       margin-top: 3px;
     }
 
     .cross-sell-savings {
       font-size: 11px;
-      color: #CC0C39;
+      color: var(--red-accent);
       font-weight: bold;
     }
 
@@ -1009,7 +1038,7 @@
       background: rgba(19, 25, 33, 0.96);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-left: 4px solid #FFA41C;
+      border-left: 4px solid var(--gold-main);
       border-radius: 12px;
       padding: 16px 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
@@ -1034,7 +1063,7 @@
 
     .compare-bar-title {
       font-size: 13.5px;
-      font-weight: 700;
+      font-weight: 800;
       color: #FFFFFF;
     }
 
@@ -1066,12 +1095,12 @@
 
     .compare-bar-btn-go {
       background: linear-gradient(to bottom, #FFE093, #FFC43D);
-      border: 1px solid #D8B400;
-      color: #0F1111;
+      border: 1px solid var(--gold-dark);
+      color: var(--text-main);
       padding: 8px 16px;
       border-radius: 100px;
       font-size: 12.5px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
       box-shadow: 0 2px 4px rgba(216,180,0,0.15);
     }
@@ -1086,7 +1115,7 @@
       bottom: 24px;
       left: 24px;
       background: #FFFFFF;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid #E3E6E6;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       padding: 14px 18px;
@@ -1115,7 +1144,7 @@
     .toast-icon-svg {
       width: 20px;
       height: 20px;
-      stroke: #FFA41C;
+      stroke: var(--gold-main);
     }
 
     .toast-body {
@@ -1126,13 +1155,13 @@
     .toast-text {
       font-size: 13px;
       font-weight: 600;
-      color: #0F1111;
+      color: var(--text-main);
       line-height: 1.4;
     }
 
     .toast-time {
       font-size: 11px;
-      color: #565959;
+      color: var(--text-sub);
       margin-top: 2px;
       font-weight: 500;
     }
@@ -1157,7 +1186,7 @@
 
     .exit-card {
       background: #FFFFFF;
-      border-radius: 12px;
+      border-radius: 14px;
       border: 1px solid #E3E6E6;
       padding: 36px;
       max-width: 450px;
@@ -1172,7 +1201,7 @@
       top: 16px;
       right: 16px;
       font-size: 22px;
-      color: #565959;
+      color: var(--text-sub);
       background: none;
       border: none;
       cursor: pointer;
@@ -1180,20 +1209,20 @@
     }
 
     .exit-close:hover {
-      color: #0F1111;
+      color: var(--text-main);
     }
 
     .exit-title {
       font-family: 'Outfit', sans-serif;
       font-size: 22px;
       font-weight: 800;
-      color: #0F1111;
+      color: var(--text-main);
       margin-bottom: 8px;
     }
 
     .exit-desc {
       font-size: 14px;
-      color: #565959;
+      color: var(--text-sub);
       margin-bottom: 24px;
       line-height: 1.5;
       font-weight: 500;
@@ -1211,17 +1240,17 @@
     }
 
     .exit-field:focus {
-      border-color: #FFA41C;
+      border-color: var(--gold-main);
     }
 
     .exit-submit-btn {
       width: 100%;
       padding: 13px 20px;
       background: linear-gradient(to bottom, #FFE093, #FFC43D);
-      border: 1px solid #D8B400;
-      color: #0F1111;
+      border: 1px solid var(--gold-dark);
+      color: var(--text-main);
       border-radius: 100px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
       font-size: 14.5px;
       transition: filter 0.15s ease;
@@ -1241,11 +1270,11 @@
 
     /* ── SITE FOOTER ────────────────────────────────── */
     .site-footer {
-      background: #131921;
+      background: var(--bg-dark);
       color: #DDDDDD;
       padding: 48px 24px;
       text-align: center;
-      border-top: 4px solid #FFA41C;
+      border-top: 4px solid var(--gold-main);
     }
 
     .footer-links {
@@ -1254,12 +1283,13 @@
       gap: 20px;
       margin-bottom: 16px;
       font-size: 13px;
+      flex-wrap: wrap;
     }
 
     .footer-links a {
-      color: #FFA41C;
+      color: var(--gold-main);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .footer-links a:hover {
@@ -1269,7 +1299,7 @@
     .footer-text {
       font-family: 'Outfit', sans-serif;
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 800;
       color: #FFFFFF;
       margin-bottom: 12px;
     }
@@ -1288,7 +1318,7 @@
         grid-template-columns: 1fr;
       }
       .hero-title {
-        font-size: 30px;
+        font-size: 32px;
       }
       .hero-subtitle {
         font-size: 14.5px;
@@ -1318,9 +1348,9 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: #131921;
+        background: var(--bg-dark);
         padding: 16px 24px;
-        border-bottom: 2px solid #FFA41C;
+        border-bottom: 2px solid var(--gold-main);
         gap: 16px;
       }
       .nav-links.show {
@@ -1365,12 +1395,12 @@
       Bestselling E-Books &amp; Kindle Deals <span class="hero-title-highlight">Starting at ₹99</span>
     </h1>
     <p class="hero-subtitle">
-      We track real-time lowest pricing across Amazon Kindle and Flipkart Kobo hourly so you read more while spending less.
+      We track verified lowest pricing across Amazon Kindle and Flipkart Kobo hourly so you read more while spending less.
     </p>
 
     <!-- Live Search Bar -->
     <div class="hero-search-box">
-      <input type="text" class="hero-search-input" id="heroSearchInput" placeholder="Search by title, author, or keyword (e.g. Atomic Habits, Goggins)..." autocomplete="off">
+      <input type="text" class="hero-search-input" id="heroSearchInput" placeholder="Search by title, author, or genre (e.g. Atomic Habits, Goggins)..." autocomplete="off">
       <button class="hero-search-clear" id="heroSearchClear" aria-label="Clear Search">&times;</button>
       <svg class="hero-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="8"></circle>
@@ -1381,7 +1411,7 @@
     <div class="hero-trust-bar">
       <span class="trust-item">
         <svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-        Instant Digital Delivery
+        Instant Cloud Sync
       </span>
       <span class="trust-item">
         <svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1402,7 +1432,8 @@
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
         </svg>
-        All E-Books
+        <span>All E-Books</span>
+        <span class="category-tab-count" id="countAll">15</span>
       </button>
       <button class="category-tab" data-category="self-help-mindset">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1410,34 +1441,39 @@
           <path d="M12 8v4"></path>
           <path d="M12 16h.01"></path>
         </svg>
-        Self-Help &amp; Mindset
+        <span>Self-Help &amp; Mindset</span>
+        <span class="category-tab-count">3</span>
       </button>
       <button class="category-tab" data-category="business-startups">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
           <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
         </svg>
-        Business &amp; Startups
+        <span>Business &amp; Startups</span>
+        <span class="category-tab-count">3</span>
       </button>
       <button class="category-tab" data-category="technology-coding">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="16 18 22 12 16 6"></polyline>
           <polyline points="8 6 2 12 8 18"></polyline>
         </svg>
-        Technology &amp; Coding
+        <span>Technology &amp; Coding</span>
+        <span class="category-tab-count">3</span>
       </button>
       <button class="category-tab" data-category="finance-investing">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="12" y1="1" x2="12" y2="23"></line>
           <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
         </svg>
-        Finance &amp; Investing
+        <span>Finance &amp; Investing</span>
+        <span class="category-tab-count">3</span>
       </button>
       <button class="category-tab" data-category="fiction-sci-fi">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
         </svg>
-        Fiction &amp; Sci-Fi
+        <span>Fiction &amp; Sci-Fi</span>
+        <span class="category-tab-count">3</span>
       </button>
     </div>
   </div>
@@ -1464,38 +1500,11 @@
 
     <!-- Product Grid container -->
     <div class="product-grid" id="productGrid">
-      <div class="skeleton-card">
-        <div class="skeleton-badge"></div>
-        <div class="skeleton-image"></div>
-        <div class="skeleton-body">
-          <div class="skeleton-line skeleton-line-short"></div>
-          <div class="skeleton-line skeleton-line-medium"></div>
-          <div class="skeleton-line skeleton-line-price"></div>
-          <div class="skeleton-line"></div>
-          <div class="skeleton-button-row">
-            <div class="skeleton-button"></div>
-            <div class="skeleton-button"></div>
-          </div>
-        </div>
-      </div>
-      <div class="skeleton-card">
-        <div class="skeleton-badge"></div>
-        <div class="skeleton-image"></div>
-        <div class="skeleton-body">
-          <div class="skeleton-line skeleton-line-short"></div>
-          <div class="skeleton-line skeleton-line-medium"></div>
-          <div class="skeleton-line skeleton-line-price"></div>
-          <div class="skeleton-line"></div>
-          <div class="skeleton-button-row">
-            <div class="skeleton-button"></div>
-            <div class="skeleton-button"></div>
-          </div>
-        </div>
-      </div>
+      <!-- Cards rendered dynamically -->
     </div>
   </main>
 
-  <!-- Accessories Section -->
+  <!-- Popular Accessories Section -->
   <section class="cross-sell-section">
     <h2 class="cross-sell-title">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right: 6px;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82zM7 7h.01"></path></svg>
@@ -1503,8 +1512,8 @@
     </h2>
     <div class="cross-sell-grid">
       <a href="/product/psychology-of-money" class="cross-sell-card">
-        <div class="cross-sell-icon-box" style="background:#FFA41C;color:#fff;">
-          <svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke:#fff;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        <div class="cross-sell-icon-box">
+          <svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
         </div>
         <div class="cross-sell-info">
           <span class="cross-sell-name">The Psychology of Money</span>
@@ -1514,8 +1523,8 @@
       </a>
 
       <a href="/product/atomic-habits" class="cross-sell-card">
-        <div class="cross-sell-icon-box" style="background:#FFA41C;color:#fff;">
-          <svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke:#fff;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <div class="cross-sell-icon-box">
+          <svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
         </div>
         <div class="cross-sell-info">
           <span class="cross-sell-name">Atomic Habits</span>
@@ -1525,8 +1534,8 @@
       </a>
 
       <a href="/product/rich-dad-poor-dad" class="cross-sell-card">
-        <div class="cross-sell-icon-box" style="background:#FFA41C;color:#fff;">
-          <svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke:#fff;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        <div class="cross-sell-icon-box">
+          <svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
         </div>
         <div class="cross-sell-info">
           <span class="cross-sell-name">Rich Dad Poor Dad</span>
@@ -1552,7 +1561,15 @@
     </p>
   </footer>
 
-  <!-- ⚖️ Floating Comparison selection tracker -->
+  <!-- Quick View Modal Container -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeQuickView()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Floating Compare Selection Tracker -->
   <div class="floating-compare-bar" id="floatingCompareBar">
     <div class="compare-bar-content">
       <span class="compare-bar-title">Compare selected picks (<span id="compareCount">0</span>/2)</span>
@@ -1595,16 +1612,308 @@
     </div>
   </div>
 
-  <!-- JavaScript client logical bindings -->
+  <!-- 💡 STATIC EMBEDDED DATA ISLAND (Guarantees 100% offline & direct file:// fallback) -->
+  <script id="static-products-data" type="application/json">
+  [
+    {
+      "id": 1,
+      "slug": "atomic-habits",
+      "name": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+      "brand": "James Clear",
+      "category": "Self-Help & Mindset",
+      "price": 149,
+      "mrp": 499,
+      "discount": 70,
+      "badge": "#1 BESTSELLER",
+      "badgeColor": "#FFA41C",
+      "rating": 4.8,
+      "ratingCount": 120450,
+      "image": "https://m.media-amazon.com/images/I/81YkqyaFVEL._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"James Clear"},{"label":"Publisher","value":"Avery"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"320 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0735213180"}],
+      "pros": ["Extremely actionable with clear frameworks","Easy-to-read narrative style","Based on solid psychological principles","Includes downloadable bonus templates"],
+      "cons": ["Some concepts are repetition of classic habit psychology","Requires persistent effort to apply"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B07D2RYQQH?tag=amzbooks-21","flipkart":"https://www.flipkart.com/atomic-habits/p/itm54?affid=amzbooks"}
+    },
+    {
+      "id": 2,
+      "slug": "cant-hurt-me",
+      "name": "Can't Hurt Me: Master Your Mind and Defy the Odds",
+      "brand": "David Goggins",
+      "category": "Self-Help & Mindset",
+      "price": 199,
+      "mrp": 599,
+      "discount": 67,
+      "badge": "UNCOMMON AMONGST UNCOMMON",
+      "badgeColor": "#10B981",
+      "rating": 4.9,
+      "ratingCount": 78500,
+      "image": "https://m.media-amazon.com/images/I/81gTRv2HXrL._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"David Goggins"},{"label":"Publisher","value":"Lioncrest Publishing"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"364 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-1544512280"}],
+      "pros": ["Highly motivating raw memoir","Includes structured challenges at chapter ends","Very candid and unfiltered account","Inspiring work ethic lessons"],
+      "cons": ["Extremely intense vocabulary","Methods may not suit everyone"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B07H453KGH?tag=amzbooks-21","flipkart":"https://www.flipkart.com/cant-hurt-me/p/itm21?affid=amzbooks"}
+    },
+    {
+      "id": 3,
+      "slug": "thinking-fast-and-slow",
+      "name": "Thinking, Fast and Slow",
+      "brand": "Daniel Kahneman",
+      "category": "Self-Help & Mindset",
+      "price": 249,
+      "mrp": 699,
+      "discount": 64,
+      "badge": "NOBEL PRIZE WINNER",
+      "badgeColor": "#3B82F6",
+      "rating": 4.6,
+      "ratingCount": 42150,
+      "image": "https://m.media-amazon.com/images/I/71f6E+CDB-L._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Daniel Kahneman"},{"label":"Publisher","value":"Farrar, Straus and Giroux"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"499 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0374533557"}],
+      "pros": ["Deeply researched cognitive psychology","Explains System 1 & 2 thinking","Fascinating insights into human error","Life-changing perspective"],
+      "cons": ["Dense academic writing style","Can be a slow read"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B00555X8OA?tag=amzbooks-21","flipkart":"https://www.flipkart.com/thinking-fast-and-slow/p/itm87?affid=amzbooks"}
+    },
+    {
+      "id": 4,
+      "slug": "zero-to-one",
+      "name": "Zero to One: Notes on Startups, or How to Build the Future",
+      "brand": "Peter Thiel",
+      "category": "Business & Startups",
+      "price": 189,
+      "mrp": 499,
+      "discount": 62,
+      "badge": "SILICON VALLEY CLASSIC",
+      "badgeColor": "#8B5CF6",
+      "rating": 4.6,
+      "ratingCount": 56900,
+      "image": "https://m.media-amazon.com/images/I/71m-MxdJ2WL._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Peter Thiel"},{"label":"Publisher","value":"Crown Business"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"195 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0804139298"}],
+      "pros": ["Unique philosophy on monopolies","Short, concise, and punchy","Provocative contrarian questions","Great guidance on tech startups"],
+      "cons": ["Somewhat opinionated","Less focus on early stage details"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B00J6YBOFQ?tag=amzbooks-21","flipkart":"https://www.flipkart.com/zero-to-one/p/itm19?affid=amzbooks"}
+    },
+    {
+      "id": 5,
+      "slug": "the-lean-startup",
+      "name": "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation",
+      "brand": "Eric Ries",
+      "category": "Business & Startups",
+      "price": 220,
+      "mrp": 599,
+      "discount": 63,
+      "badge": "FOUNDER BIBLE",
+      "badgeColor": "#EC4899",
+      "rating": 4.7,
+      "ratingCount": 31200,
+      "image": "https://m.media-amazon.com/images/I/81vvgZqCskL._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Eric Ries"},{"label":"Publisher","value":"Crown Business"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"336 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0307887894"}],
+      "pros": ["Build-Measure-Learn feedback loop","Minimizes wasted capital","Clear MVP definition","Practical metrics tracking"],
+      "cons": ["Tech startup focused","Can feel repetitive"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B004J4XGN6?tag=amzbooks-21","flipkart":"https://www.flipkart.com/the-lean-startup/p/itm38?affid=amzbooks"}
+    },
+    {
+      "id": 6,
+      "slug": "the-100-startup",
+      "name": "The $100 Startup: Reinvent the Way You Make a Living",
+      "brand": "Chris Guillebeau",
+      "category": "Business & Startups",
+      "price": 139,
+      "mrp": 399,
+      "discount": 65,
+      "badge": "SIDE HUSTLE MANUAL",
+      "badgeColor": "#3B82F6",
+      "rating": 4.5,
+      "ratingCount": 15600,
+      "image": "https://m.media-amazon.com/images/I/810U7p60g-L._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Chris Guillebeau"},{"label":"Publisher","value":"Crown Business"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"304 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0307951526"}],
+      "pros": ["Case studies of micropreneurs","Low-risk business ideas","Practical action plans","Turn passion into profit"],
+      "cons": ["Digital lifestyle focus","Lacks legal/tax details"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B007361BEU?tag=amzbooks-21","flipkart":"https://www.flipkart.com/100-startup/p/itm20?affid=amzbooks"}
+    },
+    {
+      "id": 7,
+      "slug": "clean-code",
+      "name": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "brand": "Robert C. Martin",
+      "category": "Technology & Coding",
+      "price": 499,
+      "mrp": 1499,
+      "discount": 67,
+      "badge": "DEVELOPER ESSENTIAL",
+      "badgeColor": "#F59E0B",
+      "rating": 4.7,
+      "ratingCount": 22100,
+      "image": "https://m.media-amazon.com/images/I/51E200Ae80L._SL1000_.jpg",
+      "specs": [{"label":"Author","value":"Robert C. Martin"},{"label":"Publisher","value":"Prentice Hall"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"464 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0132350884"}],
+      "pros": ["Practical clean code principles","Tons of clear refactoring examples","Timeless Agile craftsmanship","Explains functions & testing"],
+      "cons": ["Java-centric examples","Opinionated guidelines"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B001GSTOAM?tag=amzbooks-21","flipkart":"https://www.flipkart.com/clean-code/p/itm09?affid=amzbooks"}
+    },
+    {
+      "id": 8,
+      "slug": "the-pragmatic-programmer",
+      "name": "The Pragmatic Programmer: Your Journey to Mastery",
+      "brand": "Andrew Hunt",
+      "category": "Technology & Coding",
+      "price": 520,
+      "mrp": 1599,
+      "discount": 67,
+      "badge": "DEV WORLD STANDARD",
+      "badgeColor": "#10B981",
+      "rating": 4.8,
+      "ratingCount": 16400,
+      "image": "https://m.media-amazon.com/images/I/71f743sOPoL._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"David Thomas & Andrew Hunt"},{"label":"Publisher","value":"Addison-Wesley Professional"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"352 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0135957059"}],
+      "pros": ["Practical software engineering wisdom","Entertaining analogies & stories","Focuses on career & automation","Great debugging advice"],
+      "cons": ["Broad overview","Requires coding background"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B07VXS47H2?tag=amzbooks-21","flipkart":"https://www.flipkart.com/pragmatic-programmer/p/itm41?affid=amzbooks"}
+    },
+    {
+      "id": 9,
+      "slug": "designing-data-intensive-applications",
+      "name": "Designing Data-Intensive Applications",
+      "brand": "Martin Kleppmann",
+      "category": "Technology & Coding",
+      "price": 649,
+      "mrp": 1899,
+      "discount": 66,
+      "badge": "ARCHITECT BIBLE",
+      "badgeColor": "#8B5CF6",
+      "rating": 4.9,
+      "ratingCount": 14200,
+      "image": "https://m.media-amazon.com/images/I/91YnfL+26-L._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Martin Kleppmann"},{"label":"Publisher","value":"O'Reilly Media"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"611 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-1449373320"}],
+      "pros": ["Masterful database breakdown","Explains consensus & replication","Hand-drawn architecture diagrams","Essential for senior engineers"],
+      "cons": ["Extremely dense","High technical bar"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B06XP5FCYC?tag=amzbooks-21","flipkart":"https://www.flipkart.com/designing-data-intensive-applications/p/itm12?affid=amzbooks"}
+    },
+    {
+      "id": 10,
+      "slug": "psychology-of-money",
+      "name": "The Psychology of Money: Timeless lessons on wealth, greed, and happiness",
+      "brand": "Morgan Housel",
+      "category": "Finance & Investing",
+      "price": 129,
+      "mrp": 399,
+      "discount": 68,
+      "badge": "POPULAR CHOICE",
+      "badgeColor": "#FFA41C",
+      "rating": 4.8,
+      "ratingCount": 98500,
+      "image": "https://m.media-amazon.com/images/I/71g2ednj0JL._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Morgan Housel"},{"label":"Publisher","value":"Harriman House"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"256 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0857197689"}],
+      "pros": ["Brilliant short money management stories","Shows EQ beats IQ in wealth","Insights on compounding","Extremely readable"],
+      "cons": ["No stock picking formulas","Blog-style narrative"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B08D79TV6V?tag=amzbooks-21","flipkart":"https://www.flipkart.com/psychology-money/p/itm11?affid=amzbooks"}
+    },
+    {
+      "id": 11,
+      "slug": "rich-dad-poor-dad",
+      "name": "Rich Dad Poor Dad: What the Rich Teach Their Kids About Money",
+      "brand": "Robert T. Kiyosaki",
+      "category": "Finance & Investing",
+      "price": 149,
+      "mrp": 499,
+      "discount": 70,
+      "badge": "GLOBAL BLOCKBUSTER",
+      "badgeColor": "#EF4444",
+      "rating": 4.6,
+      "ratingCount": 189400,
+      "image": "https://m.media-amazon.com/images/I/81bnd7x885L._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Robert T. Kiyosaki"},{"label":"Publisher","value":"Plata Publishing"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"336 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-1612680194"}],
+      "pros": ["Assets vs liabilities framework","Great financial literacy start","Inspires business mindset","Dialogue-driven chapters"],
+      "cons": ["Dramatized stories","Some dated advice"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B0175AE562?tag=amzbooks-21","flipkart":"https://www.flipkart.com/rich-dad-poor-dad/p/itm31?affid=amzbooks"}
+    },
+    {
+      "id": 12,
+      "slug": "the-intelligent-investor",
+      "name": "The Intelligent Investor: The Definitive Book on Value Investing",
+      "brand": "Benjamin Graham",
+      "category": "Finance & Investing",
+      "price": 299,
+      "mrp": 799,
+      "discount": 63,
+      "badge": "INVESTING CLASSIC",
+      "badgeColor": "#3B82F6",
+      "rating": 4.5,
+      "ratingCount": 35400,
+      "image": "https://m.media-amazon.com/images/I/919mmN3WzWL._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Benjamin Graham"},{"label":"Publisher","value":"Harper Business"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"640 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0060555665"}],
+      "pros": ["Warren Buffett's top recommended book","Margin of safety concept","Defensive investing rules","Teaches analytical logic"],
+      "cons": ["Dense 1970s prose","Requires patience"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B000FC0KB0?tag=amzbooks-21","flipkart":"https://www.flipkart.com/intelligent-investor/p/itm32?affid=amzbooks"}
+    },
+    {
+      "id": 13,
+      "slug": "dune",
+      "name": "Dune: The Deluxe Edition",
+      "brand": "Frank Herbert",
+      "category": "Fiction & Sci-Fi",
+      "price": 199,
+      "mrp": 599,
+      "discount": 67,
+      "badge": "SCI-FI MASTERPIECE",
+      "badgeColor": "#8B5CF6",
+      "rating": 4.7,
+      "ratingCount": 54600,
+      "image": "https://m.media-amazon.com/images/I/81U5O3WbU8L._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Frank Herbert"},{"label":"Publisher","value":"Ace Books"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"608 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0441172719"}],
+      "pros": ["Masterful desert worldbuilding","Deep political & ecological themes","Iconic Paul Atreides journey","Pioneered space-opera genre"],
+      "cons": ["Complex terminology","Pacing slows in mid section"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B00B7D055A?tag=amzbooks-21","flipkart":"https://www.flipkart.com/dune/p/itm100?affid=amzbooks"}
+    },
+    {
+      "id": 14,
+      "slug": "project-hail-mary",
+      "name": "Project Hail Mary: A Novel",
+      "brand": "Andy Weir",
+      "category": "Fiction & Sci-Fi",
+      "price": 249,
+      "mrp": 699,
+      "discount": 64,
+      "badge": "#1 BEST SCI-FI 2021",
+      "badgeColor": "#10B981",
+      "rating": 4.8,
+      "ratingCount": 38900,
+      "image": "https://m.media-amazon.com/images/I/91t4t-R9w3L._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"Andy Weir"},{"label":"Publisher","value":"Ballantine Books"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"476 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0593135204"}],
+      "pros": ["Engaging hard science calculations","Heartwarming buddy-sci-fi dynamic","Fast-paced space survival","Written by author of The Martian"],
+      "cons": ["Humor resembles The Martian","Scientific math density"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B08FBFQ4DE?tag=amzbooks-21","flipkart":"https://www.flipkart.com/project-hail-mary/p/itm88?affid=amzbooks"}
+    },
+    {
+      "id": 15,
+      "slug": "neuromancer",
+      "name": "Neuromancer: The Cyberpunk Classic",
+      "brand": "William Gibson",
+      "category": "Fiction & Sci-Fi",
+      "price": 149,
+      "mrp": 399,
+      "discount": 63,
+      "badge": "CYBERPUNK INVENTOR",
+      "badgeColor": "#EC4899",
+      "rating": 4.4,
+      "ratingCount": 18400,
+      "image": "https://m.media-amazon.com/images/I/81z7-tE+oYL._SL1500_.jpg",
+      "specs": [{"label":"Author","value":"William Gibson"},{"label":"Publisher","value":"Ace Books"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"271 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0441569595"}],
+      "pros": ["Invented the term Cyberspace","Rich futuristic descriptions","Cohesive gritty atmosphere","Influenced The Matrix"],
+      "cons": ["Complex jargon-dense prose","Fast-paced narrative"],
+      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B000O76ONU?tag=amzbooks-21","flipkart":"https://www.flipkart.com/neuromancer/p/itm23?affid=amzbooks"}
+    }
+  ]
+  </script>
+
+  <!-- JavaScript Client Logic -->
   <script>
     (function() {
       'use strict';
 
-      function getApiUrl(path) {
-        if (window.location.protocol === 'file:') {
-          return 'http://localhost:3000' + path;
-        }
-        return path;
+      // Load static embedded fallback catalog
+      var staticCatalog = [];
+      try {
+        staticCatalog = JSON.parse(document.getElementById('static-products-data').textContent.trim()) || [];
+      } catch(e) {
+        console.error('Failed to parse static fallback data:', e);
       }
 
       var $productGrid = document.getElementById('productGrid');
@@ -1615,6 +1924,8 @@
       var $gridTitle = document.getElementById('gridTitle');
       var $mobileNavToggle = document.getElementById('mobileNavToggle');
       var $navLinks = document.getElementById('navLinks');
+      var $quickViewModal = document.getElementById('quickViewModal');
+      var $modalBody = document.getElementById('modalBody');
 
       var activeCategory = '';
       var currentSort = '';
@@ -1629,14 +1940,14 @@
         }
       } catch(e) {}
 
-      // Mobile nav toggle
+      // Mobile Nav Toggle
       if ($mobileNavToggle && $navLinks) {
         $mobileNavToggle.onclick = function() {
           $navLinks.classList.toggle('show');
         };
       }
 
-      // Category filters
+      // Category filter binding
       $categoryTabs.addEventListener('click', function(e) {
         var target = e.target.closest('.category-tab');
         if (target) {
@@ -1650,13 +1961,13 @@
         }
       });
 
-      // Sort change
+      // Sort binding
       $sortSelect.onchange = function() {
         currentSort = $sortSelect.value;
         loadProducts();
       };
 
-      // Search input debounced
+      // Search binding
       $heroSearchInput.oninput = function() {
         var val = $heroSearchInput.value.trim();
         $heroSearchClear.style.display = val.length > 0 ? 'block' : 'none';
@@ -1665,7 +1976,7 @@
         searchTimeout = setTimeout(function() {
           currentQuery = val;
           loadProducts();
-        }, 300);
+        }, 200);
       };
 
       $heroSearchClear.onclick = function() {
@@ -1675,10 +1986,15 @@
         loadProducts();
       };
 
-      // Fetch products catalog with category, q, and sort
+      function getApiUrl(path) {
+        if (window.location.protocol === 'file:') {
+          return 'http://localhost:3000' + path;
+        }
+        return path;
+      }
+
+      // Master load products function with seamless local fallback
       function loadProducts() {
-        showSkeletons();
-        var xhr = new XMLHttpRequest();
         var params = [];
         if (activeCategory) params.push('category=' + encodeURIComponent(activeCategory));
         if (currentQuery) params.push('q=' + encodeURIComponent(currentQuery));
@@ -1686,70 +2002,84 @@
 
         var url = '/api/products' + (params.length > 0 ? '?' + params.join('&') : '');
         
+        var xhr = new XMLHttpRequest();
         xhr.open('GET', getApiUrl(url), true);
         xhr.onload = function() {
           if (xhr.status === 200) {
             try {
               var res = JSON.parse(xhr.responseText);
               if (res.success && res.products && res.products.length > 0) {
-                if (currentQuery) {
-                  $gridTitle.textContent = 'Search Results for "' + esc(currentQuery) + '" (' + res.products.length + ')';
-                } else {
-                  $gridTitle.textContent = 'Hourly Top Offers';
-                }
-                renderCards(res.products);
-              } else {
-                showEmpty();
+                updateTitleAndRender(res.products);
+                return;
               }
-            } catch(e) {
-              showError();
-            }
-          } else {
-            showError();
+            } catch(e) {}
           }
+          // Server returned error or empty -> Use Static Catalog Fallback
+          loadFromStatic();
         };
-        xhr.onerror = function() { showError(); };
+        xhr.onerror = function() {
+          // Network fail or file:// protocol -> Use Static Catalog Fallback
+          loadFromStatic();
+        };
         xhr.send();
       }
 
-      function showSkeletons() {
-        var h = '';
-        for (var i = 0; i < 3; i++) {
-          h += 
-            '<div class="skeleton-card">' +
-              '<div class="skeleton-badge"></div>' +
-              '<div class="skeleton-image"></div>' +
-              '<div class="skeleton-body">' +
-                '<div class="skeleton-line skeleton-line-short"></div>' +
-                '<div class="skeleton-line skeleton-line-medium"></div>' +
-                '<div class="skeleton-line skeleton-line-price"></div>' +
-                '<div class="skeleton-line"></div>' +
-                '<div class="skeleton-button-row">' +
-                  '<div class="skeleton-button"></div>' +
-                  '<div class="skeleton-button"></div>' +
-                '</div>' +
-              '</div>' +
-            '</div>';
+      // Local Filter & Sort on Static Catalog
+      function loadFromStatic() {
+        var prods = staticCatalog.slice();
+
+        // Category filter
+        if (activeCategory) {
+          prods = prods.filter(function(p) {
+            var catSlug = p.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+            return catSlug === activeCategory.toLowerCase();
+          });
         }
-        $productGrid.innerHTML = h;
+
+        // Search filter
+        if (currentQuery) {
+          var q = currentQuery.toLowerCase();
+          prods = prods.filter(function(p) {
+            var text = (p.name + ' ' + p.brand + ' ' + p.category + ' ' + p.pros.join(' ')).toLowerCase();
+            return text.indexOf(q) !== -1;
+          });
+        }
+
+        // Sorting
+        if (currentSort === 'price_asc') {
+          prods.sort(function(a, b) { return a.price - b.price; });
+        } else if (currentSort === 'price_desc') {
+          prods.sort(function(a, b) { return b.price - a.price; });
+        } else if (currentSort === 'rating') {
+          prods.sort(function(a, b) { return b.rating - a.rating; });
+        } else if (currentSort === 'discount') {
+          prods.sort(function(a, b) { return b.discount - a.discount; });
+        }
+
+        updateTitleAndRender(prods);
       }
 
-      function showEmpty() {
-        $productGrid.innerHTML = '<div style="text-align:center;padding:64px;grid-column:1/-1;color:#565959;font-weight:600;">No verified e-book deals match your search criteria. Try a different keyword or category filter.</div>';
+      function updateTitleAndRender(prods) {
+        if (currentQuery) {
+          $gridTitle.textContent = 'Search Results for "' + esc(currentQuery) + '" (' + prods.length + ')';
+        } else {
+          $gridTitle.textContent = 'Hourly Top Offers (' + prods.length + ')';
+        }
+
+        if (prods.length === 0) {
+          $productGrid.innerHTML = '<div style="text-align:center;padding:64px;grid-column:1/-1;color:#565959;font-weight:600;">No verified e-book deals match your search criteria. Try a different search query or category filter.</div>';
+        } else {
+          renderCards(prods);
+        }
       }
 
-      function showError() {
-        $productGrid.innerHTML = '<div style="text-align:center;padding:64px;grid-column:1/-1;color:#CC0C39;font-weight:700;">Failed to sync live deals. Please reload the webpage.</div>';
-      }
-
-      // Render catalog cards with real images and fallback handling
+      // Render Cards
       function renderCards(prods) {
         var html = '';
         for (var i = 0; i < prods.length; i++) {
           var p = prods[i];
           var savings = p.mrp - p.price;
 
-          // Inline lead capture box insertion
           if (i === 3) {
             html += 
               '<div class="inline-lead-magnet">' +
@@ -1775,6 +2105,8 @@
           }
 
           var checkedAttr = compareSlugs.indexOf(p.slug) !== -1 ? 'checked' : '';
+          var amazonUrl = (p.affiliateLinks && p.affiliateLinks.amazon) ? p.affiliateLinks.amazon : '/go/' + p.slug + '?platform=amazon';
+          var flipkartUrl = (p.affiliateLinks && p.affiliateLinks.flipkart) ? p.affiliateLinks.flipkart : '/go/' + p.slug + '?platform=flipkart';
 
           html += 
             '<article class="product-card" id="card-' + p.slug + '">' +
@@ -1801,7 +2133,7 @@
                 
                 '<div class="card-rating-row">' +
                   '<div class="card-stars">' + renderStars(p.rating) + '</div>' +
-                  '<a href="/product/' + p.slug + '#reviews" class="card-rating-text">' + p.rating + ' (' + p.ratingCount.toLocaleString('en-IN') + ')</a>' +
+                  '<a href="/product/' + p.slug + '" class="card-rating-text">' + p.rating + ' (' + p.ratingCount.toLocaleString('en-IN') + ')</a>' +
                 '</div>' +
 
                 '<div class="card-price-row">' +
@@ -1810,7 +2142,6 @@
                   '<span class="card-savings">Save ₹' + savings.toLocaleString('en-IN') + '</span>' +
                 '</div>' +
                 
-                '<!-- E-Book Specific Digital Delivery Urgency Box -->' +
                 '<div class="card-urgency-box">' +
                   '<div class="speed-delivery">' +
                     '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>' +
@@ -1839,13 +2170,13 @@
                 '</ul>' +
 
                 '<div class="card-cta-area">' +
-                  '<a href="/go/' + p.slug + '?platform=amazon&utm_source=home_card" class="card-btn card-btn-amazon" target="_blank">' +
+                  '<a href="' + amazonUrl + '" class="card-btn card-btn-amazon" target="_blank">' +
                     '<span>Buy on Amazon Kindle</span>' +
                   '</a>' +
-                  '<a href="/go/' + p.slug + '?platform=flipkart&utm_source=home_card" class="card-btn card-btn-flipkart" target="_blank">' +
+                  '<a href="' + flipkartUrl + '" class="card-btn card-btn-flipkart" target="_blank">' +
                     '<span>Buy on Flipkart Kobo</span>' +
                   '</a>' +
-                  '<a href="/product/' + p.slug + '" class="card-details-link">Detailed Book Specs &amp; Honest Review &rarr;</a>' +
+                  '<button class="quick-view-btn" onclick="openQuickView(\'' + p.slug + '\')">⚡ Quick Book Preview &rarr;</button>' +
                 '</div>' +
 
                 '<div class="card-compare-row">' +
@@ -1882,9 +2213,9 @@
         ];
         var theme = colors[colorSeed % colors.length];
 
-        return '<div style="width:140px;height:180px;background:' + theme.bg + ';color:' + theme.fg + ';padding:16px 12px;display:flex;flex-direction:column;justify-content:space-between;border-radius:6px;box-shadow:inset 6px 0 10px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);position:relative;border-left:5px solid ' + theme.spine + ';box-sizing:border-box;">' +
+        return '<div style="width:130px;height:175px;background:' + theme.bg + ';color:' + theme.fg + ';padding:14px 10px;display:flex;flex-direction:column;justify-content:space-between;border-radius:6px;box-shadow:inset 6px 0 10px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);position:relative;border-left:5px solid ' + theme.spine + ';box-sizing:border-box;">' +
           '<div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:rgba(255,255,255,0.6)">' + esc(cat) + '</div>' +
-          '<div style="font-family:\'Outfit\',sans-serif;font-size:13px;font-weight:900;line-height:1.25;margin:8px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:left;">' + esc(name) + '</div>' +
+          '<div style="font-family:\'Outfit\',sans-serif;font-size:13px;font-weight:900;line-height:1.25;margin:6px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:left;">' + esc(name) + '</div>' +
           '<div style="font-size:10px;font-weight:700;letter-spacing:0.5px;text-align:left;border-top:1px solid rgba(255,255,255,0.2);padding-top:6px;">By ' + esc(brand) + '</div>' +
         '</div>';
       };
@@ -1902,13 +2233,68 @@
         return html;
       }
 
+      // Quick View Modal Controller
+      window.openQuickView = function(slug) {
+        var p = staticCatalog.find(function(item) { return item.slug === slug; });
+        if (!p) return;
+
+        var amazonUrl = (p.affiliateLinks && p.affiliateLinks.amazon) ? p.affiliateLinks.amazon : '/go/' + p.slug + '?platform=amazon';
+        var flipkartUrl = (p.affiliateLinks && p.affiliateLinks.flipkart) ? p.affiliateLinks.flipkart : '/go/' + p.slug + '?platform=flipkart';
+        var savings = p.mrp - p.price;
+
+        var prosHtml = p.pros.map(function(pr) { return '<li style="margin-bottom:6px;">✓ ' + esc(pr) + '</li>'; }).join('');
+        var consHtml = p.cons.map(function(cn) { return '<li style="margin-bottom:6px;color:#CC0C39;">⚠ ' + esc(cn) + '</li>'; }).join('');
+
+        var html = 
+          '<div style="display:flex;flex-direction:column;gap:16px;">' +
+            '<span style="display:inline-block;background:' + p.badgeColor + ';color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:800;align-self:flex-start;">' + esc(p.badge) + '</span>' +
+            '<h2 style="font-family:\'Outfit\',sans-serif;font-size:22px;font-weight:900;color:#0F1111;">' + esc(p.name) + '</h2>' +
+            '<div style="font-size:13px;color:#565959;font-weight:700;">By ' + esc(p.brand) + ' | ' + esc(p.category) + '</div>' +
+            
+            '<div style="display:flex;align-items:baseline;gap:12px;background:#F7F8F8;padding:12px 16px;border-radius:8px;">' +
+              '<span style="font-size:28px;font-weight:900;color:#0F1111;">₹' + p.price.toLocaleString('en-IN') + '</span>' +
+              '<span style="text-decoration:line-through;color:#565959;">MRP ₹' + p.mrp.toLocaleString('en-IN') + '</span>' +
+              '<span style="background:#FDF0F2;color:#CC0C39;font-weight:800;padding:2px 8px;border-radius:4px;font-size:12px;">Save ₹' + savings.toLocaleString('en-IN') + ' (' + p.discount + '% Off)</span>' +
+            '</div>' +
+
+            '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">' +
+              '<div>' +
+                '<h4 style="font-size:13px;font-weight:800;color:#007600;margin-bottom:8px;text-transform:uppercase;">What We Like</h4>' +
+                '<ul style="list-style:none;font-size:13px;font-weight:600;color:#333;">' + prosHtml + '</ul>' +
+              '</div>' +
+              '<div>' +
+                '<h4 style="font-size:13px;font-weight:800;color:#CC0C39;margin-bottom:8px;text-transform:uppercase;">Watch Out For</h4>' +
+                '<ul style="list-style:none;font-size:13px;font-weight:600;color:#333;">' + consHtml + '</ul>' +
+              '</div>' +
+            '</div>' +
+
+            '<div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">' +
+              '<a href="' + amazonUrl + '" class="card-btn card-btn-amazon" style="flex:1;min-width:180px;" target="_blank">Get on Amazon Kindle</a>' +
+              '<a href="' + flipkartUrl + '" class="card-btn card-btn-flipkart" style="flex:1;min-width:180px;" target="_blank">Get on Flipkart Kobo</a>' +
+              '<a href="/product/' + p.slug + '" class="card-btn" style="background:#131921;color:#fff;border-color:#131921;" target="_blank">Full Spec Page &rarr;</a>' +
+            '</div>' +
+          '</div>';
+
+        $modalBody.innerHTML = html;
+        $quickViewModal.classList.add('active');
+      };
+
+      window.closeQuickView = function() {
+        $quickViewModal.classList.remove('active');
+      };
+
+      $quickViewModal.onclick = function(e) {
+        if (e.target === $quickViewModal) closeQuickView();
+      };
+
+      // Compare Toggle Controller
       window.toggleCompare = function(checkbox) {
         var slug = checkbox.getAttribute('data-slug');
         var name = checkbox.getAttribute('data-name');
         
         if (checkbox.checked) {
           if (compareSlugs.length >= 2) {
-            showToastNotice('You can compare up to 2 books side-by-side. Uncheck one first.');
+            showToastNotice('You can compare up to 2 books side-by-side. Uncheck one first!');
             checkbox.checked = false;
             return;
           }
