@@ -1275,6 +1275,45 @@
       "browser": "Other",
       "os": "Other",
       "timestamp": "2026-07-21T14:20:26.605Z"
+    },
+    {
+      "id": 30,
+      "type": "page_view",
+      "slug": "compare",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:35:20.671Z"
+    },
+    {
+      "id": 31,
+      "type": "page_view",
+      "slug": "subscribe",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:35:20.678Z"
+    },
+    {
+      "id": 32,
+      "type": "page_view",
+      "slug": "atomic-habits",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:35:20.688Z"
     }
   ],
   "subscribers": []

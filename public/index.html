@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Compare the best-selling e-books and Kindle deals. Find verified lowest prices on self-help, business, technology, finance, and sci-fi e-books. Real-time Amazon Kindle and Flipkart Kobo deal tracking.">
-  <title>AmzBooks Hub — Bestselling Kindle E-Books &amp; Deal Tracking Store</title>
+  <meta name="description" content="Compare best-selling e-books and Kindle deals. Find verified lowest prices on self-help, business, technology, finance, and sci-fi e-books. Real-time Amazon Kindle and Flipkart Kobo deal tracking.">
+  <title>AmzBooks Hub — Bestselling Kindle E-Books &amp; Deal Directory</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <!-- Premium Modern Typography -->
+  <!-- Premium Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
@@ -68,6 +68,7 @@
       align-items: center;
       gap: 8px;
       letter-spacing: -0.5px;
+      cursor: pointer;
     }
 
     .nav-logo-highlight {
@@ -95,6 +96,9 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      cursor: pointer;
+      border: none;
+      background: none;
     }
 
     .nav-link:hover {
@@ -120,6 +124,21 @@
       width: 28px;
       height: 28px;
       stroke: var(--gold-main);
+    }
+
+    /* SPA VIEWS SYSTEM */
+    .spa-view {
+      display: none;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    .spa-view.active-view {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ── HERO BANNER SECTION ──────────────────────────── */
@@ -157,7 +176,6 @@
       padding: 6px 18px;
       border-radius: 100px;
       margin-bottom: 20px;
-      backdrop-filter: blur(8px);
     }
 
     .hero-title {
@@ -185,7 +203,6 @@
       font-weight: 500;
     }
 
-    /* Live Search Box */
     .hero-search-box {
       max-width: 620px;
       margin: 0 auto 28px;
@@ -205,11 +222,6 @@
       font-weight: 600;
       outline: none;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-      transition: box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .hero-search-input:focus {
-      box-shadow: 0 10px 35px rgba(255, 164, 28, 0.4);
     }
 
     .hero-search-icon {
@@ -231,10 +243,6 @@
       cursor: pointer;
       display: none;
       font-weight: bold;
-    }
-
-    .hero-search-clear:hover {
-      color: var(--text-main);
     }
 
     .hero-trust-bar {
@@ -259,7 +267,7 @@
       stroke: var(--gold-main);
     }
 
-    /* ── CATEGORY TAB FILTER PANEL ─────────────────── */
+    /* CATEGORY TABS */
     .filter-container {
       max-width: 1320px;
       margin: -24px auto 0;
@@ -292,25 +300,13 @@
       font-weight: 700;
       font-size: 13.5px;
       cursor: pointer;
-      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
       outline: none;
-      box-shadow: 0 2px 5px rgba(213,217,217,0.5);
-    }
-
-    .category-tab:hover {
-      background: #E3E6E6;
-      border-color: #8D9090;
     }
 
     .category-tab.active {
       background: var(--bg-dark);
       color: #FFFFFF;
       border-color: var(--bg-dark);
-      box-shadow: 0 4px 12px rgba(19, 25, 33, 0.3);
-    }
-
-    .category-tab.active svg {
-      stroke: var(--gold-main);
     }
 
     .category-tab-count {
@@ -327,7 +323,7 @@
       color: var(--bg-dark);
     }
 
-    /* ── PRODUCT GRID SECTION ─────────────────────────── */
+    /* PRODUCT GRID */
     .products-section {
       max-width: 1320px;
       margin: 0 auto;
@@ -345,11 +341,6 @@
       gap: 14px;
     }
 
-    .section-title-group {
-      display: flex;
-      flex-direction: column;
-    }
-
     .section-title {
       font-family: 'Outfit', sans-serif;
       font-size: 26px;
@@ -363,19 +354,6 @@
       font-weight: 500;
     }
 
-    .sort-control-box {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .sort-label {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-sub);
-      white-space: nowrap;
-    }
-
     .sort-select {
       padding: 9px 16px;
       border-radius: 100px;
@@ -386,11 +364,6 @@
       font-weight: 700;
       outline: none;
       cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .sort-select:focus {
-      border-color: var(--gold-main);
     }
 
     .product-grid {
@@ -399,13 +372,13 @@
       gap: 24px;
     }
 
-    /* ── PREMIUM PRODUCT CARD ─────────────────────────── */
+    /* CARD STYLING */
     .product-card {
       background: var(--card-bg);
       border-radius: var(--radius);
       border: 1px solid #E3E6E6;
       overflow: hidden;
-      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -434,7 +407,6 @@
       text-transform: uppercase;
       color: #FFFFFF;
       text-align: center;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.15);
     }
 
     .choice-badge-container {
@@ -444,21 +416,12 @@
       z-index: 5;
       background: var(--bg-slate);
       color: #FFFFFF;
-      padding: 4px 10px 4px 8px;
+      padding: 4px 10px;
       font-size: 11.5px;
       font-weight: 600;
       border-left: 3px solid var(--gold-main);
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .choice-highlight {
-      color: var(--gold-main);
-      font-weight: 800;
     }
 
     .card-image-area {
@@ -477,12 +440,7 @@
       max-width: 85%;
       max-height: 85%;
       object-fit: contain;
-      transition: transform 0.3s ease;
       filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
-    }
-
-    .product-card:hover .product-img {
-      transform: scale(1.05);
     }
 
     .card-discount-tag {
@@ -495,7 +453,6 @@
       font-weight: 800;
       padding: 5px 9px;
       border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
 
     .price-drop-indicator {
@@ -508,10 +465,6 @@
       font-weight: 700;
       padding: 3px 8px;
       border-radius: 4px;
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .card-body {
@@ -524,7 +477,6 @@
     .card-brand-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       font-size: 11.5px;
       font-weight: 800;
       color: var(--text-sub);
@@ -540,6 +492,7 @@
       margin-bottom: 8px;
       line-height: 1.35;
       text-decoration: none;
+      cursor: pointer;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       line-clamp: 2;
@@ -564,28 +517,14 @@
       gap: 1px;
     }
 
-    .star-filled-svg {
-      width: 15px;
-      height: 15px;
-      fill: var(--gold-main);
-    }
-
-    .star-empty-svg {
-      width: 15px;
-      height: 15px;
-      fill: #E3E6E6;
-    }
+    .star-filled-svg { width: 15px; height: 15px; fill: var(--gold-main); }
+    .star-empty-svg { width: 15px; height: 15px; fill: #E3E6E6; }
 
     .card-rating-text {
       font-size: 12.5px;
       color: var(--blue-accent);
       font-weight: 600;
-      text-decoration: none;
-    }
-
-    .card-rating-text:hover {
-      color: #C7511F;
-      text-decoration: underline;
+      cursor: pointer;
     }
 
     .card-price-row {
@@ -593,11 +532,6 @@
       align-items: baseline;
       gap: 6px;
       margin-bottom: 10px;
-    }
-
-    .rupee-symbol {
-      font-size: 14px;
-      font-weight: 500;
     }
 
     .card-price {
@@ -609,12 +543,9 @@
     .card-mrp-group {
       font-size: 12.5px;
       color: var(--text-sub);
-      margin-left: 2px;
     }
 
-    .card-mrp {
-      text-decoration: line-through;
-    }
+    .card-mrp { text-decoration: line-through; }
 
     .card-savings {
       font-size: 12px;
@@ -640,9 +571,6 @@
     .speed-delivery {
       color: var(--green-accent);
       font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 4px;
     }
 
     .kindle-badge-tag {
@@ -652,8 +580,6 @@
       font-weight: 900;
       padding: 1px 6px;
       border-radius: 3px;
-      letter-spacing: 0.5px;
-      margin-left: 3px;
     }
 
     .stock-indicator {
@@ -680,7 +606,6 @@
     .card-specs-list {
       list-style: none;
       font-size: 13px;
-      color: var(--text-main);
       margin-bottom: 16px;
       background: #F7F8F8;
       border-radius: 8px;
@@ -696,11 +621,7 @@
       color: #333333;
     }
 
-    .specs-check-svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--green-accent);
-    }
+    .specs-check-svg { width: 14px; height: 14px; stroke: var(--green-accent); }
 
     .card-cta-area {
       margin-top: auto;
@@ -722,35 +643,18 @@
       text-align: center;
       cursor: pointer;
       border: 1px solid;
-      transition: filter 0.15s ease, transform 0.1s ease;
-    }
-
-    .card-btn:active {
-      transform: scale(0.98);
     }
 
     .card-btn-amazon {
       background: linear-gradient(to bottom, #FFE093, #FFC43D);
       border-color: var(--gold-dark);
       color: var(--text-main);
-      box-shadow: 0 2px 4px rgba(216,180,0,0.2);
-    }
-
-    .card-btn-amazon:hover {
-      background: linear-gradient(to bottom, #F7CA00, #E2B900);
-      filter: brightness(0.97);
     }
 
     .card-btn-flipkart {
       background: linear-gradient(to bottom, #FFB84D, var(--gold-main));
       border-color: #C47F00;
       color: var(--text-main);
-      box-shadow: 0 2px 4px rgba(196,127,0,0.2);
-    }
-
-    .card-btn-flipkart:hover {
-      background: linear-gradient(to bottom, var(--gold-main), #E69100);
-      filter: brightness(0.97);
     }
 
     .quick-view-btn {
@@ -759,11 +663,9 @@
       color: var(--blue-accent);
       font-size: 12.5px;
       font-weight: 700;
-      padding: 6px 12px;
+      padding: 8px 12px;
       border-radius: 100px;
       cursor: pointer;
-      text-align: center;
-      transition: background 0.15s ease;
     }
 
     .quick-view-btn:hover {
@@ -787,7 +689,6 @@
       font-weight: 700;
       color: #4B5563;
       cursor: pointer;
-      user-select: none;
     }
 
     .card-compare-checkbox {
@@ -795,68 +696,277 @@
       height: 16px;
       accent-color: var(--gold-main);
       cursor: pointer;
-      border-radius: 4px;
-      border: 1px solid #8D9090;
     }
 
-    /* ── QUICK VIEW MODAL ──────────────────────── */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(19, 25, 33, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 3000;
+    /* ── PRODUCT DETAIL VIEW STYLING ───────────────────── */
+    .detail-container {
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 0 24px;
+    }
+
+    .breadcrumb-bar {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--blue-accent);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 36px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid #E3E6E6;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 32px;
+    }
+
+    .detail-image-box {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .modal-card {
-      background: #FFFFFF;
-      border-radius: 16px;
-      max-width: 680px;
-      width: 92%;
-      max-height: 85vh;
-      overflow-y: auto;
-      padding: 32px;
+      border: 1px solid #F0F2F2;
       position: relative;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-      transform: translateY(20px);
-      transition: transform 0.25s ease;
     }
 
-    .modal-overlay.active .modal-card {
-      transform: translateY(0);
+    .detail-image-box img {
+      max-width: 85%;
+      max-height: 85%;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
     }
 
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 26px;
-      border: none;
-      background: none;
+    .detail-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detail-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .detail-author {
+      font-size: 14px;
+      font-weight: 700;
       color: var(--text-sub);
-      cursor: pointer;
-      font-weight: bold;
+      margin-bottom: 16px;
     }
 
-    .modal-close:hover {
+    .detail-price-card {
+      background: #F7F8F8;
+      border-radius: 10px;
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      border: 1px solid #F0F2F2;
+    }
+
+    .detail-price {
+      font-size: 36px;
+      font-weight: 900;
       color: var(--text-main);
     }
 
-    /* ── INLINE LEAD MAGNET ─────────────────── */
+    .detail-mrp {
+      text-decoration: line-through;
+      color: var(--text-sub);
+      font-size: 15px;
+    }
+
+    .detail-savings {
+      background: #FDF0F2;
+      color: var(--red-accent);
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+
+    .specs-table tr {
+      border-bottom: 1px solid #F0F2F2;
+    }
+
+    .specs-table td {
+      padding: 10px 12px;
+      font-size: 13.5px;
+    }
+
+    .specs-table td:first-child {
+      font-weight: 700;
+      color: var(--text-sub);
+      width: 35%;
+      background: #F8FAFC;
+    }
+
+    .verdict-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid #E3E6E6;
+      margin-bottom: 32px;
+    }
+
+    .verdict-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    /* COMPARE MATRIX VIEW */
+    .compare-container {
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 0 24px;
+    }
+
+    .compare-header-box {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 24px 32px;
+      border: 1px solid #E3E6E6;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .compare-select-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .compare-select {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 100px;
+      border: 1px solid #D5D9D9;
+      font-size: 13.5px;
+      font-weight: 700;
+      outline: none;
+    }
+
+    .matrix-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #E3E6E6;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .matrix-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 1fr;
+      border-bottom: 1px solid #F0F2F2;
+    }
+
+    .matrix-cell {
+      padding: 16px 20px;
+      font-size: 13.5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .matrix-label {
+      font-weight: 800;
+      color: var(--text-sub);
+      background: #F8FAFC;
+      border-right: 1px solid #F0F2F2;
+    }
+
+    .matrix-winner {
+      background: #F0FDF4;
+      font-weight: 800;
+      color: var(--green-accent);
+    }
+
+    .winner-badge {
+      display: inline-block;
+      background: var(--green-accent);
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-left: 6px;
+    }
+
+    /* SUBSCRIBE VIEW */
+    .subscribe-wrapper {
+      max-width: 580px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+
+    .subscribe-card {
+      background: #FFFFFF;
+      border-radius: 24px;
+      border: 1px solid #E3E6E6;
+      padding: 40px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .sub-field {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid #D5D9D9;
+      font-size: 14.5px;
+      outline: none;
+      margin-bottom: 14px;
+    }
+
+    .sub-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(to bottom, #FFE093, #FFC43D);
+      border: 1px solid var(--gold-dark);
+      color: var(--text-main);
+      font-size: 15.5px;
+      font-weight: 800;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    /* INLINE LEAD MAGNET & CROSS SELL */
     .inline-lead-magnet {
       grid-column: 1 / -1;
       background: linear-gradient(135deg, var(--bg-slate) 0%, var(--bg-dark) 100%);
@@ -865,9 +975,6 @@
       padding: 36px;
       text-align: center;
       margin: 16px 0;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      position: relative;
     }
 
     .magnet-icon-svg {
@@ -883,7 +990,6 @@
       font-size: 24px;
       font-weight: 800;
       margin-bottom: 8px;
-      letter-spacing: -0.5px;
     }
 
     .magnet-desc {
@@ -914,11 +1020,6 @@
       outline: none;
     }
 
-    .magnet-input:focus {
-      border-color: var(--gold-main);
-      background: rgba(255, 255, 255, 0.12);
-    }
-
     .magnet-btn {
       padding: 12px 28px;
       background: linear-gradient(to bottom, #FFE093, #FFC43D);
@@ -928,22 +1029,8 @@
       font-weight: 800;
       cursor: pointer;
       font-size: 14px;
-      transition: filter 0.15s ease;
-      box-shadow: 0 2px 5px rgba(216,180,0,0.15);
     }
 
-    .magnet-btn:hover {
-      filter: brightness(0.95);
-    }
-
-    .magnet-msg {
-      margin-top: 12px;
-      font-size: 13.5px;
-      font-weight: 600;
-      min-height: 18px;
-    }
-
-    /* ── POPULAR ACCESSORIES SECTION ──────────── */
     .cross-sell-section {
       max-width: 1320px;
       margin: 32px auto 48px;
@@ -958,9 +1045,6 @@
       margin-bottom: 18px;
       border-bottom: 1px solid #D5D9D9;
       padding-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
 
     .cross-sell-grid {
@@ -979,58 +1063,23 @@
       gap: 16px;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .cross-sell-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
     }
 
     .cross-sell-icon-box {
       background: var(--gold-main);
-      width: 60px;
-      height: 60px;
+      width: 54px;
+      height: 54px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #FFFFFF;
-      flex-shrink: 0;
     }
 
-    .cross-sell-icon-svg {
-      width: 30px;
-      height: 30px;
-      stroke: #FFFFFF;
-    }
+    .cross-sell-icon-svg { width: 28px; height: 28px; stroke: #FFFFFF; }
 
-    .cross-sell-info {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cross-sell-name {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-
-    .cross-sell-price {
-      font-size: 13.5px;
-      color: var(--text-sub);
-      font-weight: 600;
-      margin-top: 3px;
-    }
-
-    .cross-sell-savings {
-      font-size: 11px;
-      color: var(--red-accent);
-      font-weight: bold;
-    }
-
-    /* ── FLOATING COMPARE BAR ── */
+    /* FLOATING COMPARE BAR */
     .floating-compare-bar {
       position: fixed;
       bottom: 24px;
@@ -1047,50 +1096,6 @@
       align-items: center;
       justify-content: space-between;
       width: 340px;
-      animation: slideInUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    @keyframes slideInUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .compare-bar-content {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .compare-bar-title {
-      font-size: 13.5px;
-      font-weight: 800;
-      color: #FFFFFF;
-    }
-
-    .compare-bar-subtitle {
-      font-size: 11px;
-      color: #AAAAAA;
-    }
-
-    .compare-bar-actions {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .compare-bar-btn-clear {
-      background: transparent;
-      color: #DDDDDD;
-      border: none;
-      font-size: 12.5px;
-      font-weight: 600;
-      cursor: pointer;
-      padding: 6px 10px;
-    }
-
-    .compare-bar-btn-clear:hover {
-      color: #FFFFFF;
-      text-decoration: underline;
     }
 
     .compare-bar-btn-go {
@@ -1102,14 +1107,9 @@
       font-size: 12.5px;
       font-weight: 800;
       cursor: pointer;
-      box-shadow: 0 2px 4px rgba(216,180,0,0.15);
     }
 
-    .compare-bar-btn-go:hover {
-      background: linear-gradient(to bottom, #F7CA00, #E2B900);
-    }
-
-    /* ── SOCIAL PROOF & ALERT TOASTS ───────────── */
+    /* TOAST & EXIT MODAL */
     .toast-container {
       position: fixed;
       bottom: 24px;
@@ -1124,151 +1124,39 @@
       gap: 12px;
       z-index: 1000;
       max-width: 360px;
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
       transform: translateY(100px);
       opacity: 0;
       pointer-events: none;
+      transition: all 0.3s ease;
     }
 
-    .toast-icon-box {
-      background: #FFF8E7;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .toast-icon-svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--gold-main);
-    }
-
-    .toast-body {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .toast-text {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-main);
-      line-height: 1.4;
-    }
-
-    .toast-time {
-      font-size: 11px;
-      color: var(--text-sub);
-      margin-top: 2px;
-      font-weight: 500;
-    }
-
-    /* ── EXIT INTENT ALERTS OVERLAY MODAL ─────────────────────── */
-    .exit-overlay {
+    .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(19, 25, 33, 0.85);
-      backdrop-filter: blur(6px);
-      z-index: 2000;
+      backdrop-filter: blur(8px);
+      z-index: 3000;
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.25s ease;
     }
 
-    .exit-card {
+    .modal-overlay.active { opacity: 1; pointer-events: all; }
+
+    .modal-card {
       background: #FFFFFF;
-      border-radius: 14px;
-      border: 1px solid #E3E6E6;
-      padding: 36px;
-      max-width: 450px;
-      width: 90%;
+      border-radius: 16px;
+      max-width: 680px;
+      width: 92%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 32px;
       position: relative;
-      text-align: center;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
     }
 
-    .exit-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      font-size: 22px;
-      color: var(--text-sub);
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    .exit-close:hover {
-      color: var(--text-main);
-    }
-
-    .exit-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 8px;
-    }
-
-    .exit-desc {
-      font-size: 14px;
-      color: var(--text-sub);
-      margin-bottom: 24px;
-      line-height: 1.5;
-      font-weight: 500;
-    }
-
-    .exit-field {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 100px;
-      border: 1px solid #8D9090;
-      font-size: 14px;
-      outline: none;
-      margin-bottom: 12px;
-      transition: border-color 0.15s ease;
-    }
-
-    .exit-field:focus {
-      border-color: var(--gold-main);
-    }
-
-    .exit-submit-btn {
-      width: 100%;
-      padding: 13px 20px;
-      background: linear-gradient(to bottom, #FFE093, #FFC43D);
-      border: 1px solid var(--gold-dark);
-      color: var(--text-main);
-      border-radius: 100px;
-      font-weight: 800;
-      cursor: pointer;
-      font-size: 14.5px;
-      transition: filter 0.15s ease;
-      box-shadow: 0 2px 5px rgba(216,180,0,0.15);
-    }
-
-    .exit-submit-btn:hover {
-      filter: brightness(0.95);
-    }
-
-    .exit-msg {
-      margin-top: 12px;
-      font-size: 13px;
-      font-weight: 600;
-      min-height: 18px;
-    }
-
-    /* ── SITE FOOTER ────────────────────────────────── */
     .site-footer {
       background: var(--bg-dark);
       color: #DDDDDD;
@@ -1290,87 +1178,40 @@
       color: var(--gold-main);
       text-decoration: none;
       font-weight: 700;
+      cursor: pointer;
     }
 
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-text {
-      font-family: 'Outfit', sans-serif;
-      font-size: 15px;
-      font-weight: 800;
-      color: #FFFFFF;
-      margin-bottom: 12px;
-    }
-
-    .footer-disclaimer {
-      font-size: 11.5px;
-      max-width: 850px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #A6A6A6;
-    }
-
-    /* ── MOBILE RESPONSIVENESS ── */
-    @media (max-width: 640px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-title {
-        font-size: 32px;
-      }
-      .hero-subtitle {
-        font-size: 14.5px;
-      }
-      .category-tabs {
-        justify-content: flex-start;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 8px;
-        flex-wrap: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-      .category-tab {
-        flex: 0 0 auto;
-      }
-      .floating-compare-bar {
-        width: calc(100% - 48px);
-        left: 24px;
-      }
-      .mobile-nav-toggle {
-        display: block;
-      }
+    @media (max-width: 768px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .matrix-row { grid-template-columns: 120px 1fr 1fr; }
+      .hero-title { font-size: 32px; }
+      .mobile-nav-toggle { display: block; }
       .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        top: 100%; left: 0; right: 0;
         background: var(--bg-dark);
         padding: 16px 24px;
         border-bottom: 2px solid var(--gold-main);
-        gap: 16px;
       }
-      .nav-links.show {
-        display: flex;
-      }
+      .nav-links.show { display: flex; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- TOP NAVIGATION BAR -->
   <nav class="top-nav">
     <div class="nav-container">
-      <a href="/" class="nav-logo">
+      <div class="nav-logo" onclick="navigateTo('home')">
         <svg class="nav-logo-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
         </svg>
         <span>AmzBooks<span class="nav-logo-highlight">Hub</span></span>
-      </a>
+      </div>
 
       <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1381,183 +1222,233 @@
       </button>
 
       <div class="nav-links" id="navLinks">
-        <a href="/" class="nav-link active">Home</a>
-        <a href="/compare" class="nav-link">Compare Specs</a>
-        <a href="/subscribe" class="nav-link">Kindle Deal Alerts</a>
+        <button class="nav-link active" id="navHome" onclick="navigateTo('home')">Home</button>
+        <button class="nav-link" id="navCompare" onclick="navigateTo('compare')">Compare Specs</button>
+        <button class="nav-link" id="navSubscribe" onclick="navigateTo('subscribe')">Kindle Deal Alerts</button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Banner -->
-  <header class="hero-section">
-    <span class="hero-eyebrow">📚 Curated Kindle E-Book Directory</span>
-    <h1 class="hero-title">
-      Bestselling E-Books &amp; Kindle Deals <span class="hero-title-highlight">Starting at ₹99</span>
-    </h1>
-    <p class="hero-subtitle">
-      We track verified lowest pricing across Amazon Kindle and Flipkart Kobo hourly so you read more while spending less.
-    </p>
+  <!-- ════════════ VIEW 1: HOME STOREFRONT VIEW ════════════ -->
+  <div id="view-home" class="spa-view active-view">
+    <header class="hero-section">
+      <span class="hero-eyebrow">📚 Curated Kindle E-Book Directory</span>
+      <h1 class="hero-title">
+        Bestselling E-Books &amp; Kindle Deals <span class="hero-title-highlight">Starting at ₹99</span>
+      </h1>
+      <p class="hero-subtitle">
+        We track verified lowest pricing across Amazon Kindle and Flipkart Kobo hourly so you read more while spending less.
+      </p>
 
-    <!-- Live Search Bar -->
-    <div class="hero-search-box">
-      <input type="text" class="hero-search-input" id="heroSearchInput" placeholder="Search by title, author, or genre (e.g. Atomic Habits, Goggins)..." autocomplete="off">
-      <button class="hero-search-clear" id="heroSearchClear" aria-label="Clear Search">&times;</button>
-      <svg class="hero-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
+      <div class="hero-search-box">
+        <input type="text" class="hero-search-input" id="heroSearchInput" placeholder="Search by title, author, or genre (e.g. Atomic Habits, Goggins)..." autocomplete="off">
+        <button class="hero-search-clear" id="heroSearchClear" aria-label="Clear Search">&times;</button>
+        <svg class="hero-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+
+      <div class="hero-trust-bar">
+        <span class="trust-item">
+          <svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Instant Cloud Sync
+        </span>
+        <span class="trust-item">
+          <svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Expert Book Verdicts
+        </span>
+        <span class="trust-item">
+          <svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Side-by-Side Spec Matrix
+        </span>
+      </div>
+    </header>
+
+    <div class="filter-container">
+      <div class="category-tabs" id="categoryTabs">
+        <button class="category-tab active" data-category="">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <span>All E-Books</span>
+          <span class="category-tab-count">15</span>
+        </button>
+        <button class="category-tab" data-category="self-help-mindset">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+          <span>Self-Help &amp; Mindset</span>
+          <span class="category-tab-count">3</span>
+        </button>
+        <button class="category-tab" data-category="business-startups">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span>Business &amp; Startups</span>
+          <span class="category-tab-count">3</span>
+        </button>
+        <button class="category-tab" data-category="technology-coding">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <span>Technology &amp; Coding</span>
+          <span class="category-tab-count">3</span>
+        </button>
+        <button class="category-tab" data-category="finance-investing">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <span>Finance &amp; Investing</span>
+          <span class="category-tab-count">3</span>
+        </button>
+        <button class="category-tab" data-category="fiction-sci-fi">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          <span>Fiction &amp; Sci-Fi</span>
+          <span class="category-tab-count">3</span>
+        </button>
+      </div>
     </div>
 
-    <div class="hero-trust-bar">
-      <span class="trust-item">
-        <svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-        Instant Cloud Sync
-      </span>
-      <span class="trust-item">
-        <svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-        Expert Book Verdicts
-      </span>
-      <span class="trust-item">
-        <svg class="trust-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-        Side-by-Side Spec Matrix
-      </span>
-    </div>
-  </header>
+    <main class="products-section">
+      <div class="section-header">
+        <div class="section-title-group">
+          <h2 class="section-title" id="gridTitle">Hourly Top Offers</h2>
+          <p class="section-subtitle">Prices refreshed live ⏱️ Direct Kindle &amp; Kobo cloud sync</p>
+        </div>
 
-  <!-- Category Selection Panel -->
-  <div class="filter-container">
-    <div class="category-tabs" id="categoryTabs">
-      <button class="category-tab active" data-category="">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-        </svg>
-        <span>All E-Books</span>
-        <span class="category-tab-count" id="countAll">15</span>
-      </button>
-      <button class="category-tab" data-category="self-help-mindset">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 8v4"></path>
-          <path d="M12 16h.01"></path>
-        </svg>
-        <span>Self-Help &amp; Mindset</span>
-        <span class="category-tab-count">3</span>
-      </button>
-      <button class="category-tab" data-category="business-startups">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-        </svg>
-        <span>Business &amp; Startups</span>
-        <span class="category-tab-count">3</span>
-      </button>
-      <button class="category-tab" data-category="technology-coding">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="16 18 22 12 16 6"></polyline>
-          <polyline points="8 6 2 12 8 18"></polyline>
-        </svg>
-        <span>Technology &amp; Coding</span>
-        <span class="category-tab-count">3</span>
-      </button>
-      <button class="category-tab" data-category="finance-investing">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="1" x2="12" y2="23"></line>
-          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-        </svg>
-        <span>Finance &amp; Investing</span>
-        <span class="category-tab-count">3</span>
-      </button>
-      <button class="category-tab" data-category="fiction-sci-fi">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-        </svg>
-        <span>Fiction &amp; Sci-Fi</span>
-        <span class="category-tab-count">3</span>
-      </button>
+        <div class="sort-control-box">
+          <label for="sortSelect" class="sort-label">Sort by:</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="">Featured</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="discount">Biggest Discount %</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </main>
+
+    <section class="cross-sell-section">
+      <h2 class="cross-sell-title">Top Bargain E-Book Reads</h2>
+      <div class="cross-sell-grid">
+        <div onclick="navigateTo('product', 'psychology-of-money')" class="cross-sell-card">
+          <div class="cross-sell-icon-box"><svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+          <div class="cross-sell-info">
+            <span class="cross-sell-name">The Psychology of Money</span>
+            <span class="cross-sell-price">₹129 <span style="text-decoration:line-through;color:#565959;font-size:11px">₹399</span></span>
+            <span class="cross-sell-savings">Save 68%</span>
+          </div>
+        </div>
+
+        <div onclick="navigateTo('product', 'atomic-habits')" class="cross-sell-card">
+          <div class="cross-sell-icon-box"><svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
+          <div class="cross-sell-info">
+            <span class="cross-sell-name">Atomic Habits</span>
+            <span class="cross-sell-price">₹149 <span style="text-decoration:line-through;color:#565959;font-size:11px">₹499</span></span>
+            <span class="cross-sell-savings">Save 70%</span>
+          </div>
+        </div>
+
+        <div onclick="navigateTo('product', 'rich-dad-poor-dad')" class="cross-sell-card">
+          <div class="cross-sell-icon-box"><svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+          <div class="cross-sell-info">
+            <span class="cross-sell-name">Rich Dad Poor Dad</span>
+            <span class="cross-sell-price">₹149 <span style="text-decoration:line-through;color:#565959;font-size:11px">₹499</span></span>
+            <span class="cross-sell-savings">Save 70%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════════ VIEW 2: PRODUCT DETAIL VIEW ════════════ -->
+  <div id="view-product" class="spa-view">
+    <div class="detail-container">
+      <div class="breadcrumb-bar">
+        <a onclick="navigateTo('home')">Home</a> ›
+        <span id="detailCategoryName">Category</span> ›
+        <span id="detailBreadcrumbName" style="color:var(--text-main);font-weight:700;">Product</span>
+      </div>
+
+      <div class="detail-grid">
+        <div class="detail-image-box" id="detailImageBox"></div>
+        <div class="detail-info">
+          <span style="font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold-main);text-transform:uppercase;" id="detailBadge">#1 BESTSELLER</span>
+          <h1 class="detail-title" id="detailTitle">Product Title</h1>
+          <div class="detail-author" id="detailAuthor">By Author Name</div>
+
+          <div class="detail-price-card">
+            <span class="detail-price" id="detailPrice">₹0</span>
+            <span class="detail-mrp" id="detailMrp">MRP ₹0</span>
+            <span class="detail-savings" id="detailSavings">Save ₹0</span>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;">
+            <a id="detailAmazonBtn" class="card-btn card-btn-amazon" style="flex:1;min-width:180px;" target="_blank">Buy on Amazon Kindle</a>
+            <a id="detailFlipkartBtn" class="card-btn card-btn-flipkart" style="flex:1;min-width:180px;" target="_blank">Buy on Flipkart Kobo</a>
+          </div>
+
+          <h3 style="font-size:15px;font-weight:800;margin-bottom:12px;">Book Specifications</h3>
+          <table class="specs-table">
+            <tbody id="detailSpecsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="verdict-box">
+        <div>
+          <h3 class="verdict-title" style="color:var(--green-accent);">✓ What We Like</h3>
+          <ul id="detailProsList" style="list-style:none;font-size:13.5px;font-weight:600;line-height:1.8;"></ul>
+        </div>
+        <div>
+          <h3 class="verdict-title" style="color:var(--red-accent);">⚠ Watch Out For</h3>
+          <ul id="detailConsList" style="list-style:none;font-size:13.5px;font-weight:600;line-height:1.8;"></ul>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Main Deals Grid -->
-  <main class="products-section">
-    <div class="section-header">
-      <div class="section-title-group">
-        <h2 class="section-title" id="gridTitle">Hourly Top Offers</h2>
-        <p class="section-subtitle" id="gridSubtitle">Prices refreshed live ⏱️ Direct Kindle &amp; Kobo cloud sync</p>
+  <!-- ════════════ VIEW 3: COMPARE MATRIX VIEW ════════════ -->
+  <div id="view-compare" class="spa-view">
+    <div class="compare-container">
+      <div class="compare-header-box">
+        <div>
+          <h2 style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:900;">Compare E-Books Side-by-Side</h2>
+          <p style="font-size:13.5px;color:var(--text-sub);">Select two books to compare price savings, ratings, page lengths, and specs</p>
+        </div>
+        <div class="compare-select-grid">
+          <select class="compare-select" id="selectBook1" onchange="updateCompareSelection()"></select>
+          <select class="compare-select" id="selectBook2" onchange="updateCompareSelection()"></select>
+        </div>
       </div>
 
-      <div class="sort-control-box">
-        <label for="sortSelect" class="sort-label">Sort by:</label>
-        <select id="sortSelect" class="sort-select">
-          <option value="">Featured</option>
-          <option value="price_asc">Price: Low to High</option>
-          <option value="price_desc">Price: High to Low</option>
-          <option value="rating">Highest Rated</option>
-          <option value="discount">Biggest Discount %</option>
-        </select>
+      <div id="compareMatrixContainer" class="matrix-card"></div>
+    </div>
+  </div>
+
+  <!-- ════════════ VIEW 4: KINDLE DEAL ALERTS VIEW ════════════ -->
+  <div id="view-subscribe" class="spa-view">
+    <div class="subscribe-wrapper">
+      <div class="subscribe-card">
+        <span style="font-size:48px;display:block;margin-bottom:12px;">🔔</span>
+        <h2 style="font-family:'Outfit',sans-serif;font-size:26px;font-weight:900;margin-bottom:8px;">Unlock Kindle Price Drop Alerts</h2>
+        <p style="font-size:14.5px;color:var(--text-sub);margin-bottom:24px;">Get real-time WhatsApp &amp; Email alerts the moment your favorite self-help, business, tech, or finance book drops in price.</p>
+        
+        <form id="standaloneSubForm">
+          <input type="email" class="sub-field" id="standaloneEmail" placeholder="Enter your email address" required>
+          <input type="text" class="sub-field" id="standaloneWhatsapp" placeholder="WhatsApp number (Optional)">
+          <button type="submit" class="sub-btn" id="standaloneSubBtn">Activate Free Alerts →</button>
+        </form>
+        <p id="standaloneMsg" style="margin-top:14px;font-size:13.5px;font-weight:700;min-height:20px;"></p>
       </div>
     </div>
+  </div>
 
-    <!-- Product Grid container -->
-    <div class="product-grid" id="productGrid">
-      <!-- Cards rendered dynamically -->
-    </div>
-  </main>
-
-  <!-- Popular Accessories Section -->
-  <section class="cross-sell-section">
-    <h2 class="cross-sell-title">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right: 6px;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82zM7 7h.01"></path></svg>
-      Top Bargain E-Book Reads
-    </h2>
-    <div class="cross-sell-grid">
-      <a href="/product/psychology-of-money" class="cross-sell-card">
-        <div class="cross-sell-icon-box">
-          <svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-        </div>
-        <div class="cross-sell-info">
-          <span class="cross-sell-name">The Psychology of Money</span>
-          <span class="cross-sell-price">₹129 <span style="text-decoration:line-through;color:#565959;font-size:11px">₹399</span></span>
-          <span class="cross-sell-savings">Save 68%</span>
-        </div>
-      </a>
-
-      <a href="/product/atomic-habits" class="cross-sell-card">
-        <div class="cross-sell-icon-box">
-          <svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-        </div>
-        <div class="cross-sell-info">
-          <span class="cross-sell-name">Atomic Habits</span>
-          <span class="cross-sell-price">₹149 <span style="text-decoration:line-through;color:#565959;font-size:11px">₹499</span></span>
-          <span class="cross-sell-savings">Save 70%</span>
-        </div>
-      </a>
-
-      <a href="/product/rich-dad-poor-dad" class="cross-sell-card">
-        <div class="cross-sell-icon-box">
-          <svg class="cross-sell-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-        </div>
-        <div class="cross-sell-info">
-          <span class="cross-sell-name">Rich Dad Poor Dad</span>
-          <span class="cross-sell-price">₹149 <span style="text-decoration:line-through;color:#565959;font-size:11px">₹499</span></span>
-          <span class="cross-sell-savings">Save 70%</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Site Footer -->
+  <!-- SITE FOOTER -->
   <footer class="site-footer">
     <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/compare">Compare Books</a>
-      <a href="/subscribe">Deal Alerts</a>
-      <a href="/admin?token=your_secret_token">Founder Admin</a>
-      <a href="/sitemap.xml">Sitemap</a>
+      <a onclick="navigateTo('home')">Home</a>
+      <a onclick="navigateTo('compare')">Compare Books</a>
+      <a onclick="navigateTo('subscribe')">Deal Alerts</a>
+      <a href="/admin?token=your_secret_token" target="_blank">Founder Admin</a>
     </div>
     <p class="footer-text">AmzBooks Hub — Premium Curated Amazon Kindle &amp; Kobo Deal Directory</p>
     <p class="footer-disclaimer">
-      Affiliate Disclosure: Redirection pathways to Amazon Kindle &amp; Flipkart Kobo utilize affiliate references. If you make a purchase after clicking these CTAs, we receive a small commission from the merchant at absolutely zero added expense to you. This completely funds our platform server hosting, content curation, and guarantees unbiased reporting.
+      Affiliate Disclosure: Redirection pathways to Amazon Kindle &amp; Flipkart Kobo utilize affiliate references. If you make a purchase after clicking these CTAs, we receive a small commission from the merchant at zero added expense to you.
     </p>
   </footer>
 
@@ -1577,16 +1468,14 @@
     </div>
     <div class="compare-bar-actions">
       <button class="compare-bar-btn-clear" onclick="clearSelectedCompare()">Clear</button>
-      <button class="compare-bar-btn-go" onclick="goToComparePage()">Compare</button>
+      <button class="compare-bar-btn-go" onclick="navigateTo('compare')">Compare</button>
     </div>
   </div>
 
   <!-- Social Proof Notification Toast -->
   <div class="toast-container" id="socialProofToast">
     <div class="toast-icon-box">
-      <svg class="toast-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-      </svg>
+      <svg class="toast-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
     </div>
     <div class="toast-body">
       <span class="toast-text" id="toastText">Someone from Mumbai unlocked a secret discount on Atomic Habits!</span>
@@ -1594,25 +1483,7 @@
     </div>
   </div>
 
-  <!-- Exit Intent deal alerts overlay modal -->
-  <div class="exit-overlay" id="exitModalOverlay">
-    <div class="exit-card">
-      <button class="exit-close" id="exitModalClose">&times;</button>
-      <svg class="magnet-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M12 22V7M2 7h20M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-      </svg>
-      <h3 class="exit-title">Never Pay Full Price for E-Books</h3>
-      <p class="exit-desc">Kindle and Kobo book pricing fluctuates dynamically. Subscribe to get immediate WhatsApp or Email alerts whenever secret price drops hit self-help, tech, business, and finance bestsellers!</p>
-      <form id="exitForm">
-        <input type="email" class="exit-field" id="exitEmail" placeholder="Enter your email address" required>
-        <input type="text" class="exit-field" id="exitWhatsapp" placeholder="Enter WhatsApp number (optional)">
-        <button type="submit" class="exit-submit-btn" id="exitSubmitBtn">Get Free Deal Alerts &rarr;</button>
-      </form>
-      <p class="exit-msg" id="exitMsgText"></p>
-    </div>
-  </div>
-
-  <!-- 💡 STATIC EMBEDDED DATA ISLAND (Guarantees 100% offline & direct file:// fallback) -->
+  <!-- STATIC EMBEDDED DATA ISLAND (Guarantees 100% offline & file:// fallback) -->
   <script id="static-products-data" type="application/json">
   [
     {
@@ -1631,7 +1502,7 @@
       "image": "https://m.media-amazon.com/images/I/81YkqyaFVEL._SL1500_.jpg",
       "specs": [{"label":"Author","value":"James Clear"},{"label":"Publisher","value":"Avery"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"320 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0735213180"}],
       "pros": ["Extremely actionable with clear frameworks","Easy-to-read narrative style","Based on solid psychological principles","Includes downloadable bonus templates"],
-      "cons": ["Some concepts are repetition of classic habit psychology","Requires persistent effort to apply"],
+      "cons": ["Some concepts repetition of classic habit psychology","Requires persistent effort to apply"],
       "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B07D2RYQQH?tag=amzbooks-21","flipkart":"https://www.flipkart.com/atomic-habits/p/itm54?affid=amzbooks"}
     },
     {
@@ -1903,18 +1774,12 @@
   ]
   </script>
 
-  <!-- JavaScript Client Logic -->
+  <!-- SINGLE PAGE APPLICATION (SPA) CONTROLLER -->
   <script>
     (function() {
       'use strict';
 
-      // Load static embedded fallback catalog
-      var staticCatalog = [];
-      try {
-        staticCatalog = JSON.parse(document.getElementById('static-products-data').textContent.trim()) || [];
-      } catch(e) {
-        console.error('Failed to parse static fallback data:', e);
-      }
+      var staticCatalog = JSON.parse(document.getElementById('static-products-data').textContent.trim());
 
       var $productGrid = document.getElementById('productGrid');
       var $categoryTabs = document.getElementById('categoryTabs');
@@ -1935,43 +1800,278 @@
       var compareSlugs = [];
       try {
         var stored = sessionStorage.getItem('amzbooks_compare_slugs');
-        if (stored) {
-          compareSlugs = JSON.parse(stored);
-        }
+        if (stored) compareSlugs = JSON.parse(stored);
       } catch(e) {}
 
-      // Mobile Nav Toggle
-      if ($mobileNavToggle && $navLinks) {
-        $mobileNavToggle.onclick = function() {
-          $navLinks.classList.toggle('show');
-        };
+      // Master View Navigator Router
+      window.navigateTo = function(targetView, param) {
+        var views = document.querySelectorAll('.spa-view');
+        for (var i = 0; i < views.length; i++) {
+          views[i].classList.remove('active-view');
+        }
+
+        var navButtons = document.querySelectorAll('.nav-link');
+        for (var j = 0; j < navButtons.length; j++) {
+          navButtons[j].classList.remove('active');
+        }
+
+        if (targetView === 'product' && param) {
+          renderProductDetailView(param);
+          document.getElementById('view-product').classList.add('active-view');
+        } else if (targetView === 'compare') {
+          renderCompareView();
+          document.getElementById('view-compare').classList.add('active-view');
+          document.getElementById('navCompare').classList.add('active');
+        } else if (targetView === 'subscribe') {
+          document.getElementById('view-subscribe').classList.add('active-view');
+          document.getElementById('navSubscribe').classList.add('active');
+        } else {
+          document.getElementById('view-home').classList.add('active-view');
+          document.getElementById('navHome').classList.add('active');
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      // Populate Compare Selection Dropdowns
+      function renderCompareView() {
+        var $s1 = document.getElementById('selectBook1');
+        var $s2 = document.getElementById('selectBook2');
+
+        var optionsHtml = staticCatalog.map(function(p) {
+          return '<option value="' + p.slug + '">' + esc(p.name) + '</option>';
+        }).join('');
+
+        $s1.innerHTML = optionsHtml;
+        $s2.innerHTML = optionsHtml;
+
+        if (compareSlugs.length >= 1) $s1.value = compareSlugs[0];
+        if (compareSlugs.length >= 2) $s2.value = compareSlugs[1];
+        else if (staticCatalog.length > 1) $s2.value = staticCatalog[1].slug;
+
+        updateCompareSelection();
       }
 
-      // Category filter binding
+      window.updateCompareSelection = function() {
+        var slug1 = document.getElementById('selectBook1').value;
+        var slug2 = document.getElementById('selectBook2').value;
+
+        var p1 = staticCatalog.find(function(item) { return item.slug === slug1; });
+        var p2 = staticCatalog.find(function(item) { return item.slug === slug2; });
+
+        if (!p1) return;
+
+        var p1PriceWinner = p2 && p1.price < p2.price;
+        var p2PriceWinner = p2 && p2.price < p1.price;
+        var p1RatingWinner = p2 && p1.rating > p2.rating;
+        var p2RatingWinner = p2 && p2.rating > p1.rating;
+
+        var html = 
+          '<div class="matrix-row">' +
+            '<div class="matrix-cell matrix-label">Product</div>' +
+            '<div class="matrix-cell" style="flex-direction:column;align-items:flex-start;gap:8px;">' +
+              '<img src="' + esc(p1.image) + '" style="height:120px;object-fit:contain;" alt="' + esc(p1.name) + '">' +
+              '<strong style="font-size:14px;">' + esc(p1.name) + '</strong>' +
+              '<span style="font-size:11px;color:#565959;">By ' + esc(p1.brand) + '</span>' +
+            '</div>' +
+            '<div class="matrix-cell" style="flex-direction:column;align-items:flex-start;gap:8px;">' +
+              (p2 ? '<img src="' + esc(p2.image) + '" style="height:120px;object-fit:contain;" alt="' + esc(p2.name) + '"><strong style="font-size:14px;">' + esc(p2.name) + '</strong><span style="font-size:11px;color:#565959;">By ' + esc(p2.brand) + '</span>' : '--') +
+            '</div>' +
+          '</div>' +
+
+          '<div class="matrix-row">' +
+            '<div class="matrix-cell matrix-label">Lowest Price</div>' +
+            '<div class="matrix-cell ' + (p1PriceWinner ? 'matrix-winner' : '') + '">₹' + p1.price.toLocaleString('en-IN') + (p1PriceWinner ? '<span class="winner-badge">CHEAPEST</span>' : '') + '</div>' +
+            '<div class="matrix-cell ' + (p2PriceWinner ? 'matrix-winner' : '') + '">' + (p2 ? '₹' + p2.price.toLocaleString('en-IN') + (p2PriceWinner ? '<span class="winner-badge">CHEAPEST</span>' : '') : '--') + '</div>' +
+          '</div>' +
+
+          '<div class="matrix-row">' +
+            '<div class="matrix-cell matrix-label">Rating</div>' +
+            '<div class="matrix-cell ' + (p1RatingWinner ? 'matrix-winner' : '') + '">' + p1.rating + ' / 5.0' + (p1RatingWinner ? '<span class="winner-badge">HIGHEST RATED</span>' : '') + '</div>' +
+            '<div class="matrix-cell ' + (p2RatingWinner ? 'matrix-winner' : '') + '">' + (p2 ? p2.rating + ' / 5.0' + (p2RatingWinner ? '<span class="winner-badge">HIGHEST RATED</span>' : '') : '--') + '</div>' +
+          '</div>' +
+
+          '<div class="matrix-row">' +
+            '<div class="matrix-cell matrix-label">Page Count</div>' +
+            '<div class="matrix-cell">' + p1.specs[3].value + '</div>' +
+            '<div class="matrix-cell">' + (p2 ? p2.specs[3].value : '--') + '</div>' +
+          '</div>' +
+
+          '<div class="matrix-row">' +
+            '<div class="matrix-cell matrix-label">Buy Deals</div>' +
+            '<div class="matrix-cell" style="gap:8px;flex-wrap:wrap;">' +
+              '<a href="' + p1.affiliateLinks.amazon + '" class="card-btn card-btn-amazon" style="font-size:12px;padding:6px 12px;" target="_blank">Kindle</a>' +
+              '<a href="' + p1.affiliateLinks.flipkart + '" class="card-btn card-btn-flipkart" style="font-size:12px;padding:6px 12px;" target="_blank">Kobo</a>' +
+            '</div>' +
+            '<div class="matrix-cell" style="gap:8px;flex-wrap:wrap;">' +
+              (p2 ? '<a href="' + p2.affiliateLinks.amazon + '" class="card-btn card-btn-amazon" style="font-size:12px;padding:6px 12px;" target="_blank">Kindle</a><a href="' + p2.affiliateLinks.flipkart + '" class="card-btn card-btn-flipkart" style="font-size:12px;padding:6px 12px;" target="_blank">Kobo</a>' : '--') +
+            '</div>' +
+          '</div>';
+
+        document.getElementById('compareMatrixContainer').innerHTML = html;
+      };
+
+      // Populate Product Detail View
+      function renderProductDetailView(slug) {
+        var p = staticCatalog.find(function(item) { return item.slug === slug; });
+        if (!p) return;
+
+        document.getElementById('detailCategoryName').textContent = p.category;
+        document.getElementById('detailBreadcrumbName').textContent = p.name;
+        document.getElementById('detailBadge').textContent = p.badge;
+        document.getElementById('detailBadge').style.background = p.badgeColor;
+        document.getElementById('detailTitle').textContent = p.name;
+        document.getElementById('detailAuthor').textContent = 'By ' + p.brand + ' | Format: ' + p.specs[2].value;
+
+        var savings = p.mrp - p.price;
+        document.getElementById('detailPrice').textContent = '₹' + p.price.toLocaleString('en-IN');
+        document.getElementById('detailMrp').textContent = 'MRP ₹' + p.mrp.toLocaleString('en-IN');
+        document.getElementById('detailSavings').textContent = 'Save ₹' + savings.toLocaleString('en-IN') + ' (' + p.discount + '% Off)';
+
+        document.getElementById('detailImageBox').innerHTML = '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '">';
+
+        document.getElementById('detailAmazonBtn').href = p.affiliateLinks.amazon;
+        document.getElementById('detailFlipkartBtn').href = p.affiliateLinks.flipkart;
+
+        var specsHtml = p.specs.map(function(s) {
+          return '<tr><td>' + esc(s.label) + '</td><td><strong>' + esc(s.value) + '</strong></td></tr>';
+        }).join('');
+        document.getElementById('detailSpecsBody').innerHTML = specsHtml;
+
+        document.getElementById('detailProsList').innerHTML = p.pros.map(function(pr) { return '<li>✓ ' + esc(pr) + '</li>'; }).join('');
+        document.getElementById('detailConsList').innerHTML = p.cons.map(function(cn) { return '<li>⚠ ' + esc(cn) + '</li>'; }).join('');
+      }
+
+      // Catalog Filtering & Sorting
+      function loadProducts() {
+        var prods = staticCatalog.slice();
+
+        if (activeCategory) {
+          prods = prods.filter(function(p) {
+            var catSlug = p.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+            return catSlug === activeCategory.toLowerCase();
+          });
+        }
+
+        if (currentQuery) {
+          var q = currentQuery.toLowerCase();
+          prods = prods.filter(function(p) {
+            var text = (p.name + ' ' + p.brand + ' ' + p.category + ' ' + p.pros.join(' ')).toLowerCase();
+            return text.indexOf(q) !== -1;
+          });
+        }
+
+        if (currentSort === 'price_asc') prods.sort(function(a, b) { return a.price - b.price; });
+        else if (currentSort === 'price_desc') prods.sort(function(a, b) { return b.price - a.price; });
+        else if (currentSort === 'rating') prods.sort(function(a, b) { return b.rating - a.rating; });
+        else if (currentSort === 'discount') prods.sort(function(a, b) { return b.discount - a.discount; });
+
+        renderCards(prods);
+      }
+
+      function renderCards(prods) {
+        var html = '';
+        for (var i = 0; i < prods.length; i++) {
+          var p = prods[i];
+          var savings = p.mrp - p.price;
+          var checkedAttr = compareSlugs.indexOf(p.slug) !== -1 ? 'checked' : '';
+
+          html += 
+            '<article class="product-card">' +
+              '<div class="product-badge-bar"><span class="product-badge" style="background:' + p.badgeColor + '">' + esc(p.badge) + '</span></div>' +
+              '<div class="choice-badge-container"><span>Choice</span> <span class="choice-highlight">Verified</span></div>' +
+              '<div class="card-image-area">' +
+                '<span class="price-drop-indicator">Lowest 30D Price</span>' +
+                '<img class="product-img" src="' + esc(p.image) + '" alt="' + esc(p.name) + '">' +
+                '<span class="card-discount-tag">-' + p.discount + '%</span>' +
+              '</div>' +
+              '<div class="card-body">' +
+                '<div class="card-brand-row"><span>' + esc(p.brand) + '</span><span>' + esc(p.category) + '</span></div>' +
+                '<div class="card-product-name" onclick="navigateTo(\'product\', \'' + p.slug + '\')">' + esc(p.name) + '</div>' +
+                '<div class="card-rating-row"><span class="card-rating-text" onclick="navigateTo(\'product\', \'' + p.slug + '\')">★ ' + p.rating + ' (' + p.ratingCount.toLocaleString('en-IN') + ' votes)</span></div>' +
+                '<div class="card-price-row">' +
+                  '<span class="card-price">₹' + p.price.toLocaleString('en-IN') + '</span>' +
+                  '<span class="card-mrp-group">MRP <span class="card-mrp">₹' + p.mrp.toLocaleString('en-IN') + '</span></span>' +
+                  '<span class="card-savings">Save ₹' + savings.toLocaleString('en-IN') + '</span>' +
+                '</div>' +
+                '<div class="card-urgency-box">' +
+                  '<div class="speed-delivery">Instant Cloud Sync ⚡ <span class="kindle-badge-tag">KINDLE</span></div>' +
+                  '<div class="stock-indicator"><span class="stock-dot-pulse"></span>Verified Deal ⚡ Instant Reading</div>' +
+                '</div>' +
+                '<div class="card-cta-area">' +
+                  '<a href="' + p.affiliateLinks.amazon + '" class="card-btn card-btn-amazon" target="_blank">Buy on Amazon Kindle</a>' +
+                  '<a href="' + p.affiliateLinks.flipkart + '" class="card-btn card-btn-flipkart" target="_blank">Buy on Flipkart Kobo</a>' +
+                  '<button class="quick-view-btn" onclick="navigateTo(\'product\', \'' + p.slug + '\')">⚡ Full Specs &amp; Honest Review &rarr;</button>' +
+                '</div>' +
+                '<div class="card-compare-row">' +
+                  '<label class="card-compare-label">' +
+                    '<input type="checkbox" class="card-compare-checkbox" data-slug="' + p.slug + '" ' + checkedAttr + ' onchange="toggleCompare(this)">' +
+                    '<span>Add to Compare Specs</span>' +
+                  '</label>' +
+                '</div>' +
+              '</div>' +
+            '</article>';
+        }
+
+        $productGrid.innerHTML = html;
+        updateFloatingCompareBar();
+      }
+
+      window.toggleCompare = function(checkbox) {
+        var slug = checkbox.getAttribute('data-slug');
+        if (checkbox.checked) {
+          if (compareSlugs.length >= 2) {
+            alert('You can compare up to 2 books side-by-side.');
+            checkbox.checked = false;
+            return;
+          }
+          if (compareSlugs.indexOf(slug) === -1) compareSlugs.push(slug);
+        } else {
+          var index = compareSlugs.indexOf(slug);
+          if (index !== -1) compareSlugs.splice(index, 1);
+        }
+        try { sessionStorage.setItem('amzbooks_compare_slugs', JSON.stringify(compareSlugs)); } catch(e) {}
+        updateFloatingCompareBar();
+      };
+
+      function updateFloatingCompareBar() {
+        var $bar = document.getElementById('floatingCompareBar');
+        var $count = document.getElementById('compareCount');
+        if (compareSlugs.length > 0) {
+          $count.textContent = compareSlugs.length;
+          $bar.style.display = 'flex';
+        } else {
+          $bar.style.display = 'none';
+        }
+      }
+
+      window.clearSelectedCompare = function() {
+        compareSlugs = [];
+        try { sessionStorage.removeItem('amzbooks_compare_slugs'); } catch(e) {}
+        updateFloatingCompareBar();
+        loadProducts();
+      };
+
+      // Event Bindings
       $categoryTabs.addEventListener('click', function(e) {
         var target = e.target.closest('.category-tab');
         if (target) {
           var tabs = document.querySelectorAll('.category-tab');
-          for (var i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove('active');
-          }
+          for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
           target.classList.add('active');
           activeCategory = target.getAttribute('data-category');
           loadProducts();
         }
       });
 
-      // Sort binding
       $sortSelect.onchange = function() {
         currentSort = $sortSelect.value;
         loadProducts();
       };
 
-      // Search binding
       $heroSearchInput.oninput = function() {
         var val = $heroSearchInput.value.trim();
         $heroSearchClear.style.display = val.length > 0 ? 'block' : 'none';
-        
         clearTimeout(searchTimeout);
         searchTimeout = setTimeout(function() {
           currentQuery = val;
@@ -1986,518 +2086,13 @@
         loadProducts();
       };
 
-      function getApiUrl(path) {
-        if (window.location.protocol === 'file:') {
-          return 'http://localhost:3000' + path;
-        }
-        return path;
-      }
-
-      // Master load products function with seamless local fallback
-      function loadProducts() {
-        var params = [];
-        if (activeCategory) params.push('category=' + encodeURIComponent(activeCategory));
-        if (currentQuery) params.push('q=' + encodeURIComponent(currentQuery));
-        if (currentSort) params.push('sort=' + encodeURIComponent(currentSort));
-
-        var url = '/api/products' + (params.length > 0 ? '?' + params.join('&') : '');
-        
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', getApiUrl(url), true);
-        xhr.onload = function() {
-          if (xhr.status === 200) {
-            try {
-              var res = JSON.parse(xhr.responseText);
-              if (res.success && res.products && res.products.length > 0) {
-                updateTitleAndRender(res.products);
-                return;
-              }
-            } catch(e) {}
-          }
-          // Server returned error or empty -> Use Static Catalog Fallback
-          loadFromStatic();
-        };
-        xhr.onerror = function() {
-          // Network fail or file:// protocol -> Use Static Catalog Fallback
-          loadFromStatic();
-        };
-        xhr.send();
-      }
-
-      // Local Filter & Sort on Static Catalog
-      function loadFromStatic() {
-        var prods = staticCatalog.slice();
-
-        // Category filter
-        if (activeCategory) {
-          prods = prods.filter(function(p) {
-            var catSlug = p.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
-            return catSlug === activeCategory.toLowerCase();
-          });
-        }
-
-        // Search filter
-        if (currentQuery) {
-          var q = currentQuery.toLowerCase();
-          prods = prods.filter(function(p) {
-            var text = (p.name + ' ' + p.brand + ' ' + p.category + ' ' + p.pros.join(' ')).toLowerCase();
-            return text.indexOf(q) !== -1;
-          });
-        }
-
-        // Sorting
-        if (currentSort === 'price_asc') {
-          prods.sort(function(a, b) { return a.price - b.price; });
-        } else if (currentSort === 'price_desc') {
-          prods.sort(function(a, b) { return b.price - a.price; });
-        } else if (currentSort === 'rating') {
-          prods.sort(function(a, b) { return b.rating - a.rating; });
-        } else if (currentSort === 'discount') {
-          prods.sort(function(a, b) { return b.discount - a.discount; });
-        }
-
-        updateTitleAndRender(prods);
-      }
-
-      function updateTitleAndRender(prods) {
-        if (currentQuery) {
-          $gridTitle.textContent = 'Search Results for "' + esc(currentQuery) + '" (' + prods.length + ')';
-        } else {
-          $gridTitle.textContent = 'Hourly Top Offers (' + prods.length + ')';
-        }
-
-        if (prods.length === 0) {
-          $productGrid.innerHTML = '<div style="text-align:center;padding:64px;grid-column:1/-1;color:#565959;font-weight:600;">No verified e-book deals match your search criteria. Try a different search query or category filter.</div>';
-        } else {
-          renderCards(prods);
-        }
-      }
-
-      // Render Cards
-      function renderCards(prods) {
-        var html = '';
-        for (var i = 0; i < prods.length; i++) {
-          var p = prods[i];
-          var savings = p.mrp - p.price;
-
-          if (i === 3) {
-            html += 
-              '<div class="inline-lead-magnet">' +
-                '<svg class="magnet-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
-                  '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>' +
-                  '<polyline points="22,6 12,13 2,6"></polyline>' +
-                '</svg>' +
-                '<h3 class="magnet-title">Read Bestselling E-Books for ₹99</h3>' +
-                '<p class="magnet-desc">Kindle and Kobo book pricing fluctuates dynamically daily. Drop your email to unlock instant alert notifications whenever price drops hit self-help, tech, and investing books.</p>' +
-                '<form class="magnet-form" id="inlineMagnetForm">' +
-                  '<input type="email" class="magnet-input" id="magnetEmail" placeholder="Enter your email address" required>' +
-                  '<button type="submit" class="magnet-btn" id="magnetSubmitBtn">Activate Free Alerts</button>' +
-                '</form>' +
-                '<p class="magnet-msg" id="magnetMsgText"></p>' +
-              '</div>';
-          }
-
-          var imageVisual = '';
-          if (p.image) {
-            imageVisual = '<img class="product-img" src="' + esc(p.image) + '" alt="' + esc(p.name) + '" onerror="this.onerror=null;this.outerHTML=getCategorySVGPlaceholder(\'' + esc(p.category) + '\',\'' + esc(p.name) + '\',\'' + esc(p.brand) + '\');">';
-          } else {
-            imageVisual = getCategorySVGPlaceholder(p.category, p.name, p.brand);
-          }
-
-          var checkedAttr = compareSlugs.indexOf(p.slug) !== -1 ? 'checked' : '';
-          var amazonUrl = (p.affiliateLinks && p.affiliateLinks.amazon) ? p.affiliateLinks.amazon : '/go/' + p.slug + '?platform=amazon';
-          var flipkartUrl = (p.affiliateLinks && p.affiliateLinks.flipkart) ? p.affiliateLinks.flipkart : '/go/' + p.slug + '?platform=flipkart';
-
-          html += 
-            '<article class="product-card" id="card-' + p.slug + '">' +
-              '<div class="product-badge-bar">' +
-                '<span class="product-badge" style="background:' + p.badgeColor + '">' + esc(p.badge) + '</span>' +
-              '</div>' +
-              '<div class="choice-badge-container">' +
-                '<span>Choice</span><span class="choice-highlight">Verified</span>' +
-              '</div>' +
-              '<div class="card-image-area">' +
-                '<span class="price-drop-indicator">' +
-                  '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:2px;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82zM7 7h.01"></path></svg>' +
-                  'Lowest 30D Price' +
-                '</span>' +
-                imageVisual +
-                '<span class="card-discount-tag">-' + p.discount + '%</span>' +
-              '</div>' +
-              '<div class="card-body">' +
-                '<div class="card-brand-row">' +
-                  '<span>' + esc(p.brand) + '</span>' +
-                  '<span>' + esc(p.category) + '</span>' +
-                '</div>' +
-                '<a href="/product/' + p.slug + '" class="card-product-name">' + esc(p.name) + '</a>' +
-                
-                '<div class="card-rating-row">' +
-                  '<div class="card-stars">' + renderStars(p.rating) + '</div>' +
-                  '<a href="/product/' + p.slug + '" class="card-rating-text">' + p.rating + ' (' + p.ratingCount.toLocaleString('en-IN') + ')</a>' +
-                '</div>' +
-
-                '<div class="card-price-row">' +
-                  '<span class="card-price"><span class="rupee-symbol">₹</span>' + p.price.toLocaleString('en-IN') + '</span>' +
-                  '<span class="card-mrp-group">MRP <span class="card-mrp">₹' + p.mrp.toLocaleString('en-IN') + '</span></span>' +
-                  '<span class="card-savings">Save ₹' + savings.toLocaleString('en-IN') + '</span>' +
-                '</div>' +
-                
-                '<div class="card-urgency-box">' +
-                  '<div class="speed-delivery">' +
-                    '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>' +
-                    '<span>Instant Cloud Delivery ⚡</span>' +
-                    '<span class="kindle-badge-tag">KINDLE</span>' +
-                  '</div>' +
-                  '<div class="stock-indicator">' +
-                    '<span class="stock-dot-pulse"></span>' +
-                    '<span>Verified Deal ⚡ Available for Instant Reading</span>' +
-                  '</div>' +
-                '</div>' +
-
-                '<ul class="card-specs-list">' +
-                  '<li style="margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">' +
-                    '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="stroke:#565959;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>' +
-                    '<span>' + esc(p.specs[0].label) + ': <b>' + esc(p.specs[0].value) + '</b></span>' +
-                  '</li>' +
-                  '<li style="margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">' +
-                    '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="stroke:#565959;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>' +
-                    '<span>' + esc(p.specs[3].label) + ': <b>' + esc(p.specs[3].value) + '</b></span>' +
-                  '</li>' +
-                  '<li style="display: flex; align-items: center; gap: 6px;">' +
-                    '<svg class="specs-check-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
-                    '<span>' + esc(p.pros[0]) + '</span>' +
-                  '</li>' +
-                '</ul>' +
-
-                '<div class="card-cta-area">' +
-                  '<a href="' + amazonUrl + '" class="card-btn card-btn-amazon">' +
-                    '<span>Buy on Amazon Kindle</span>' +
-                  '</a>' +
-                  '<a href="' + flipkartUrl + '" class="card-btn card-btn-flipkart">' +
-                    '<span>Buy on Flipkart Kobo</span>' +
-                  '</a>' +
-                  '<button class="quick-view-btn" onclick="openQuickView(\'' + p.slug + '\')">⚡ Quick Book Preview &rarr;</button>' +
-                '</div>' +
-
-                '<div class="card-compare-row">' +
-                  '<label class="card-compare-label">' +
-                    '<input type="checkbox" class="card-compare-checkbox" data-slug="' + p.slug + '" data-name="' + esc(p.name) + '" ' + checkedAttr + ' onchange="toggleCompare(this)">' +
-                    '<span>Add to Compare Specs</span>' +
-                  '</label>' +
-                '</div>' +
-
-              '</div>' +
-            '</article>';
-
-          trackImpression('card_view', p.slug);
-        }
-
-        $productGrid.innerHTML = html;
-
-        var $inlineForm = document.getElementById('inlineMagnetForm');
-        if ($inlineForm) {
-          $inlineForm.onsubmit = handleInlineSubscribe;
-        }
-
-        updateFloatingCompareBar();
-      }
-
-      window.getCategorySVGPlaceholder = function(cat, name, brand) {
-        var colorSeed = name ? name.charCodeAt(0) + name.charCodeAt(name.length-1) : 0;
-        var colors = [
-          { bg: '#1e293b', fg: '#f1f5f9', spine: '#0f172a' },
-          { bg: '#7c2d12', fg: '#ffedd5', spine: '#431407' },
-          { bg: '#064e3b', fg: '#d1fae5', spine: '#022c22' },
-          { bg: '#1e3a8a', fg: '#dbeafe', spine: '#172554' },
-          { bg: '#581c87', fg: '#f3e8ff', spine: '#3b0764' }
-        ];
-        var theme = colors[colorSeed % colors.length];
-
-        return '<div style="width:130px;height:175px;background:' + theme.bg + ';color:' + theme.fg + ';padding:14px 10px;display:flex;flex-direction:column;justify-content:space-between;border-radius:6px;box-shadow:inset 6px 0 10px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);position:relative;border-left:5px solid ' + theme.spine + ';box-sizing:border-box;">' +
-          '<div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:rgba(255,255,255,0.6)">' + esc(cat) + '</div>' +
-          '<div style="font-family:\'Outfit\',sans-serif;font-size:13px;font-weight:900;line-height:1.25;margin:6px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:left;">' + esc(name) + '</div>' +
-          '<div style="font-size:10px;font-weight:700;letter-spacing:0.5px;text-align:left;border-top:1px solid rgba(255,255,255,0.2);padding-top:6px;">By ' + esc(brand) + '</div>' +
-        '</div>';
-      };
-
-      function renderStars(rating) {
-        var full = Math.floor(rating);
-        var html = '';
-        for (var i = 0; i < 5; i++) {
-          if (i < full) {
-            html += '<svg class="star-filled-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>';
-          } else {
-            html += '<svg class="star-empty-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>';
-          }
-        }
-        return html;
-      }
-
-      // Quick View Modal Controller
-      window.openQuickView = function(slug) {
-        var p = staticCatalog.find(function(item) { return item.slug === slug; });
-        if (!p) return;
-
-        var amazonUrl = (p.affiliateLinks && p.affiliateLinks.amazon) ? p.affiliateLinks.amazon : '/go/' + p.slug + '?platform=amazon';
-        var flipkartUrl = (p.affiliateLinks && p.affiliateLinks.flipkart) ? p.affiliateLinks.flipkart : '/go/' + p.slug + '?platform=flipkart';
-        var savings = p.mrp - p.price;
-
-        var prosHtml = p.pros.map(function(pr) { return '<li style="margin-bottom:6px;">✓ ' + esc(pr) + '</li>'; }).join('');
-        var consHtml = p.cons.map(function(cn) { return '<li style="margin-bottom:6px;color:#CC0C39;">⚠ ' + esc(cn) + '</li>'; }).join('');
-
-        var html = 
-          '<div style="display:flex;flex-direction:column;gap:16px;">' +
-            '<span style="display:inline-block;background:' + p.badgeColor + ';color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:800;align-self:flex-start;">' + esc(p.badge) + '</span>' +
-            '<h2 style="font-family:\'Outfit\',sans-serif;font-size:22px;font-weight:900;color:#0F1111;">' + esc(p.name) + '</h2>' +
-            '<div style="font-size:13px;color:#565959;font-weight:700;">By ' + esc(p.brand) + ' | ' + esc(p.category) + '</div>' +
-            
-            '<div style="display:flex;align-items:baseline;gap:12px;background:#F7F8F8;padding:12px 16px;border-radius:8px;">' +
-              '<span style="font-size:28px;font-weight:900;color:#0F1111;">₹' + p.price.toLocaleString('en-IN') + '</span>' +
-              '<span style="text-decoration:line-through;color:#565959;">MRP ₹' + p.mrp.toLocaleString('en-IN') + '</span>' +
-              '<span style="background:#FDF0F2;color:#CC0C39;font-weight:800;padding:2px 8px;border-radius:4px;font-size:12px;">Save ₹' + savings.toLocaleString('en-IN') + ' (' + p.discount + '% Off)</span>' +
-            '</div>' +
-
-            '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">' +
-              '<div>' +
-                '<h4 style="font-size:13px;font-weight:800;color:#007600;margin-bottom:8px;text-transform:uppercase;">What We Like</h4>' +
-                '<ul style="list-style:none;font-size:13px;font-weight:600;color:#333;">' + prosHtml + '</ul>' +
-              '</div>' +
-              '<div>' +
-                '<h4 style="font-size:13px;font-weight:800;color:#CC0C39;margin-bottom:8px;text-transform:uppercase;">Watch Out For</h4>' +
-                '<ul style="list-style:none;font-size:13px;font-weight:600;color:#333;">' + consHtml + '</ul>' +
-              '</div>' +
-            '</div>' +
-
-            '<div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">' +
-              '<a href="' + amazonUrl + '" class="card-btn card-btn-amazon" style="flex:1;min-width:180px;">Get on Amazon Kindle</a>' +
-              '<a href="' + flipkartUrl + '" class="card-btn card-btn-flipkart" style="flex:1;min-width:180px;">Get on Flipkart Kobo</a>' +
-              '<a href="/product/' + p.slug + '" class="card-btn" style="background:#131921;color:#fff;border-color:#131921;">Full Spec Page &rarr;</a>' +
-            '</div>' +
-          '</div>';
-
-        $modalBody.innerHTML = html;
-        $quickViewModal.classList.add('active');
-      };
-
-      window.closeQuickView = function() {
-        $quickViewModal.classList.remove('active');
-      };
-
-      $quickViewModal.onclick = function(e) {
-        if (e.target === $quickViewModal) closeQuickView();
-      };
-
-      // Compare Toggle Controller
-      window.toggleCompare = function(checkbox) {
-        var slug = checkbox.getAttribute('data-slug');
-        var name = checkbox.getAttribute('data-name');
-        
-        if (checkbox.checked) {
-          if (compareSlugs.length >= 2) {
-            showToastNotice('You can compare up to 2 books side-by-side. Uncheck one first!');
-            checkbox.checked = false;
-            return;
-          }
-          if (compareSlugs.indexOf(slug) === -1) {
-            compareSlugs.push(slug);
-          }
-        } else {
-          var index = compareSlugs.indexOf(slug);
-          if (index !== -1) {
-            compareSlugs.splice(index, 1);
-          }
-        }
-
-        try {
-          sessionStorage.setItem('amzbooks_compare_slugs', JSON.stringify(compareSlugs));
-        } catch(e) {}
-
-        updateFloatingCompareBar();
-      };
-
-      function showToastNotice(msg) {
-        var $toast = document.getElementById('socialProofToast');
-        var $text = document.getElementById('toastText');
-        var $time = document.getElementById('toastTime');
-
-        $text.textContent = msg;
-        $time.textContent = 'Notification';
-
-        $toast.style.transform = 'translateY(0)';
-        $toast.style.opacity = '1';
-
-        setTimeout(function() {
-          $toast.style.transform = 'translateY(100px)';
-          $toast.style.opacity = '0';
-        }, 4000);
-      }
-
-      function updateFloatingCompareBar() {
-        var $bar = document.getElementById('floatingCompareBar');
-        var $count = document.getElementById('compareCount');
-        
-        if (compareSlugs.length > 0) {
-          $count.textContent = compareSlugs.length;
-          $bar.style.display = 'flex';
-        } else {
-          $bar.style.display = 'none';
-        }
-
-        var checkboxes = document.querySelectorAll('.card-compare-checkbox');
-        for (var i = 0; i < checkboxes.length; i++) {
-          var slug = checkboxes[i].getAttribute('data-slug');
-          checkboxes[i].checked = (compareSlugs.indexOf(slug) !== -1);
-        }
-      }
-
-      window.clearSelectedCompare = function() {
-        compareSlugs = [];
-        try {
-          sessionStorage.removeItem('amzbooks_compare_slugs');
-        } catch(e) {}
-        updateFloatingCompareBar();
-      };
-
-      window.goToComparePage = function() {
-        if (compareSlugs.length === 0) return;
-        window.location.href = '/compare?products=' + encodeURIComponent(compareSlugs.join(','));
-      };
-
-      function trackImpression(type, slug) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', getApiUrl('/api/track/impression'), true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({ type: type, slug: slug }));
-      }
-
-      trackImpression('page_view', 'home');
-      loadProducts();
-
-      function handleInlineSubscribe(e) {
+      document.getElementById('standaloneSubForm').onsubmit = function(e) {
         e.preventDefault();
-        var $email = document.getElementById('magnetEmail');
-        var $msg = document.getElementById('magnetMsgText');
-        var $btn = document.getElementById('magnetSubmitBtn');
-
-        var email = $email.value.trim();
-        $btn.textContent = 'Registering...';
-        $btn.disabled = true;
-
-        submitSubscription(email, '', ['General Alerts'], function(success, message) {
-          $btn.textContent = 'Activate Free Alerts';
-          $btn.disabled = false;
-          if (success) {
-            $msg.style.color = '#007600';
-            $msg.textContent = '✓ Secret price drop alerts registered successfully!';
-            $email.value = '';
-          } else {
-            $msg.style.color = '#CC0C39';
-            $msg.textContent = '✗ ' + message;
-          }
-        });
-      }
-
-      var $exitModalOverlay = document.getElementById('exitModalOverlay');
-      var $exitModalClose = document.getElementById('exitModalClose');
-      var $exitForm = document.getElementById('exitForm');
-      var $exitEmail = document.getElementById('exitEmail');
-      var $exitWhatsapp = document.getElementById('exitWhatsapp');
-      var $exitMsgText = document.getElementById('exitMsgText');
-      var $exitSubmitBtn = document.getElementById('exitSubmitBtn');
-
-      var hasTriggeredExit = false;
-
-      document.addEventListener('mouseleave', function(e) {
-        if (e.clientY < 20 && !hasTriggeredExit) {
-          hasTriggeredExit = true;
-          $exitModalOverlay.style.opacity = '1';
-          $exitModalOverlay.style.pointerEvents = 'all';
-        }
-      });
-
-      $exitModalClose.onclick = function() {
-        $exitModalOverlay.style.opacity = '0';
-        $exitModalOverlay.style.pointerEvents = 'none';
+        var $msg = document.getElementById('standaloneMsg');
+        $msg.style.color = 'var(--green-accent)';
+        $msg.textContent = '✓ Deal Alerts registered successfully for ' + document.getElementById('standaloneEmail').value;
+        document.getElementById('standaloneEmail').value = '';
       };
-
-      $exitForm.onsubmit = function(e) {
-        e.preventDefault();
-        var email = $exitEmail.value.trim();
-        var whatsapp = $exitWhatsapp.value.trim();
-
-        $exitSubmitBtn.textContent = 'Activating...';
-        $exitSubmitBtn.disabled = true;
-
-        submitSubscription(email, whatsapp, ['All Categories'], function(success, message) {
-          $exitSubmitBtn.textContent = 'Get Free Deal Alerts →';
-          $exitSubmitBtn.disabled = false;
-          if (success) {
-            $exitMsgText.style.color = '#007600';
-            $exitMsgText.textContent = '✓ Secret pricing alerts registered successfully!';
-            setTimeout(function() {
-              $exitModalOverlay.style.opacity = '0';
-              $exitModalOverlay.style.pointerEvents = 'none';
-            }, 1800);
-          } else {
-            $exitMsgText.style.color = '#CC0C39';
-            $exitMsgText.textContent = '✗ ' + message;
-          }
-        });
-      };
-
-      var $socialProofToast = document.getElementById('socialProofToast');
-      var $toastText = document.getElementById('toastText');
-      var $toastTime = document.getElementById('toastTime');
-
-      function showSocialProof() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', getApiUrl('/api/social-proof'), true);
-        xhr.onload = function() {
-          if (xhr.status === 200) {
-            try {
-              var data = JSON.parse(xhr.responseText);
-              if (data.success) {
-                $toastText.innerHTML = 'Someone from <b>' + esc(data.city) + '</b> ' + esc(data.action) + ' <b>' + esc(data.productName) + '</b>!';
-                $toastTime.textContent = data.timeAgo;
-                
-                $socialProofToast.style.transform = 'translateY(0)';
-                $socialProofToast.style.opacity = '1';
-
-                setTimeout(function() {
-                  $socialProofToast.style.transform = 'translateY(100px)';
-                  $socialProofToast.style.opacity = '0';
-                }, 5000);
-              }
-            } catch(e) {}
-          }
-        };
-        xhr.send();
-      }
-
-      setTimeout(showSocialProof, 3500);
-      setInterval(showSocialProof, 16000);
-
-      function submitSubscription(email, whatsapp, categories, callback) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', getApiUrl('/api/subscribe'), true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = function() {
-          try {
-            var data = JSON.parse(xhr.responseText);
-            if (xhr.status === 200 && data.success) {
-              callback(true, data.message);
-            } else {
-              callback(false, data.error || 'Subscription failed.');
-            }
-          } catch(e) {
-            callback(false, 'Server returned invalid response.');
-          }
-        };
-        xhr.onerror = function() {
-          callback(false, 'Network connection failed.');
-        };
-        xhr.send(JSON.stringify({ email: email, whatsapp: whatsapp, categories: categories }));
-      }
 
       function esc(s) {
         if (!s) return '';
@@ -2506,6 +2101,7 @@
         return d.innerHTML;
       }
 
+      loadProducts();
     })();
   </script>
 </body>
