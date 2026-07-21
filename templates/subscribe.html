@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe to Bestseller Price Drop Alerts — AmzBooks Hub</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #131921 0%, #232F3E 50%, #131921 100%);
+      color: #F8FAFC;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER NAVIGATION ─────────────────────── */
+    .top-nav {
+      background: #131921;
+      padding: 12px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 4px solid #FFA41C;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFFFFF;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo-icon {
+      background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+      color: #0F172A;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #FFFFFF;
+    }
+
+    /* ── CENTER WRAPPER ────────────────────────── */
+    .subscribe-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .glass-card {
+      background: rgba(30, 41, 59, 0.45);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 580px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      left: -30%;
+      width: 160%;
+      height: 160%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .card-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .bell-icon {
+      font-size: 52px;
+      display: inline-block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 10px rgba(245, 158, 11, 0.3));
+      animation: swing-bell 3s ease-in-out infinite;
+    }
+
+    @keyframes swing-bell {
+      0%, 100% { transform: rotate(0); }
+      15% { transform: rotate(10deg); }
+      30% { transform: rotate(-10deg); }
+      45% { transform: rotate(5deg); }
+      60% { transform: rotate(-5deg); }
+      75% { transform: rotate(0); }
+    }
+
+    .card-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .card-subtitle {
+      font-size: 14.5px;
+      color: #94A3B8;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #FBBF24;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      color: #FFFFFF;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .input-field:focus {
+      border-color: #FBBF24;
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15);
+    }
+
+    .input-field::placeholder {
+      color: #4B5563;
+    }
+
+    /* Toggle pill boxes for categories */
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .pill-checkbox {
+      display: none;
+    }
+
+    .pill-label {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #CBD5E1;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      user-select: none;
+    }
+
+    .pill-checkbox:checked + .pill-label {
+      background: rgba(251, 191, 36, 0.15);
+      border-color: #FBBF24;
+      color: #FBBF24;
+    }
+
+    .pill-label:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Submit Button */
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+      color: #0F172A;
+      font-size: 16px;
+      font-weight: 800;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .alert-msg {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      min-height: 22px;
+    }
+
+    /* Trust indicators */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      text-align: center;
+    }
+
+    .trust-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .trust-emoji {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .trust-text {
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #131921;
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 4px solid #FFA41C;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #FFA41C;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-text {
+      font-size: 11px;
+      color: #64748B;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 640px) {
+      .glass-card {
+        padding: 32px 24px;
+      }
+      .card-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-icon">📚</span>
+        <span>AmzBooks Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/compare" class="nav-link">Compare</a>
+        <a href="/subscribe" class="nav-link" style="color:#FFFFFF">Deal Alerts</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content Section -->
+  <main class="subscribe-wrapper">
+    <div class="glass-card">
+      <div class="card-header">
+        <span class="bell-icon">🔔</span>
+        <h1 class="card-title">Unlock Kindle &amp; Kobo Price Drops</h1>
+        <p class="card-subtitle">E-Book prices on Amazon Kindle &amp; Flipkart Kobo fluctuate. Get real-time WhatsApp &amp; Email alerts the exact minute your favorite book crashes in price.</p>
+      </div>
+
+      <form id="subscribeForm">
+        <!-- Email Input -->
+        <div class="form-group">
+          <label class="form-label" for="subEmail">Your Email Address</label>
+          <input type="email" class="input-field" id="subEmail" placeholder="e.g. rahul.sharma@gmail.com" required>
+        </div>
+
+        <!-- WhatsApp Input -->
+        <div class="form-group">
+          <label class="form-label" for="subWhatsapp">WhatsApp Number (For Instant Alerts)</label>
+          <input type="text" class="input-field" id="subWhatsapp" placeholder="e.g. +91 9876543210 (Optional)">
+        </div>
+
+        <!-- Category Preferences Multi-Selector -->
+        <div class="form-group">
+          <span class="form-label">Alert Me On Genres:</span>
+          <div class="category-pills">
+            <input type="checkbox" id="catSelfHelp" class="pill-checkbox" value="Self-Help & Mindset" checked>
+            <label for="catSelfHelp" class="pill-label">📖 Self-Help &amp; Mindset</label>
+
+            <input type="checkbox" id="catBusiness" class="pill-checkbox" value="Business & Startups" checked>
+            <label for="catBusiness" class="pill-label">💼 Business &amp; Startups</label>
+
+            <input type="checkbox" id="catTech" class="pill-checkbox" value="Technology & Coding">
+            <label for="catTech" class="pill-label">💻 Technology &amp; Coding</label>
+
+            <input type="checkbox" id="catFinance" class="pill-checkbox" value="Finance & Investing">
+            <label for="catFinance" class="pill-label">📈 Finance &amp; Investing</label>
+
+            <input type="checkbox" id="catFiction" class="pill-checkbox" value="Fiction & Sci-Fi">
+            <label for="catFiction" class="pill-label">🚀 Fiction &amp; Sci-Fi</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btnSubmit">Activate Free Deal Alerts →</button>
+      </form>
+
+      <p class="alert-msg" id="alertMsgText"></p>
+
+      <!-- Trust Grid -->
+      <div class="trust-grid">
+        <div class="trust-card">
+          <span class="trust-emoji">🛡️</span>
+          <span class="trust-text">Zero Spam</span>
+        </div>
+        <div class="trust-card">
+          <span class="trust-emoji">⚡</span>
+          <span class="trust-text">Instant Push</span>
+        </div>
+        <div class="trust-card">
+          <span class="trust-emoji">🆓</span>
+          <span class="trust-text">100% Free</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/compare">Compare Books</a>
+      <a href="/subscribe">Deal Alerts</a>
+      <a href="/admin?token=your_secret_token">Founder Admin</a>
+      <a href="/sitemap.xml" target="_blank">Sitemap</a>
+    </div>
+    <p class="footer-text">
+      © 2026 AmzBooks Hub. We respect your data privacy. You can unsubscribe from these price alerts at any single click using the footer option in any notification.
+    </p>
+  </footer>
+
+  <!-- Javascript logic -->
+  <script>
+    (function() {
+      'use strict';
+
+      var $form = document.getElementById('subscribeForm');
+      var $email = document.getElementById('subEmail');
+      var $whatsapp = document.getElementById('subWhatsapp');
+      var $btnSubmit = document.getElementById('btnSubmit');
+      var $alertMsgText = document.getElementById('alertMsgText');
+
+      $form.onsubmit = function(e) {
+        e.preventDefault();
+        var email = $email.value.trim();
+        var whatsapp = $whatsapp.value.trim();
+
+        // Get category preferences
+        var categories = [];
+        var checkboxes = document.querySelectorAll('.pill-checkbox');
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked) {
+            categories.push(checkboxes[i].value);
+          }
+        }
+
+        if (categories.length === 0) {
+          $alertMsgText.style.color = '#EF4444';
+          $alertMsgText.textContent = '⚠ Please select at least one category preference.';
+          return;
+        }
+
+        $btnSubmit.textContent = 'Activating...';
+        $btnSubmit.disabled = true;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/subscribe', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        
+        xhr.onload = function() {
+          $btnSubmit.textContent = 'Activate Free Deal Alerts →';
+          $btnSubmit.disabled = false;
+          
+          try {
+            var res = JSON.parse(xhr.responseText);
+            if (xhr.status === 200 && res.success) {
+              $alertMsgText.style.color = '#10B981';
+              $alertMsgText.textContent = '✓ SUCCESS: ' + res.message;
+              $email.value = '';
+              $whatsapp.value = '';
+              
+              // Reset checkboxes
+              for (var j = 0; j < checkboxes.length; j++) {
+                checkboxes[j].checked = (j < 2); // check first 2
+              }
+            } else {
+              $alertMsgText.style.color = '#EF4444';
+              $alertMsgText.textContent = '✗ ERROR: ' + (res.error || 'Failed to subscribe.');
+            }
+          } catch(e) {
+            $alertMsgText.style.color = '#EF4444';
+            $alertMsgText.textContent = '✗ Failed to communicate with server.';
+          }
+        };
+
+        xhr.onerror = function() {
+          $btnSubmit.textContent = 'Activate Free Deal Alerts →';
+          $btnSubmit.disabled = false;
+          $alertMsgText.style.color = '#EF4444';
+          $alertMsgText.textContent = '✗ Network connection failed.';
+        };
+
+        xhr.send(JSON.stringify({
+          email: email,
+          whatsapp: whatsapp,
+          categories: categories
+        }));
+      };
+
+    })();
+  </script>
+</body>
+</html>

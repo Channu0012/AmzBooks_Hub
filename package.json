@@ -1,0 +1,17 @@
+{
+  "name": "affiliate-marketing-hub",
+  "version": "1.0.0",
+  "description": "Affiliate Marketing Hub for Indian Budget Tech Market",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "firebase-admin": "^13.10.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

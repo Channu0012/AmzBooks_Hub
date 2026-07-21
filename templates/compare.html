@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <title>{{TITLE}}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <!-- Modern Premium Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #EAEDED; /* Amazon product listing backdrop grey */
+      color: #0F1111;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER NAVIGATION (Amazon-style Dark Theme) ─────────────────────── */
+    .top-nav {
+      background: #131921; /* Amazon dark navy blue */
+      padding: 12px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 4px solid #FFA41C; /* Amazon gold accent accentuation line */
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #FFFFFF;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-logo-highlight {
+      color: #FFA41C;
+    }
+
+    .nav-logo-icon-svg {
+      width: 24px;
+      height: 24px;
+      stroke: #FFA41C;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #DDDDDD;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-link:hover {
+      color: #FFA41C;
+    }
+
+    /* ── DYNAMIC COMPARE HEADER (Navy Slate Banner) ── */
+    .compare-header {
+      background: linear-gradient(180deg, #232F3E 0%, #131921 100%);
+      color: #FFFFFF;
+      padding: 40px 24px 48px;
+      text-align: center;
+      border-bottom: 1px solid #334155;
+      box-shadow: inset 0 -10px 20px rgba(0,0,0,0.1);
+    }
+
+    .compare-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .compare-subtitle {
+      font-size: 15px;
+      color: #CCCCCC;
+      max-width: 640px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    /* Selection Dropper */
+    .selector-panel {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      max-width: 760px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .selector-box {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+    }
+
+    .selector-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: #FFA41C;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .selector-icon-svg {
+      width: 14px;
+      height: 14px;
+      stroke: #FFA41C;
+    }
+
+    .product-select {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .product-select option {
+      background: #131921;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .product-select:focus {
+      border-color: #FFA41C;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* ── COMPARISON MATRIX TABLE ── */
+    .compare-container {
+      max-width: 1300px;
+      margin: 36px auto 48px;
+      padding: 0 24px;
+    }
+
+    .compare-table-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid #E3E6E6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1.2fr;
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1.2fr;
+      border-bottom: 1px solid #E3E6E6;
+    }
+
+    .compare-row:last-child {
+      border-bottom: none;
+    }
+
+    .compare-cell {
+      padding: 18px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* Cell Variants */
+    .cell-label {
+      background: #F7F8F8;
+      font-weight: 800;
+      color: #565959;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      border-right: 1px solid #E3E6E6;
+      text-align: left;
+    }
+
+    .cell-product-hero {
+      background: #FFFFFF;
+      padding: 28px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .cell-product-hero:not(:last-child) {
+      border-right: 1px solid #E3E6E6;
+    }
+
+    .hero-image-box {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .hero-img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+
+    .hero-brand {
+      font-size: 11px;
+      font-weight: 700;
+      color: #007185;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .hero-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0F1111;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .badge-deal {
+      display: inline-block;
+      background: #E3E6E6;
+      color: #0F1111;
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      align-self: center;
+    }
+
+    /* Winner Highlights */
+    .winner-badge {
+      display: inline-block;
+      background: #FFF8E7; /* Soft yellow */
+      color: #92400E; /* Amber text */
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid #FCD34D;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .winner-highlight {
+      background: rgba(255, 244, 224, 0.25);
+    }
+
+    /* Rating elements */
+    .stars-row {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .star-filled-svg {
+      width: 15px;
+      height: 15px;
+      fill: #FFA41C;
+    }
+
+    .star-empty-svg {
+      width: 15px;
+      height: 15px;
+      fill: #E3E6E6;
+    }
+
+    /* Pricing */
+    .price-value {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0F1111;
+    }
+
+    .price-mrp {
+      font-size: 12.5px;
+      text-decoration: line-through;
+      color: #565959;
+      margin-top: 2px;
+    }
+
+    /* Lists Pros Cons */
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .compare-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #333333;
+    }
+
+    .pro-check-svg {
+      width: 15px;
+      height: 15px;
+      stroke: #007600;
+      flex-shrink: 0;
+    }
+
+    .con-warning-svg {
+      width: 15px;
+      height: 15px;
+      stroke: #CC0C39;
+      flex-shrink: 0;
+    }
+
+    /* Actions CTAs inside grid cell */
+    .cell-cta-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .btn-buy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 11px 16px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      text-align: center;
+      transition: filter 0.15s ease, transform 0.1s ease;
+      cursor: pointer;
+      border: 1px solid;
+    }
+
+    .btn-buy:active {
+      transform: scale(0.98);
+    }
+
+    .btn-amazon {
+      background: linear-gradient(to bottom, #FFE093, #FFC43D);
+      border-color: #D8B400;
+      color: #0F1111;
+      box-shadow: 0 2px 4px rgba(216,180,0,0.15);
+    }
+
+    .btn-amazon:hover {
+      background: linear-gradient(to bottom, #F7CA00, #E2B900);
+      filter: brightness(0.97);
+    }
+
+    .btn-flipkart {
+      background: linear-gradient(to bottom, #FFB84D, #FFA41C);
+      border-color: #C47F00;
+      color: #0F1111;
+      box-shadow: 0 2px 4px rgba(196,127,0,0.15);
+    }
+
+    .btn-flipkart:hover {
+      background: linear-gradient(to bottom, #FFA41C, #E69100);
+      filter: brightness(0.97);
+    }
+
+    /* Empty state */
+    .compare-empty-state {
+      padding: 64px 32px;
+      text-align: center;
+    }
+
+    .empty-icon-svg {
+      width: 64px;
+      height: 64px;
+      stroke: #565959;
+      margin: 0 auto 16px;
+      display: block;
+    }
+
+    .empty-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #0F1111;
+      margin-bottom: 8px;
+    }
+
+    .empty-desc {
+      font-size: 14px;
+      color: #565959;
+      max-width: 440px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    /* Lead magnet alert box */
+    .lead-box {
+      background: linear-gradient(135deg, #232F3E 0%, #131921 100%);
+      color: #FFFFFF;
+      border-radius: 12px;
+      padding: 36px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lead-box::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      left: -30%;
+      width: 160%;
+      height: 160%;
+      background: radial-gradient(circle, rgba(255, 164, 28, 0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .alert-icon-svg {
+      width: 44px;
+      height: 44px;
+      stroke: #FFA41C;
+      margin: 0 auto 16px;
+      display: block;
+    }
+
+    .lead-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .lead-subtitle {
+      font-size: 14.5px;
+      color: #CCCCCC;
+      max-width: 500px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .lead-form {
+      display: flex;
+      max-width: 540px;
+      margin: 0 auto;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .lead-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 12px 18px;
+      border-radius: 100px;
+      border: 1px solid #565959;
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .lead-input:focus {
+      border-color: #FFA41C;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .lead-btn {
+      padding: 12px 28px;
+      background: linear-gradient(to bottom, #FFE093, #FFC43D);
+      border: 1px solid #D8B400;
+      color: #0F1111;
+      border-radius: 100px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 14px;
+      transition: filter 0.15s ease;
+      box-shadow: 0 2px 5px rgba(216,180,0,0.15);
+    }
+
+    .lead-btn:hover {
+      filter: brightness(0.95);
+    }
+
+    .lead-msg {
+      margin-top: 12px;
+      font-size: 13.5px;
+      font-weight: 600;
+      min-height: 18px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #131921;
+      color: #DDDDDD;
+      padding: 48px 24px;
+      text-align: center;
+      margin-top: 64px;
+      border-top: 4px solid #FFA41C;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #FFA41C;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .footer-disclaimer {
+      font-size: 11.5px;
+      max-width: 850px;
+      margin: 0 auto;
+      color: #A6A6A6;
+      line-height: 1.8;
+    }
+
+    /* Responsiveness layout scroll */
+    @media (max-width: 840px) {
+      .compare-grid, .compare-row {
+        grid-template-columns: 1fr 1fr;
+      }
+      .compare-table-card {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .compare-grid, .compare-row {
+        min-width: 720px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .compare-title {
+        font-size: 26px;
+      }
+      .top-nav {
+        padding: 16px;
+      }
+      .compare-header {
+        padding: 24px 16px 32px;
+      }
+      .selector-panel {
+        flex-direction: column;
+      }
+      .lead-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <svg class="nav-logo-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span>AmzBooks<span class="nav-logo-highlight">Hub</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/compare" class="nav-link active">Compare</a>
+        <a href="/subscribe" class="nav-link">Deal Alerts</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Interactive Header -->
+  <header class="compare-header">
+    <h1 class="compare-title">Compare E-Book Specifications Side-by-Side</h1>
+    <p class="compare-subtitle">Select up to two bestselling Kindle e-books in the selectors below to compare pricing, star ratings, pros, cons, and complete book details side-by-side.</p>
+    
+    <div class="selector-panel">
+      <!-- Dropdown 1 -->
+      <div class="selector-box">
+        <span class="selector-label">
+          <svg class="selector-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          Compare Product 1
+        </span>
+        <select class="product-select" id="selectorOne">
+          <option value="">-- Choose Product 1 --</option>
+        </select>
+      </div>
+
+      <!-- Dropdown 2 -->
+      <div class="selector-box">
+        <span class="selector-label">
+          <svg class="selector-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          Compare Product 2
+        </span>
+        <select class="product-select" id="selectorTwo">
+          <option value="">-- Choose Product 2 --</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Comparison Table Container -->
+  <main class="compare-container">
+    <div id="compareView">
+      <!-- Hydrated Dynamically by JS -->
+    </div>
+
+    <!-- Deal capture Alerts box -->
+    <section class="lead-box">
+      <svg class="alert-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <h2 class="lead-title">Kindle E-Book Price Alerts</h2>
+      <p class="lead-subtitle">Get immediately notified whenever prices drop on Amazon &amp; Flipkart comparison lists. Never pay full retail price!</p>
+      <form class="lead-form" id="leadForm">
+        <input type="email" class="lead-input" id="leadEmail" placeholder="Enter your email address" required>
+        <button type="submit" class="lead-btn" id="leadSubmitBtn">Subscribe Alerts</button>
+      </form>
+      <p class="lead-msg" id="leadMsgText"></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/compare">Compare Books</a>
+      <a href="/subscribe">Deal Alerts</a>
+      <a href="/admin?token=your_secret_token">Founder Admin</a>
+      <a href="/sitemap.xml" target="_blank">Sitemap</a>
+    </div>
+    <p class="footer-text">AmzBooks Hub — Premium Amazon Kindle &amp; Kobo Affiliate Directory</p>
+    <p class="footer-disclaimer">
+      Affiliate Disclosure: Redirection links to external portals are referral affiliate codes. AmzBooks Hub receives a small commission on items purchased at completely zero added fee to the customer. This completely funds our server costs and editorial curation efforts.
+    </p>
+  </footer>
+
+  <!-- Dynamic Data Islands -->
+  <script id="compared-products-data" type="application/json">
+    {{COMPARED_PRODUCTS_DATA}}
+  </script>
+  <script id="all-products-list" type="application/json">
+    {{ALL_PRODUCTS_LIST}}
+  </script>
+
+  <!-- Scripts -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Load server template hydrated data
+      var comparedProducts = [];
+      try {
+        comparedProducts = JSON.parse(document.getElementById('compared-products-data').textContent.trim()) || [];
+      } catch(e) {
+        console.error('Failed to parse compared products:', e);
+      }
+
+      var allProducts = [];
+      try {
+        allProducts = JSON.parse(document.getElementById('all-products-list').textContent.trim()) || [];
+      } catch(e) {
+        console.error('Failed to parse all products:', e);
+      }
+
+      // DOM Elements
+      var $selectorOne = document.getElementById('selectorOne');
+      var $selectorTwo = document.getElementById('selectorTwo');
+      var $compareView = document.getElementById('compareView');
+
+      // Hydrate selects
+      function populateDropdowns() {
+        var h1 = '<option value="">-- Choose Product 1 --</option>';
+        var h2 = '<option value="">-- Choose Product 2 --</option>';
+
+        // Sort by category then name
+        allProducts.sort(function(a, b) {
+          if (a.category !== b.category) return a.category.localeCompare(b.category);
+          return a.name.localeCompare(b.name);
+        });
+
+        for (var i = 0; i < allProducts.length; i++) {
+          var p = allProducts[i];
+          h1 += '<option value="' + p.slug + '">' + esc(p.category) + ' : ' + esc(p.name) + '</option>';
+          h2 += '<option value="' + p.slug + '">' + esc(p.category) + ' : ' + esc(p.name) + '</option>';
+        }
+
+        $selectorOne.innerHTML = h1;
+        $selectorTwo.innerHTML = h2;
+
+        // Set values if active compared list
+        if (comparedProducts[0]) $selectorOne.value = comparedProducts[0].slug;
+        if (comparedProducts[1]) $selectorTwo.value = comparedProducts[1].slug;
+      }
+
+      populateDropdowns();
+
+      // Dropdowns change reloads page with products parameter
+      function handleSelectorChange() {
+        var s1 = $selectorOne.value;
+        var s2 = $selectorTwo.value;
+        var params = [];
+
+        if (s1) params.push(s1);
+        if (s2) params.push(s2);
+
+        if (params.length > 0) {
+          window.location.href = '/compare?products=' + encodeURIComponent(params.join(','));
+        } else {
+          window.location.href = '/compare';
+        }
+      }
+
+      $selectorOne.onchange = handleSelectorChange;
+      $selectorTwo.onchange = handleSelectorChange;
+
+      // Render the comparison spec table
+      function renderComparison() {
+        if (!comparedProducts || comparedProducts.length === 0) {
+          $compareView.innerHTML = 
+            '<div class="compare-table-card compare-empty-state">' +
+              '<svg class="empty-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+                '<line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line>' +
+              '</svg>' +
+              '<h3 class="empty-title">No Books Selected</h3>' +
+              '<p class="empty-desc">Select one or two bestselling e-books in the top dropdowns to compare pricing, verified star ratings, and detailed book specifications side-by-side.</p>' +
+            '</div>';
+          return;
+        }
+
+        var p1 = comparedProducts[0];
+        var p2 = comparedProducts[1] || null;
+
+        // Determine winner metric highlights
+        var p1PriceWinner = p2 && p1.price < p2.price;
+        var p2PriceWinner = p2 && p2.price < p1.price;
+        
+        var p1RatingWinner = p2 && p1.rating > p2.rating;
+        var p2RatingWinner = p2 && p2.rating > p1.rating;
+
+        var p1DiscountWinner = p2 && p1.discount > p2.discount;
+        var p2DiscountWinner = p2 && p2.discount > p1.discount;
+
+        var colSpan = p2 ? '3' : '2';
+
+        var html = '<div class="compare-table-card"><div class="compare-grid">';
+
+        // --- ROW 1: HERO / NAME (IMAGE BINDING ACTIVE) ---
+        var p1Visual = p1.image ? '<img class="hero-img" src="' + esc(p1.image) + '" alt="' + esc(p1.name) + '">' : getCategoryIconSVG(p1.category, p1.name, p1.brand);
+        html += 
+          '<div class="compare-cell cell-label">Product</div>' +
+          '<div class="compare-cell cell-product-hero">' +
+            '<div class="hero-image-box" style="display:flex;align-items:center;justify-content:center;height:140px;width:100%;">' + p1Visual + '</div>' +
+            '<span class="hero-brand">' + esc(p1.brand) + '</span>' +
+            '<h3 class="hero-name" style="font-size:14px;">' + esc(p1.name) + '</h3>' +
+            '<span class="badge-deal" style="background:' + p1.badgeColor + ';color:#fff;">' + esc(p1.badge) + '</span>' +
+          '</div>';
+
+        if (p2) {
+          var p2Visual = p2.image ? '<img class="hero-img" src="' + esc(p2.image) + '" alt="' + esc(p2.name) + '">' : getCategoryIconSVG(p2.category, p2.name, p2.brand);
+          html += 
+            '<div class="compare-cell cell-product-hero">' +
+              '<div class="hero-image-box" style="display:flex;align-items:center;justify-content:center;height:140px;width:100%;">' + p2Visual + '</div>' +
+              '<span class="hero-brand">' + esc(p2.brand) + '</span>' +
+              '<h3 class="hero-name" style="font-size:14px;">' + esc(p2.name) + '</h3>' +
+              '<span class="badge-deal" style="background:' + p2.badgeColor + ';color:#fff;">' + esc(p2.badge) + '</span>' +
+            '</div>';
+        } else {
+          html += 
+            '<div class="compare-cell cell-product-hero" style="color:#8D9090;justify-content:center">' +
+              '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>' +
+              '<span style="font-size:13px;font-weight:700;">Add second book above</span>' +
+            '</div>';
+        }
+        html += '</div>';
+
+        // --- ROW 2: CATEGORY ---
+        html += '<div class="compare-row">' +
+          '<div class="compare-cell cell-label">Category</div>' +
+          '<div class="compare-cell" style="font-weight:700">' + esc(p1.category) + '</div>';
+        if (p2) {
+          html += '<div class="compare-cell" style="font-weight:700">' + esc(p2.category) + '</div>';
+        } else {
+          html += '<div class="compare-cell" style="color:#8D9090">--</div>';
+        }
+        html += '</div>';
+
+        // --- ROW 3: LOWEST PRICE ---
+        html += '<div class="compare-row">' +
+          '<div class="compare-cell cell-label">Lowest Price</div>' +
+          '<div class="compare-cell ' + (p1PriceWinner ? 'winner-highlight' : '') + '">' +
+            '<span class="price-value">₹' + p1.price.toLocaleString('en-IN') + '</span>' +
+            '<span class="price-mrp">MRP ₹' + p1.mrp.toLocaleString('en-IN') + '</span>' +
+            (p1PriceWinner ? '<span class="winner-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>Cheapest Pick</span>' : '') +
+          '</div>';
+        if (p2) {
+          html += '<div class="compare-cell ' + (p2PriceWinner ? 'winner-highlight' : '') + '">' +
+            '<span class="price-value">₹' + p2.price.toLocaleString('en-IN') + '</span>' +
+            '<span class="price-mrp">MRP ₹' + p2.mrp.toLocaleString('en-IN') + '</span>' +
+            (p2PriceWinner ? '<span class="winner-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>Cheapest Pick</span>' : '') +
+          '</div>';
+        } else {
+          html += '<div class="compare-cell" style="color:#8D9090">--</div>';
+        }
+        html += '</div>';
+
+        // --- ROW 4: DISCOUNT ---
+        html += '<div class="compare-row">' +
+          '<div class="compare-cell cell-label">Discount</div>' +
+          '<div class="compare-cell ' + (p1DiscountWinner ? 'winner-highlight' : '') + '">' +
+            '<span class="price-value" style="color:#CC0C39">' + p1.discount + '% Off</span>' +
+            (p1DiscountWinner ? '<span class="winner-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>Max Savings</span>' : '') +
+          '</div>';
+        if (p2) {
+          html += '<div class="compare-cell ' + (p2DiscountWinner ? 'winner-highlight' : '') + '">' +
+            '<span class="price-value" style="color:#CC0C39">' + p2.discount + '% Off</span>' +
+            (p2DiscountWinner ? '<span class="winner-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>Max Savings</span>' : '') +
+          '</div>';
+        } else {
+          html += '<div class="compare-cell" style="color:#8D9090">--</div>';
+        }
+        html += '</div>';
+
+        // --- ROW 5: RATING ---
+        html += '<div class="compare-row">' +
+          '<div class="compare-cell cell-label">Rating</div>' +
+          '<div class="compare-cell ' + (p1RatingWinner ? 'winner-highlight' : '') + '">' +
+            '<div class="stars-row">' + renderStars(p1.rating) + '&nbsp;' + p1.rating + ' / 5</div>' +
+            '<span style="font-size:11.5px;color:#565959;margin-top:2px">(' + p1.ratingCount.toLocaleString('en-IN') + ' votes)</span>' +
+            (p1RatingWinner ? '<span class="winner-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>Top Rated</span>' : '') +
+          '</div>';
+        if (p2) {
+          html += '<div class="compare-cell ' + (p2RatingWinner ? 'winner-highlight' : '') + '">' +
+            '<div class="stars-row">' + renderStars(p2.rating) + '&nbsp;' + p2.rating + ' / 5</div>' +
+            '<span style="font-size:11.5px;color:#565959;margin-top:2px">(' + p2.ratingCount.toLocaleString('en-IN') + ' votes)</span>' +
+            (p2RatingWinner ? '<span class="winner-badge"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>Top Rated</span>' : '') +
+          '</div>';
+        } else {
+          html += '<div class="compare-cell" style="color:#8D9090">--</div>';
+        }
+        html += '</div>';
+
+        // --- SECTION HEADER: SPECS ---
+        html += '<div class="compare-row" style="background:#F7F8F8;border-top:1px solid #D5D9D9">' +
+          '<div class="compare-cell cell-label" style="background:#F0F2F2">Book Details</div>' +
+          '<div class="compare-cell" style="grid-column: 2 / ' + colSpan + ';font-weight:700;font-size:13px;text-transform:uppercase;color:#4B5563;letter-spacing:1px;padding:12px 24px;">Detailed Specifications Matrix</div>' +
+          '</div>';
+
+        // Unique specs label mapping list
+        var specKeysMap = {};
+        for (var i0 = 0; i0 < p1.specs.length; i0++) {
+          specKeysMap[p1.specs[i0].label] = true;
+        }
+        if (p2) {
+          for (var i1 = 0; i1 < p2.specs.length; i1++) {
+            specKeysMap[p2.specs[i1].label] = true;
+          }
+        }
+        var specLabels = Object.keys(specKeysMap);
+
+        for (var s = 0; s < specLabels.length; s++) {
+          var label = specLabels[s];
+          var val1 = findSpecValue(p1, label);
+          var val2 = p2 ? findSpecValue(p2, label) : '--';
+
+          html += '<div class="compare-row">' +
+            '<div class="compare-cell cell-label">' + esc(label) + '</div>' +
+            '<div class="compare-cell" style="font-weight:600">' + esc(val1) + '</div>';
+          if (p2) {
+            html += '<div class="compare-cell" style="font-weight:600">' + esc(val2) + '</div>';
+          } else {
+            html += '<div class="compare-cell" style="color:#8D9090">--</div>';
+          }
+          html += '</div>';
+        }
+
+        // --- SECTION HEADER: VERDICT ---
+        html += '<div class="compare-row" style="background:#F7F8F8;border-top:1px solid #D5D9D9">' +
+          '<div class="compare-cell cell-label" style="background:#F0F2F2">Likes &amp; Weaknesses</div>' +
+          '<div class="compare-cell" style="grid-column: 2 / ' + colSpan + ';font-weight:700;font-size:13px;text-transform:uppercase;color:#4B5563;letter-spacing:1px;padding:12px 24px;">Honest Book Verdict</div>' +
+          '</div>';
+
+        // Pros Row
+        var pros1 = '';
+        for (var pr1 = 0; pr1 < p1.pros.length; pr1++) {
+          pros1 += '<li class="compare-list-item"><svg class="pro-check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>' + esc(p1.pros[pr1]) + '</span></li>';
+        }
+        var pros2 = '';
+        if (p2) {
+          for (var pr2 = 0; pr2 < p2.pros.length; pr2++) {
+            pros2 += '<li class="compare-list-item"><svg class="pro-check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>' + esc(p2.pros[pr2]) + '</span></li>';
+          }
+        }
+
+        html += '<div class="compare-row">' +
+          '<div class="compare-cell cell-label" style="color:#007600">What We Like</div>' +
+          '<div class="compare-cell"><ul class="compare-list">' + pros1 + '</ul></div>';
+        if (p2) {
+          html += '<div class="compare-cell"><ul class="compare-list">' + pros2 + '</ul></div>';
+        } else {
+          html += '<div class="compare-cell" style="color:#8D9090">--</div>';
+        }
+        html += '</div>';
+
+        // Cons Row
+        var cons1 = '';
+        for (var cn1 = 0; cn1 < p1.cons.length; cn1++) {
+          cons1 += '<li class="compare-list-item"><svg class="con-warning-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg><span>' + esc(p1.cons[cn1]) + '</span></li>';
+        }
+        var cons2 = '';
+        if (p2) {
+          for (var cn2 = 0; cn2 < p2.cons.length; cn2++) {
+            cons2 += '<li class="compare-list-item"><svg class="con-warning-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg><span>' + esc(p2.cons[cn2]) + '</span></li>';
+          }
+        }
+
+        html += '<div class="compare-row">' +
+          '<div class="compare-cell cell-label" style="color:#CC0C39">Watch Out For</div>' +
+          '<div class="compare-cell"><ul class="compare-list">' + cons1 + '</ul></div>';
+        if (p2) {
+          html += '<div class="compare-cell"><ul class="compare-list">' + cons2 + '</ul></div>';
+        } else {
+          html += '<div class="compare-cell" style="color:#8D9090">--</div>';
+        }
+        html += '</div>';
+
+        // --- ROW LAST: ACTION REDIRECT BUY BUTTONS ---
+        html += '<div class="compare-row">' +
+          '<div class="compare-cell cell-label" style="background:#F7F8F8">Action Deal</div>' +
+          '<div class="compare-cell">' +
+            '<div class="cell-cta-box">' +
+              '<a href="/go/' + p1.slug + '?platform=amazon&utm_source=compare" class="btn-buy btn-amazon" target="_blank"><span>Get on Kindle</span></a>' +
+              '<a href="/go/' + p1.slug + '?platform=flipkart&utm_source=compare" class="btn-buy btn-flipkart" target="_blank"><span>Get on Kobo</span></a>' +
+              '<a href="/product/' + p1.slug + '" style="font-size:12.5px;font-weight:750;color:#007185;text-align:center;text-decoration:none;margin-top:6px;">Detailed Honest Verdict &rarr;</a>' +
+            '</div>' +
+          '</div>';
+
+        if (p2) {
+          html += '<div class="compare-cell">' +
+            '<div class="cell-cta-box">' +
+              '<a href="/go/' + p2.slug + '?platform=amazon&utm_source=compare" class="btn-buy btn-amazon" target="_blank"><span>Get on Kindle</span></a>' +
+              '<a href="/go/' + p2.slug + '?platform=flipkart&utm_source=compare" class="btn-buy btn-flipkart" target="_blank"><span>Get on Kobo</span></a>' +
+              '<a href="/product/' + p2.slug + '" style="font-size:12.5px;font-weight:750;color:#007185;text-align:center;text-decoration:none;margin-top:6px;">Detailed Honest Verdict &rarr;</a>' +
+            '</div>' +
+          '</div>';
+        } else {
+          html += '<div class="compare-cell" style="color:#565959;justify-content:center;text-align:center;font-weight:600;">Choose a second book in the top dropdowns to compare pricing &amp; details side-by-side!</div>';
+        }
+        html += '</div>';
+
+        html += '</div></div>';
+
+        $compareView.innerHTML = html;
+      }
+
+      function findSpecValue(productObj, labelStr) {
+        for (var i = 0; i < productObj.specs.length; i++) {
+          if (productObj.specs[i].label === labelStr) {
+            return productObj.specs[i].value;
+          }
+        }
+        return 'Not Specified';
+      }
+
+      function renderStars(rating) {
+        var full = Math.floor(rating);
+        var html = '';
+        for (var i = 0; i < 5; i++) {
+          if (i < full) {
+            html += '<svg class="star-filled-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>';
+          } else {
+            html += '<svg class="star-empty-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>';
+          }
+        }
+        return html;
+      }
+
+      function getCategoryIconSVG(cat, name, brand) {
+        var colorSeed = name ? name.charCodeAt(0) + name.charCodeAt(name.length-1) : 0;
+        var colors = [
+          { bg: '#1e293b', fg: '#f1f5f9', spine: '#0f172a' },
+          { bg: '#7c2d12', fg: '#ffedd5', spine: '#431407' },
+          { bg: '#064e3b', fg: '#d1fae5', spine: '#022c22' },
+          { bg: '#1e3a8a', fg: '#dbeafe', spine: '#172554' },
+          { bg: '#581c87', fg: '#f3e8ff', spine: '#3b0764' }
+        ];
+        var theme = colors[colorSeed % colors.length];
+
+        return '<div style="width:100%;height:100%;background:' + theme.bg + ';color:' + theme.fg + ';padding:14px 8px;display:flex;flex-direction:column;justify-content:space-between;border-radius:4px;box-shadow:inset 4px 0 6px rgba(0,0,0,0.3);position:relative;border-left:4px solid ' + theme.spine + ';box-sizing:border-box;min-height:120px;">' +
+          '<div style="font-size:7px;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;color:rgba(255,255,255,0.6)">' + esc(cat) + '</div>' +
+          '<div style="font-family:\'Outfit\',sans-serif;font-size:10px;font-weight:900;line-height:1.2;margin:4px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:left;">' + esc(name) + '</div>' +
+          '<div style="font-size:8px;font-weight:700;text-align:left;border-top:1px solid rgba(255,255,255,0.2);padding-top:4px;">' + esc(brand) + '</div>' +
+        '</div>';
+      }
+
+      renderComparison();
+
+      /* ── LEAD ALERTS CAPTURE ── */
+      var $leadForm = document.getElementById('leadForm');
+      var $leadEmail = document.getElementById('leadEmail');
+      var $leadMsgText = document.getElementById('leadMsgText');
+      var $leadSubmitBtn = document.getElementById('leadSubmitBtn');
+
+      $leadForm.onsubmit = function(e) {
+        e.preventDefault();
+        var email = $leadEmail.value.trim();
+
+        $leadSubmitBtn.textContent = 'Registering...';
+        $leadSubmitBtn.disabled = true;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/subscribe', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+          $leadSubmitBtn.textContent = 'Subscribe Alerts';
+          $leadSubmitBtn.disabled = false;
+          try {
+            var res = JSON.parse(xhr.responseText);
+            if (xhr.status === 200 && res.success) {
+              $leadMsgText.style.color = '#007600';
+              $leadMsgText.textContent = '✓ SUCCESS: Pricing drop alerts registered successfully!';
+              $leadEmail.value = '';
+            } else {
+              $leadMsgText.style.color = '#CC0C39';
+              $leadMsgText.textContent = '✗ ERROR: ' + (res.error || 'Failed to subscribe.');
+            }
+          } catch(e) {
+            $leadMsgText.style.color = '#CC0C39';
+            $leadMsgText.textContent = '✗ Server connection failed.';
+          }
+        };
+        xhr.send(JSON.stringify({ email: email, categories: ['General Comparison'] }));
+      };
+
+      function esc(s) {
+        if (!s) return '';
+        var d = document.createElement('div');
+        d.appendChild(document.createTextNode(s));
+        return d.innerHTML;
+      }
+
+    })();
+  </script>
+</body>
+</html>

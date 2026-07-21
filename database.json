@@ -1,0 +1,1170 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "slug": "atomic-habits",
+      "name": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+      "brand": "James Clear",
+      "category": "Self-Help & Mindset",
+      "price": 149,
+      "mrp": 499,
+      "discount": 70,
+      "badge": "#1 BESTSELLER",
+      "badgeColor": "#FFA41C",
+      "rating": 4.8,
+      "ratingCount": 120450,
+      "image": "https://m.media-amazon.com/images/I/81YkqyaFVEL._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "James Clear"
+        },
+        {
+          "label": "Publisher",
+          "value": "Avery"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "320 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0735213180"
+        }
+      ],
+      "pros": [
+        "Extremely actionable with clear frameworks",
+        "Easy-to-read narrative style",
+        "Based on solid psychological principles",
+        "Includes downloadable bonus templates"
+      ],
+      "cons": [
+        "Some concepts are repetition of classic habit psychology",
+        "Requires persistent effort to apply"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B07D2RYQQH?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B07D2RYQQH?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/atomic-habits/p/itm54?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 2,
+      "slug": "cant-hurt-me",
+      "name": "Can't Hurt Me: Master Your Mind and Defy the Odds",
+      "brand": "David Goggins",
+      "category": "Self-Help & Mindset",
+      "price": 199,
+      "mrp": 599,
+      "discount": 67,
+      "badge": "UNCOMMON AMONGST UNCOMMON",
+      "badgeColor": "#10B981",
+      "rating": 4.9,
+      "ratingCount": 78500,
+      "image": "https://m.media-amazon.com/images/I/81gTRv2HXrL._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "David Goggins"
+        },
+        {
+          "label": "Publisher",
+          "value": "Lioncrest Publishing"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "364 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-1544512280"
+        }
+      ],
+      "pros": [
+        "Highly motivating raw memoir",
+        "Includes structured challenges at the end of chapters",
+        "Very candid and unfiltered account",
+        "Inspiring work ethic lessons"
+      ],
+      "cons": [
+        "Extremely intense vocabulary",
+        "His extreme methods may not suit everyone"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B07H453KGH?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B07H453KGH?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/cant-hurt-me/p/itm21?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 3,
+      "slug": "thinking-fast-and-slow",
+      "name": "Thinking, Fast and Slow",
+      "brand": "Daniel Kahneman",
+      "category": "Self-Help & Mindset",
+      "price": 249,
+      "mrp": 699,
+      "discount": 64,
+      "badge": "NOBEL PRIZE WINNER",
+      "badgeColor": "#3B82F6",
+      "rating": 4.6,
+      "ratingCount": 42150,
+      "image": "https://m.media-amazon.com/images/I/71f6E+CDB-L._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Daniel Kahneman"
+        },
+        {
+          "label": "Publisher",
+          "value": "Farrar, Straus and Giroux"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "499 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0374533557"
+        }
+      ],
+      "pros": [
+        "Deeply researched cognitive psychology",
+        "Explains System 1 and System 2 thinking clearly",
+        "Fascinating insights into human error and biases",
+        "Life-changing perspective on decision making"
+      ],
+      "cons": [
+        "Dense academic writing style",
+        "Can be a slow read for some"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B00555X8OA?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B00555X8OA?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/thinking-fast-and-slow/p/itm87?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 4,
+      "slug": "zero-to-one",
+      "name": "Zero to One: Notes on Startups, or How to Build the Future",
+      "brand": "Peter Thiel",
+      "category": "Business & Startups",
+      "price": 189,
+      "mrp": 499,
+      "discount": 62,
+      "badge": "SILICON VALLEY CLASSIC",
+      "badgeColor": "#8B5CF6",
+      "rating": 4.6,
+      "ratingCount": 56900,
+      "image": "https://m.media-amazon.com/images/I/71m-MxdJ2WL._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Peter Thiel"
+        },
+        {
+          "label": "Publisher",
+          "value": "Crown Business"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "195 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0804139298"
+        }
+      ],
+      "pros": [
+        "Unique philosophy on monopolies vs competition",
+        "Short, concise, and punchy",
+        "Provocative contrarian questions",
+        "Great guidance on technology startups"
+      ],
+      "cons": [
+        "Somewhat opinionated and idealistic",
+        "Less focus on early-stage execution details"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B00J6YBOFQ?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B00J6YBOFQ?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/zero-to-one/p/itm19?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 5,
+      "slug": "the-lean-startup",
+      "name": "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation",
+      "brand": "Eric Ries",
+      "category": "Business & Startups",
+      "price": 220,
+      "mrp": 599,
+      "discount": 63,
+      "badge": "FOUNDER BIBLE",
+      "badgeColor": "#EC4899",
+      "rating": 4.7,
+      "ratingCount": 31200,
+      "image": "https://m.media-amazon.com/images/I/81vvgZqCskL._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Eric Ries"
+        },
+        {
+          "label": "Publisher",
+          "value": "Crown Business"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "336 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0307887894"
+        }
+      ],
+      "pros": [
+        "Build-Measure-Learn feedback loop framework",
+        "Minimizes wasted capital and resources",
+        "Clear definition of Minimum Viable Product (MVP)",
+        "Highly practical metrics tracking guidance"
+      ],
+      "cons": [
+        "Better suited for tech startups than traditional business",
+        "Can feel repetitive in later sections"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B004J4XGN6?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B004J4XGN6?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/the-lean-startup/p/itm38?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 6,
+      "slug": "the-100-startup",
+      "name": "The $100 Startup: Reinvent the Way You Make a Living",
+      "brand": "Chris Guillebeau",
+      "category": "Business & Startups",
+      "price": 139,
+      "mrp": 399,
+      "discount": 65,
+      "badge": "SIDE HUSTLE MANUAL",
+      "badgeColor": "#3B82F6",
+      "rating": 4.5,
+      "ratingCount": 15600,
+      "image": "https://m.media-amazon.com/images/I/810U7p60g-L._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Chris Guillebeau"
+        },
+        {
+          "label": "Publisher",
+          "value": "Crown Business"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "304 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0307951526"
+        }
+      ],
+      "pros": [
+        "Excellent case studies of micropreneurs",
+        "Very approachable low-risk ideas",
+        "Practical action plans for quick launch",
+        "Focuses on turning passions into profit"
+      ],
+      "cons": [
+        "Mostly digital/lifestyle business focus",
+        "Lacks detailed legal or tax accounting guidance"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B007361BEU?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B007361BEU?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/100-startup/p/itm20?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 7,
+      "slug": "clean-code",
+      "name": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "brand": "Robert C. Martin",
+      "category": "Technology & Coding",
+      "price": 499,
+      "mrp": 1499,
+      "discount": 67,
+      "badge": "DEVELOPER ESSENTIAL",
+      "badgeColor": "#F59E0B",
+      "rating": 4.7,
+      "ratingCount": 22100,
+      "image": "https://m.media-amazon.com/images/I/51E200Ae80L._SL1000_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Robert C. Martin"
+        },
+        {
+          "label": "Publisher",
+          "value": "Prentice Hall"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "464 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0132350884"
+        }
+      ],
+      "pros": [
+        "Practical principles for writing clean code",
+        "Tons of clear code examples and refactoring",
+        "Timeless Agile software craftsmanship tips",
+        "Explains meaningful naming, functions, and testing"
+      ],
+      "cons": [
+        "Examples are strictly in Java",
+        "Highly opinionated guidelines"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B001GSTOAM?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B001GSTOAM?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/clean-code/p/itm09?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 8,
+      "slug": "the-pragmatic-programmer",
+      "name": "The Pragmatic Programmer: Your Journey to Mastery",
+      "brand": "Andrew Hunt",
+      "category": "Technology & Coding",
+      "price": 520,
+      "mrp": 1599,
+      "discount": 67,
+      "badge": "DEV WORLD STANDARD",
+      "badgeColor": "#10B981",
+      "rating": 4.8,
+      "ratingCount": 16400,
+      "image": "https://m.media-amazon.com/images/I/71f743sOPoL._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "David Thomas & Andrew Hunt"
+        },
+        {
+          "label": "Publisher",
+          "value": "Addison-Wesley Professional"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "352 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0135957059"
+        }
+      ],
+      "pros": [
+        "Full of practical software development wisdom",
+        "Highly entertaining stories and analogies",
+        "Focuses on careers, code maintenance, and automation",
+        "Great advice on testing and debugging"
+      ],
+      "cons": [
+        "Broad overview rather than deep coding tutorials",
+        "Kindle formatting could be slightly better"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B07VXS47H2?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B07VXS47H2?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/pragmatic-programmer/p/itm41?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 9,
+      "slug": "designing-data-intensive-applications",
+      "name": "Designing Data-Intensive Applications",
+      "brand": "Martin Kleppmann",
+      "category": "Technology & Coding",
+      "price": 649,
+      "mrp": 1899,
+      "discount": 66,
+      "badge": "ARCHITECT BIBLE",
+      "badgeColor": "#8B5CF6",
+      "rating": 4.9,
+      "ratingCount": 14200,
+      "image": "https://m.media-amazon.com/images/I/91YnfL+26-L._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Martin Kleppmann"
+        },
+        {
+          "label": "Publisher",
+          "value": "O'Reilly Media"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "611 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-1449373320"
+        }
+      ],
+      "pros": [
+        "Masterful breakdown of databases and storage engines",
+        "Explains consensus, replication, and scaling perfectly",
+        "Beautiful hand-drawn conceptual architecture diagrams",
+        "Highly educational for senior software engineers"
+      ],
+      "cons": [
+        "Extremely dense and technical",
+        "Requires basic systems understanding beforehand"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B06XP5FCYC?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B06XP5FCYC?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/designing-data-intensive-applications/p/itm12?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 10,
+      "slug": "psychology-of-money",
+      "name": "The Psychology of Money: Timeless lessons on wealth, greed, and happiness",
+      "brand": "Morgan Housel",
+      "category": "Finance & Investing",
+      "price": 129,
+      "mrp": 399,
+      "discount": 68,
+      "badge": "POPULAR CHOICE",
+      "badgeColor": "#FFA41C",
+      "rating": 4.8,
+      "ratingCount": 98500,
+      "image": "https://m.media-amazon.com/images/I/71g2ednj0JL._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Morgan Housel"
+        },
+        {
+          "label": "Publisher",
+          "value": "Harriman House"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "256 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0857197689"
+        }
+      ],
+      "pros": [
+        "Brilliant short stories about money management behavior",
+        "Shows how emotional intelligence beats mathematical IQ",
+        "Fascinating thoughts on long-term compounded growth",
+        "Very easy to read and understand"
+      ],
+      "cons": [
+        "Lacks stock picking formulas or deep market math",
+        "Some stories might feel repetitive if you read Housel's blog"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B08D79TV6V?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B08D79TV6V?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/psychology-money/p/itm11?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 11,
+      "slug": "rich-dad-poor-dad",
+      "name": "Rich Dad Poor Dad: What the Rich Teach Their Kids About Money",
+      "brand": "Robert T. Kiyosaki",
+      "category": "Finance & Investing",
+      "price": 149,
+      "mrp": 499,
+      "discount": 70,
+      "badge": "GLOBAL BLOCKBUSTER",
+      "badgeColor": "#EF4444",
+      "rating": 4.6,
+      "ratingCount": 189400,
+      "image": "https://m.media-amazon.com/images/I/81bnd7x885L._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Robert T. Kiyosaki"
+        },
+        {
+          "label": "Publisher",
+          "value": "Plata Publishing"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "336 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-1612680194"
+        }
+      ],
+      "pros": [
+        "Eye-opening ideas about assets vs liabilities",
+        "Excellent financial literacy foundations",
+        "Inspires business building and real estate investing",
+        "Highly readable dialogue-driven chapters"
+      ],
+      "cons": [
+        "Contains some financial advice that might be outdated",
+        "Kiyosaki's stories are heavily dramatized"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B0175AE562?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B0175AE562?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/rich-dad-poor-dad/p/itm31?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 12,
+      "slug": "the-intelligent-investor",
+      "name": "The Intelligent Investor: The Definitive Book on Value Investing",
+      "brand": "Benjamin Graham",
+      "category": "Finance & Investing",
+      "price": 299,
+      "mrp": 799,
+      "discount": 63,
+      "badge": "INVESTING CLASSIC",
+      "badgeColor": "#3B82F6",
+      "rating": 4.5,
+      "ratingCount": 35400,
+      "image": "https://m.media-amazon.com/images/I/919mmN3WzWL._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Benjamin Graham"
+        },
+        {
+          "label": "Publisher",
+          "value": "Harper Business"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "640 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0060555665"
+        }
+      ],
+      "pros": [
+        "Warren Buffett's recommended investing guide",
+        "Teaches margin of safety and value investing concepts",
+        "Invaluable strategies for defensive & enterprising investors",
+        "Focuses on emotional discipline and analytical logic"
+      ],
+      "cons": [
+        "Extremely dense and dry language",
+        "Financial examples are historically dated (1970s)"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B000FC0KB0?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B000FC0KB0?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/intelligent-investor/p/itm32?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 13,
+      "slug": "dune",
+      "name": "Dune: The Deluxe Edition",
+      "brand": "Frank Herbert",
+      "category": "Fiction & Sci-Fi",
+      "price": 199,
+      "mrp": 599,
+      "discount": 67,
+      "badge": "SCI-FI MASTERPIECE",
+      "badgeColor": "#8B5CF6",
+      "rating": 4.7,
+      "ratingCount": 54600,
+      "image": "https://m.media-amazon.com/images/I/81U5O3WbU8L._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Frank Herbert"
+        },
+        {
+          "label": "Publisher",
+          "value": "Ace Books"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "608 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0441172719"
+        }
+      ],
+      "pros": [
+        "Masterful worldbuilding and deep ecology themes",
+        "Engaging mix of politics, religion, and philosophy",
+        "Iconic characters like Paul Atreides",
+        "Pioneered modern space-opera sci-fi"
+      ],
+      "cons": [
+        "Includes complex lists of jargon and terminologies",
+        "Slow pacing in the second act"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B00B7D055A?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B00B7D055A?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/dune/p/itm100?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 14,
+      "slug": "project-hail-mary",
+      "name": "Project Hail Mary: A Novel",
+      "brand": "Andy Weir",
+      "category": "Fiction & Sci-Fi",
+      "price": 249,
+      "mrp": 699,
+      "discount": 64,
+      "badge": "#1 BEST SCI-FI 2021",
+      "badgeColor": "#10B981",
+      "rating": 4.8,
+      "ratingCount": 38900,
+      "image": "https://m.media-amazon.com/images/I/91t4t-R9w3L._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "Andy Weir"
+        },
+        {
+          "label": "Publisher",
+          "value": "Ballantine Books"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "476 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0593135204"
+        }
+      ],
+      "pros": [
+        "Incredibly detailed and engaging hard science",
+        "Brilliant and heartwarming buddy-sci-fi dynamic",
+        "Fast-paced, high-stakes space survival mission",
+        "Written by author of The Martian"
+      ],
+      "cons": [
+        "Main character shares similar humor as Mark Watney",
+        "Some science calculations can be dense for casual readers"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B08FBFQ4DE?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B08FBFQ4DE?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/project-hail-mary/p/itm88?affid=amzbooks"
+      },
+      "active": true
+    },
+    {
+      "id": 15,
+      "slug": "neuromancer",
+      "name": "Neuromancer: The Cyberpunk Classic",
+      "brand": "William Gibson",
+      "category": "Fiction & Sci-Fi",
+      "price": 149,
+      "mrp": 399,
+      "discount": 63,
+      "badge": "CYBERPUNK INVENTOR",
+      "badgeColor": "#EC4899",
+      "rating": 4.4,
+      "ratingCount": 18400,
+      "image": "https://m.media-amazon.com/images/I/81z7-tE+oYL._SL1500_.jpg",
+      "specs": [
+        {
+          "label": "Author",
+          "value": "William Gibson"
+        },
+        {
+          "label": "Publisher",
+          "value": "Ace Books"
+        },
+        {
+          "label": "Format",
+          "value": "Kindle Edition"
+        },
+        {
+          "label": "Pages",
+          "value": "271 Pages"
+        },
+        {
+          "label": "Language",
+          "value": "English"
+        },
+        {
+          "label": "ISBN-13",
+          "value": "978-0441569595"
+        }
+      ],
+      "pros": [
+        "Invented the term \"Cyberspace\" and Cyberpunk style",
+        "Incredibly rich, futuristic descriptions",
+        "Cohesive atmosphere and gritty world",
+        "Hugely influential for movies like The Matrix"
+      ],
+      "cons": [
+        "Highly complex prose and quick jargon shifts",
+        "Very fast-paced plot requires full attention"
+      ],
+      "affiliateUrl": "https://www.amazon.in/dp/B000O76ONU?tag=amzbooks-21",
+      "affiliateLinks": {
+        "amazon": "https://www.amazon.in/dp/B000O76ONU?tag=amzbooks-21",
+        "flipkart": "https://www.flipkart.com/neuromancer/p/itm23?affid=amzbooks"
+      },
+      "active": true
+    }
+  ],
+  "clickLogs": [
+    {
+      "id": 1,
+      "clickId": "c061bffe5f7811a3",
+      "slug": "atomic-habits",
+      "platform": "amazon",
+      "productName": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+      "destinationUrl": "https://www.amazon.in/dp/B07D2RYQQH?tag=amzbooks-21",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "referer": "",
+      "clientIP": "::1",
+      "userAgent": "node",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:02:15.403Z",
+      "timestampFormatted": "2026-07-21 14:02:15 UTC",
+      "maskedSlug": "ato***its"
+    }
+  ],
+  "impressionLogs": [
+    {
+      "id": 1,
+      "type": "page_view",
+      "slug": "compare",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:17:25.482Z"
+    },
+    {
+      "id": 2,
+      "type": "page_view",
+      "slug": "atomic-habits",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:20:44.285Z"
+    },
+    {
+      "id": 3,
+      "type": "page_view",
+      "slug": "home",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:02.965Z"
+    },
+    {
+      "id": 4,
+      "type": "card_view",
+      "slug": "atomic-habits",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.034Z"
+    },
+    {
+      "id": 5,
+      "type": "card_view",
+      "slug": "cant-hurt-me",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.040Z"
+    },
+    {
+      "id": 6,
+      "type": "card_view",
+      "slug": "thinking-fast-and-slow",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.050Z"
+    },
+    {
+      "id": 7,
+      "type": "card_view",
+      "slug": "zero-to-one",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.054Z"
+    },
+    {
+      "id": 8,
+      "type": "card_view",
+      "slug": "the-lean-startup",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.059Z"
+    },
+    {
+      "id": 9,
+      "type": "card_view",
+      "slug": "clean-code",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.065Z"
+    },
+    {
+      "id": 10,
+      "type": "card_view",
+      "slug": "the-pragmatic-programmer",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.069Z"
+    },
+    {
+      "id": 11,
+      "type": "card_view",
+      "slug": "designing-data-intensive-applications",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.072Z"
+    },
+    {
+      "id": 12,
+      "type": "card_view",
+      "slug": "psychology-of-money",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.076Z"
+    },
+    {
+      "id": 13,
+      "type": "card_view",
+      "slug": "the-100-startup",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.080Z"
+    },
+    {
+      "id": 14,
+      "type": "card_view",
+      "slug": "rich-dad-poor-dad",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.085Z"
+    },
+    {
+      "id": 15,
+      "type": "card_view",
+      "slug": "the-intelligent-investor",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.089Z"
+    },
+    {
+      "id": 16,
+      "type": "card_view",
+      "slug": "dune",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.093Z"
+    },
+    {
+      "id": 17,
+      "type": "card_view",
+      "slug": "project-hail-mary",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.099Z"
+    },
+    {
+      "id": 18,
+      "type": "card_view",
+      "slug": "neuromancer",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Edge",
+      "os": "Windows",
+      "timestamp": "2026-05-28T17:22:03.103Z"
+    },
+    {
+      "id": 19,
+      "type": "page_view",
+      "slug": "compare",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:02:15.387Z"
+    },
+    {
+      "id": 20,
+      "type": "page_view",
+      "slug": "subscribe",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:02:15.390Z"
+    },
+    {
+      "id": 21,
+      "type": "page_view",
+      "slug": "atomic-habits",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:02:15.392Z"
+    },
+    {
+      "id": 22,
+      "type": "page_view",
+      "slug": "psychology-of-money",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-21T14:02:15.395Z"
+    }
+  ],
+  "subscribers": []
+}
