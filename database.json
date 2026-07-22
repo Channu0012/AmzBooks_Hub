@@ -1353,6 +1353,32 @@
       "browser": "Other",
       "os": "Other",
       "timestamp": "2026-07-21T14:38:40.736Z"
+    },
+    {
+      "id": 36,
+      "type": "page_view",
+      "slug": "home",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-22T15:40:32.853Z"
+    },
+    {
+      "id": 37,
+      "type": "page_view",
+      "slug": "home",
+      "utmSource": "direct",
+      "utmMedium": "",
+      "utmCampaign": "",
+      "clientIP": "::1",
+      "deviceType": "Desktop",
+      "browser": "Other",
+      "os": "Other",
+      "timestamp": "2026-07-22T15:40:32.874Z"
     }
   ],
   "subscribers": []

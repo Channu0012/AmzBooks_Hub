@@ -16,23 +16,23 @@
     }
 
     :root {
-      --bg-dark: #131921;
-      --bg-slate: #232F3E;
-      --gold-main: #FFA41C;
-      --gold-light: #FFE093;
-      --gold-dark: #D8B400;
-      --card-bg: #FFFFFF;
-      --text-main: #0F1111;
-      --text-sub: #565959;
-      --red-accent: #CC0C39;
-      --green-accent: #007600;
-      --blue-accent: #007185;
-      --radius: 14px;
+      --bg-dark: #0f172a;
+      --bg-slate: #1e293b;
+      --gold-main: #f59e0b;
+      --gold-light: #fef3c7;
+      --gold-dark: #d97706;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-sub: #64748b;
+      --red-accent: #ef4444;
+      --green-accent: #10b981;
+      --blue-accent: #3b82f6;
+      --radius: 16px;
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #EAEDED;
+      background-color: #f8fafc;
       color: var(--text-main);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
@@ -41,13 +41,15 @@
 
     /* ── TOP NAVIGATION ─────────────────────────── */
     .top-nav {
-      background: var(--bg-dark);
-      padding: 14px 24px;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 16px 24px;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 4px solid var(--gold-main);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      border-bottom: 2px solid var(--gold-main);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
     }
 
     .nav-container {
@@ -1636,294 +1638,9 @@
 
   <!-- STATIC EMBEDDED DATA ISLAND (Guarantees 100% offline & file:// fallback) -->
   <script id="static-products-data" type="application/json">
-  [
-    {
-      "id": 1,
-      "slug": "atomic-habits",
-      "name": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
-      "brand": "James Clear",
-      "category": "Self-Help & Mindset",
-      "price": 149,
-      "mrp": 499,
-      "discount": 70,
-      "badge": "#1 BESTSELLER",
-      "badgeColor": "#FFA41C",
-      "rating": 4.8,
-      "ratingCount": 120450,
-      "image": "https://m.media-amazon.com/images/I/81YkqyaFVEL._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"James Clear"},{"label":"Publisher","value":"Avery"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"320 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0735213180"}],
-      "pros": ["Extremely actionable with clear frameworks","Easy-to-read narrative style","Based on solid psychological principles","Includes downloadable bonus templates"],
-      "cons": ["Some concepts repetition of classic habit psychology","Requires persistent effort to apply"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B07D2RYQQH?tag=amzbooks-21","flipkart":"https://www.flipkart.com/atomic-habits/p/itm54?affid=amzbooks"}
-    },
-    {
-      "id": 2,
-      "slug": "cant-hurt-me",
-      "name": "Can't Hurt Me: Master Your Mind and Defy the Odds",
-      "brand": "David Goggins",
-      "category": "Self-Help & Mindset",
-      "price": 199,
-      "mrp": 599,
-      "discount": 67,
-      "badge": "UNCOMMON AMONGST UNCOMMON",
-      "badgeColor": "#10B981",
-      "rating": 4.9,
-      "ratingCount": 78500,
-      "image": "https://m.media-amazon.com/images/I/81gTRv2HXrL._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"David Goggins"},{"label":"Publisher","value":"Lioncrest Publishing"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"364 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-1544512280"}],
-      "pros": ["Highly motivating raw memoir","Includes structured challenges at chapter ends","Very candid and unfiltered account","Inspiring work ethic lessons"],
-      "cons": ["Extremely intense vocabulary","Methods may not suit everyone"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B07H453KGH?tag=amzbooks-21","flipkart":"https://www.flipkart.com/cant-hurt-me/p/itm21?affid=amzbooks"}
-    },
-    {
-      "id": 3,
-      "slug": "thinking-fast-and-slow",
-      "name": "Thinking, Fast and Slow",
-      "brand": "Daniel Kahneman",
-      "category": "Self-Help & Mindset",
-      "price": 249,
-      "mrp": 699,
-      "discount": 64,
-      "badge": "NOBEL PRIZE WINNER",
-      "badgeColor": "#3B82F6",
-      "rating": 4.6,
-      "ratingCount": 42150,
-      "image": "https://m.media-amazon.com/images/I/71f6E+CDB-L._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Daniel Kahneman"},{"label":"Publisher","value":"Farrar, Straus and Giroux"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"499 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0374533557"}],
-      "pros": ["Deeply researched cognitive psychology","Explains System 1 & 2 thinking","Fascinating insights into human error","Life-changing perspective"],
-      "cons": ["Dense academic writing style","Can be a slow read"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B00555X8OA?tag=amzbooks-21","flipkart":"https://www.flipkart.com/thinking-fast-and-slow/p/itm87?affid=amzbooks"}
-    },
-    {
-      "id": 4,
-      "slug": "zero-to-one",
-      "name": "Zero to One: Notes on Startups, or How to Build the Future",
-      "brand": "Peter Thiel",
-      "category": "Business & Startups",
-      "price": 189,
-      "mrp": 499,
-      "discount": 62,
-      "badge": "SILICON VALLEY CLASSIC",
-      "badgeColor": "#8B5CF6",
-      "rating": 4.6,
-      "ratingCount": 56900,
-      "image": "https://m.media-amazon.com/images/I/71m-MxdJ2WL._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Peter Thiel"},{"label":"Publisher","value":"Crown Business"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"195 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0804139298"}],
-      "pros": ["Unique philosophy on monopolies","Short, concise, and punchy","Provocative contrarian questions","Great guidance on tech startups"],
-      "cons": ["Somewhat opinionated","Less focus on early stage details"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B00J6YBOFQ?tag=amzbooks-21","flipkart":"https://www.flipkart.com/zero-to-one/p/itm19?affid=amzbooks"}
-    },
-    {
-      "id": 5,
-      "slug": "the-lean-startup",
-      "name": "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation",
-      "brand": "Eric Ries",
-      "category": "Business & Startups",
-      "price": 220,
-      "mrp": 599,
-      "discount": 63,
-      "badge": "FOUNDER BIBLE",
-      "badgeColor": "#EC4899",
-      "rating": 4.7,
-      "ratingCount": 31200,
-      "image": "https://m.media-amazon.com/images/I/81vvgZqCskL._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Eric Ries"},{"label":"Publisher","value":"Crown Business"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"336 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0307887894"}],
-      "pros": ["Build-Measure-Learn feedback loop","Minimizes wasted capital","Clear MVP definition","Practical metrics tracking"],
-      "cons": ["Tech startup focused","Can feel repetitive"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B004J4XGN6?tag=amzbooks-21","flipkart":"https://www.flipkart.com/the-lean-startup/p/itm38?affid=amzbooks"}
-    },
-    {
-      "id": 6,
-      "slug": "the-100-startup",
-      "name": "The $100 Startup: Reinvent the Way You Make a Living",
-      "brand": "Chris Guillebeau",
-      "category": "Business & Startups",
-      "price": 139,
-      "mrp": 399,
-      "discount": 65,
-      "badge": "SIDE HUSTLE MANUAL",
-      "badgeColor": "#3B82F6",
-      "rating": 4.5,
-      "ratingCount": 15600,
-      "image": "https://m.media-amazon.com/images/I/810U7p60g-L._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Chris Guillebeau"},{"label":"Publisher","value":"Crown Business"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"304 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0307951526"}],
-      "pros": ["Case studies of micropreneurs","Low-risk business ideas","Practical action plans","Turn passion into profit"],
-      "cons": ["Digital lifestyle focus","Lacks legal/tax details"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B007361BEU?tag=amzbooks-21","flipkart":"https://www.flipkart.com/100-startup/p/itm20?affid=amzbooks"}
-    },
-    {
-      "id": 7,
-      "slug": "clean-code",
-      "name": "Clean Code: A Handbook of Agile Software Craftsmanship",
-      "brand": "Robert C. Martin",
-      "category": "Technology & Coding",
-      "price": 499,
-      "mrp": 1499,
-      "discount": 67,
-      "badge": "DEVELOPER ESSENTIAL",
-      "badgeColor": "#F59E0B",
-      "rating": 4.7,
-      "ratingCount": 22100,
-      "image": "https://m.media-amazon.com/images/I/51E200Ae80L._SL1000_.jpg",
-      "specs": [{"label":"Author","value":"Robert C. Martin"},{"label":"Publisher","value":"Prentice Hall"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"464 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0132350884"}],
-      "pros": ["Practical clean code principles","Tons of clear refactoring examples","Timeless Agile craftsmanship","Explains functions & testing"],
-      "cons": ["Java-centric examples","Opinionated guidelines"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B001GSTOAM?tag=amzbooks-21","flipkart":"https://www.flipkart.com/clean-code/p/itm09?affid=amzbooks"}
-    },
-    {
-      "id": 8,
-      "slug": "the-pragmatic-programmer",
-      "name": "The Pragmatic Programmer: Your Journey to Mastery",
-      "brand": "Andrew Hunt",
-      "category": "Technology & Coding",
-      "price": 520,
-      "mrp": 1599,
-      "discount": 67,
-      "badge": "DEV WORLD STANDARD",
-      "badgeColor": "#10B981",
-      "rating": 4.8,
-      "ratingCount": 16400,
-      "image": "https://m.media-amazon.com/images/I/71f743sOPoL._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"David Thomas & Andrew Hunt"},{"label":"Publisher","value":"Addison-Wesley Professional"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"352 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0135957059"}],
-      "pros": ["Practical software engineering wisdom","Entertaining analogies & stories","Focuses on career & automation","Great debugging advice"],
-      "cons": ["Broad overview","Requires coding background"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B07VXS47H2?tag=amzbooks-21","flipkart":"https://www.flipkart.com/pragmatic-programmer/p/itm41?affid=amzbooks"}
-    },
-    {
-      "id": 9,
-      "slug": "designing-data-intensive-applications",
-      "name": "Designing Data-Intensive Applications",
-      "brand": "Martin Kleppmann",
-      "category": "Technology & Coding",
-      "price": 649,
-      "mrp": 1899,
-      "discount": 66,
-      "badge": "ARCHITECT BIBLE",
-      "badgeColor": "#8B5CF6",
-      "rating": 4.9,
-      "ratingCount": 14200,
-      "image": "https://m.media-amazon.com/images/I/91YnfL+26-L._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Martin Kleppmann"},{"label":"Publisher","value":"O'Reilly Media"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"611 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-1449373320"}],
-      "pros": ["Masterful database breakdown","Explains consensus & replication","Hand-drawn architecture diagrams","Essential for senior engineers"],
-      "cons": ["Extremely dense","High technical bar"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B06XP5FCYC?tag=amzbooks-21","flipkart":"https://www.flipkart.com/designing-data-intensive-applications/p/itm12?affid=amzbooks"}
-    },
-    {
-      "id": 10,
-      "slug": "psychology-of-money",
-      "name": "The Psychology of Money: Timeless lessons on wealth, greed, and happiness",
-      "brand": "Morgan Housel",
-      "category": "Finance & Investing",
-      "price": 129,
-      "mrp": 399,
-      "discount": 68,
-      "badge": "POPULAR CHOICE",
-      "badgeColor": "#FFA41C",
-      "rating": 4.8,
-      "ratingCount": 98500,
-      "image": "https://m.media-amazon.com/images/I/71g2ednj0JL._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Morgan Housel"},{"label":"Publisher","value":"Harriman House"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"256 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0857197689"}],
-      "pros": ["Brilliant short money management stories","Shows EQ beats IQ in wealth","Insights on compounding","Extremely readable"],
-      "cons": ["No stock picking formulas","Blog-style narrative"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B08D79TV6V?tag=amzbooks-21","flipkart":"https://www.flipkart.com/psychology-money/p/itm11?affid=amzbooks"}
-    },
-    {
-      "id": 11,
-      "slug": "rich-dad-poor-dad",
-      "name": "Rich Dad Poor Dad: What the Rich Teach Their Kids About Money",
-      "brand": "Robert T. Kiyosaki",
-      "category": "Finance & Investing",
-      "price": 149,
-      "mrp": 499,
-      "discount": 70,
-      "badge": "GLOBAL BLOCKBUSTER",
-      "badgeColor": "#EF4444",
-      "rating": 4.6,
-      "ratingCount": 189400,
-      "image": "https://m.media-amazon.com/images/I/81bnd7x885L._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Robert T. Kiyosaki"},{"label":"Publisher","value":"Plata Publishing"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"336 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-1612680194"}],
-      "pros": ["Assets vs liabilities framework","Great financial literacy start","Inspires business mindset","Dialogue-driven chapters"],
-      "cons": ["Dramatized stories","Some dated advice"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B0175AE562?tag=amzbooks-21","flipkart":"https://www.flipkart.com/rich-dad-poor-dad/p/itm31?affid=amzbooks"}
-    },
-    {
-      "id": 12,
-      "slug": "the-intelligent-investor",
-      "name": "The Intelligent Investor: The Definitive Book on Value Investing",
-      "brand": "Benjamin Graham",
-      "category": "Finance & Investing",
-      "price": 299,
-      "mrp": 799,
-      "discount": 63,
-      "badge": "INVESTING CLASSIC",
-      "badgeColor": "#3B82F6",
-      "rating": 4.5,
-      "ratingCount": 35400,
-      "image": "https://m.media-amazon.com/images/I/919mmN3WzWL._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Benjamin Graham"},{"label":"Publisher","value":"Harper Business"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"640 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0060555665"}],
-      "pros": ["Warren Buffett's top recommended book","Margin of safety concept","Defensive investing rules","Teaches analytical logic"],
-      "cons": ["Dense 1970s prose","Requires patience"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B000FC0KB0?tag=amzbooks-21","flipkart":"https://www.flipkart.com/intelligent-investor/p/itm32?affid=amzbooks"}
-    },
-    {
-      "id": 13,
-      "slug": "dune",
-      "name": "Dune: The Deluxe Edition",
-      "brand": "Frank Herbert",
-      "category": "Fiction & Sci-Fi",
-      "price": 199,
-      "mrp": 599,
-      "discount": 67,
-      "badge": "SCI-FI MASTERPIECE",
-      "badgeColor": "#8B5CF6",
-      "rating": 4.7,
-      "ratingCount": 54600,
-      "image": "https://m.media-amazon.com/images/I/81U5O3WbU8L._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Frank Herbert"},{"label":"Publisher","value":"Ace Books"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"608 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0441172719"}],
-      "pros": ["Masterful desert worldbuilding","Deep political & ecological themes","Iconic Paul Atreides journey","Pioneered space-opera genre"],
-      "cons": ["Complex terminology","Pacing slows in mid section"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B00B7D055A?tag=amzbooks-21","flipkart":"https://www.flipkart.com/dune/p/itm100?affid=amzbooks"}
-    },
-    {
-      "id": 14,
-      "slug": "project-hail-mary",
-      "name": "Project Hail Mary: A Novel",
-      "brand": "Andy Weir",
-      "category": "Fiction & Sci-Fi",
-      "price": 249,
-      "mrp": 699,
-      "discount": 64,
-      "badge": "#1 BEST SCI-FI 2021",
-      "badgeColor": "#10B981",
-      "rating": 4.8,
-      "ratingCount": 38900,
-      "image": "https://m.media-amazon.com/images/I/91t4t-R9w3L._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"Andy Weir"},{"label":"Publisher","value":"Ballantine Books"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"476 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0593135204"}],
-      "pros": ["Engaging hard science calculations","Heartwarming buddy-sci-fi dynamic","Fast-paced space survival","Written by author of The Martian"],
-      "cons": ["Humor resembles The Martian","Scientific math density"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B08FBFQ4DE?tag=amzbooks-21","flipkart":"https://www.flipkart.com/project-hail-mary/p/itm88?affid=amzbooks"}
-    },
-    {
-      "id": 15,
-      "slug": "neuromancer",
-      "name": "Neuromancer: The Cyberpunk Classic",
-      "brand": "William Gibson",
-      "category": "Fiction & Sci-Fi",
-      "price": 149,
-      "mrp": 399,
-      "discount": 63,
-      "badge": "CYBERPUNK INVENTOR",
-      "badgeColor": "#EC4899",
-      "rating": 4.4,
-      "ratingCount": 18400,
-      "image": "https://m.media-amazon.com/images/I/81z7-tE+oYL._SL1500_.jpg",
-      "specs": [{"label":"Author","value":"William Gibson"},{"label":"Publisher","value":"Ace Books"},{"label":"Format","value":"Kindle Edition"},{"label":"Pages","value":"271 Pages"},{"label":"Language","value":"English"},{"label":"ISBN-13","value":"978-0441569595"}],
-      "pros": ["Invented the term Cyberspace","Rich futuristic descriptions","Cohesive gritty atmosphere","Influenced The Matrix"],
-      "cons": ["Complex jargon-dense prose","Fast-paced narrative"],
-      "affiliateLinks": {"amazon":"https://www.amazon.in/dp/B000O76ONU?tag=amzbooks-21","flipkart":"https://www.flipkart.com/neuromancer/p/itm23?affid=amzbooks"}
-    }
-  ]
+  {{PRODUCTS_DATA}}
   </script>
+
 
   <!-- SINGLE PAGE APPLICATION (SPA) CONTROLLER -->
   <script>
@@ -2081,8 +1798,8 @@
 
         document.getElementById('detailImageBox').innerHTML = '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '">';
 
-        document.getElementById('detailAmazonBtn').href = p.affiliateLinks.amazon;
-        document.getElementById('detailFlipkartBtn').href = p.affiliateLinks.flipkart;
+        document.getElementById('detailAmazonBtn').href = '/go/' + p.slug + '?platform=amazon&utm_source=product_detail';
+        document.getElementById('detailFlipkartBtn').href = '/go/' + p.slug + '?platform=flipkart&utm_source=product_detail';
 
         var specsHtml = p.specs.map(function(s) {
           return '<tr><td>' + esc(s.label) + '</td><td><strong>' + esc(s.value) + '</strong></td></tr>';
@@ -2150,8 +1867,8 @@
                   '<div class="stock-indicator"><span class="stock-dot-pulse"></span>Verified Deal ⚡ Instant Reading</div>' +
                 '</div>' +
                 '<div class="card-cta-area">' +
-                  '<a href="' + p.affiliateLinks.amazon + '" class="card-btn card-btn-amazon" target="_blank">Buy on Amazon Kindle</a>' +
-                  '<a href="' + p.affiliateLinks.flipkart + '" class="card-btn card-btn-flipkart" target="_blank">Buy on Flipkart Kobo</a>' +
+                  '<a href="/go/' + p.slug + '?platform=amazon&utm_source=home_card" class="card-btn card-btn-amazon" target="_blank">Buy on Amazon Kindle</a>' +
+                  '<a href="/go/' + p.slug + '?platform=flipkart&utm_source=home_card" class="card-btn card-btn-flipkart" target="_blank">Buy on Flipkart Kobo</a>' +
                   '<button class="quick-view-btn" onclick="navigateTo(\'product\', \'' + p.slug + '\')">⚡ Full Specs &amp; Honest Review &rarr;</button>' +
                 '</div>' +
                 '<div class="card-compare-row">' +
@@ -2166,6 +1883,7 @@
 
         $productGrid.innerHTML = html;
         updateFloatingCompareBar();
+        setupImpressionObserver();
       }
 
       window.toggleCompare = function(checkbox) {
@@ -2297,11 +2015,128 @@
 
       document.getElementById('standaloneSubForm').onsubmit = function(e) {
         e.preventDefault();
+        var $email = document.getElementById('standaloneEmail');
+        var $whatsapp = document.getElementById('standaloneWhatsapp');
+        var $btn = document.getElementById('standaloneSubBtn');
         var $msg = document.getElementById('standaloneMsg');
-        $msg.style.color = 'var(--green-accent)';
-        $msg.textContent = '✓ Deal Alerts registered successfully for ' + document.getElementById('standaloneEmail').value;
-        document.getElementById('standaloneEmail').value = '';
+        
+        var email = $email.value.trim();
+        var whatsapp = $whatsapp.value.trim();
+
+        $btn.textContent = 'Activating...';
+        $btn.disabled = true;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/subscribe', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+          $btn.textContent = 'Activate Free Alerts →';
+          $btn.disabled = false;
+          try {
+            var res = JSON.parse(xhr.responseText);
+            if (xhr.status === 200 && res.success) {
+              $msg.style.color = 'var(--green-accent)';
+              $msg.textContent = '✓ SUCCESS: ' + res.message;
+              $email.value = '';
+              $whatsapp.value = '';
+            } else {
+              $msg.style.color = 'var(--red-accent)';
+              $msg.textContent = '✗ ERROR: ' + (res.error || 'Failed to subscribe.');
+            }
+          } catch(err) {
+            $msg.style.color = 'var(--red-accent)';
+            $msg.textContent = '✗ Connection failed.';
+          }
+        };
+        xhr.onerror = function() {
+          $btn.textContent = 'Activate Free Alerts →';
+          $btn.disabled = false;
+          $msg.style.color = 'var(--red-accent)';
+          $msg.textContent = '✗ Network connection failed.';
+        };
+        xhr.send(JSON.stringify({ email: email, whatsapp: whatsapp, categories: ['General Alerts'] }));
       };
+
+      /* ── TELEMETRY CARD IMPRESSIONS OBSERVER ── */
+      function trackImpression(type, slug) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/track/impression', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+          type: type,
+          slug: slug,
+          utmSource: 'scroll_observer'
+        }));
+      }
+
+      var impressionObserver = null;
+      function setupImpressionObserver() {
+        if (!('IntersectionObserver' in window)) return;
+        if (impressionObserver) impressionObserver.disconnect();
+        
+        impressionObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var slug = entry.target.getAttribute('data-slug');
+              if (slug) {
+                if (!window.loggedImpressions) window.loggedImpressions = {};
+                if (!window.loggedImpressions[slug]) {
+                  window.loggedImpressions[slug] = true;
+                  trackImpression('card_view', slug);
+                }
+              }
+              impressionObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        var cards = document.querySelectorAll('.product-card');
+        cards.forEach(function(card) {
+          var titleEl = card.querySelector('.card-product-name');
+          if (titleEl) {
+            var navigateCall = titleEl.getAttribute('onclick');
+            var match = /navigateTo\('product',\s*'([^']+)'\)/.exec(navigateCall);
+            if (match && match[1]) {
+              card.setAttribute('data-slug', match[1]);
+              impressionObserver.observe(card);
+            }
+          }
+        });
+      }
+
+      /* ── DYNAMIC SOCIAL PROOF ALERTS TOAST ── */
+      var $socialProofToast = document.getElementById('socialProofToast');
+      var $toastText = document.getElementById('toastText');
+      var $toastTime = document.getElementById('toastTime');
+
+      function showSocialProof() {
+        if (!$socialProofToast) return;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/api/social-proof', true);
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            try {
+              var data = JSON.parse(xhr.responseText);
+              if (data.success) {
+                $toastText.innerHTML = 'Someone from <b>' + esc(data.city) + '</b> ' + esc(data.action) + ' <b>' + esc(data.productName) + '</b>!';
+                $toastTime.textContent = data.timeAgo;
+                
+                $socialProofToast.style.transform = 'translateY(0)';
+                $socialProofToast.style.opacity = '1';
+
+                setTimeout(function() {
+                  $socialProofToast.style.transform = 'translateY(100px)';
+                  $socialProofToast.style.opacity = '0';
+                }, 5000);
+              }
+            } catch(e) {}
+          }
+        };
+        xhr.send();
+      }
+
+      setTimeout(showSocialProof, 3500);
+      setInterval(showSocialProof, 16000);
 
       function esc(s) {
         if (!s) return '';

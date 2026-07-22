@@ -708,6 +708,27 @@ app.get('/admin', (req, res) => {
    DYNAMIC SERVER ROUTING & SEO TEMPLATE INJECTION (Moved to secure templates/)
    ─────────────────────────────────────────────────────────────── */
 
+// Storefront Dynamic Home Page
+app.get('/', (req, res) => {
+  logImpression('page_view', 'home', req);
+  try {
+    const templatePath = path.join(__dirname, 'templates', 'index.html');
+    if (!fs.existsSync(templatePath)) {
+      return res.status(500).send('Storefront template file index.html is missing in templates folder.');
+    }
+    let html = fs.readFileSync(templatePath, 'utf8');
+    
+    // Replace with live products array from database
+    const activeProducts = products.filter(p => p.active);
+    html = html.replace(/{{PRODUCTS_DATA}}/g, JSON.stringify(activeProducts));
+    
+    res.send(html);
+  } catch (err) {
+    console.error('Error rendering homepage:', err);
+    res.status(500).send('Error loading homepage.');
+  }
+});
+
 // Dynamic Product Detail Page (/product/:slug)
 app.get('/product/:slug', (req, res) => {
   const product = products.find(p => p.slug === req.params.slug && p.active);

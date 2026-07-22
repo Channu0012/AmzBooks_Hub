@@ -21,22 +21,40 @@
       padding: 0;
     }
 
+    :root {
+      --bg-dark: #0f172a;
+      --bg-slate: #1e293b;
+      --gold-main: #f59e0b;
+      --gold-light: #fef3c7;
+      --gold-dark: #d97706;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-sub: #64748b;
+      --red-accent: #ef4444;
+      --green-accent: #10b981;
+      --blue-accent: #3b82f6;
+      --radius: 16px;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #EAEDED; /* Amazon product listing backdrop grey */
-      color: #0F1111;
+      background-color: #f8fafc;
+      color: var(--text-main);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
     /* ── HEADER NAVIGATION (Amazon-style Dark Theme) ─────────────────────── */
     .top-nav {
-      background: #131921; /* Amazon dark navy blue */
-      padding: 12px 24px;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 16px 24px;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 4px solid #FFA41C; /* Amazon gold accent accentuation line */
+      border-bottom: 2px solid var(--gold-main);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
     }
 
     .nav-container {
