@@ -29,3 +29,11 @@ npm start
 ```
 
 Visit `http://localhost:3000` in your browser.
+
+## ⚡ Core Overhauls & Telemetry
+
+Recently added premium architecture optimizations:
+- **Dynamic Storefront Servicing**: Homepage moved from static public assets to dynamically rendered templates in Express, preventing state desynchronization.
+- **Glassmorphic Aesthetics**: Modernized navbar themes, translucent glowing search inputs, and hover scale effects on card details.
+- **Interaction Observers**: Integrated `IntersectionObserver` on search card nodes for logging real-world viewport impressions to the dashboard logs.
+
