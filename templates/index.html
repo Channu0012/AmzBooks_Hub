@@ -218,19 +218,22 @@
       width: 100%;
       padding: 18px 54px 18px 28px;
       border-radius: 100px;
-      border: 3px solid var(--gold-main);
-      background: #FFFFFF;
-      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 500;
       outline: none;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
-      transition: all 0.2s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .hero-search-input:focus {
-      border-color: #FFFFFF;
-      box-shadow: 0 0 0 4px var(--gold-main), 0 14px 40px rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--gold-main);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.3), 0 10px 35px rgba(0, 0, 0, 0.3);
     }
 
     .hero-search-icon {
@@ -238,7 +241,7 @@
       right: 22px;
       width: 24px;
       height: 24px;
-      stroke: var(--bg-slate);
+      stroke: rgba(255, 255, 255, 0.6);
       pointer-events: none;
     }
 
@@ -510,95 +513,70 @@
     .product-card {
       background: var(--card-bg);
       border-radius: var(--radius);
-      border: 1px solid #E3E6E6;
+      border: 1px solid #e2e8f0;
       overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
       position: relative;
     }
 
     .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+      border-color: rgba(245, 158, 11, 0.2);
     }
 
-    .product-badge-bar {
+    .card-badge-top {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 5;
-    }
-
-    .product-badge {
-      display: block;
-      width: 100%;
-      padding: 6px 12px;
-      font-size: 11px;
+      top: 12px;
+      left: 12px;
+      color: #FFFFFF;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      text-align: center;
-    }
-
-    .choice-badge-container {
-      position: absolute;
-      top: 38px;
-      left: 0;
-      z-index: 5;
-      background: var(--bg-slate);
-      color: #FFFFFF;
       padding: 4px 10px;
-      font-size: 11.5px;
-      font-weight: 600;
-      border-left: 3px solid var(--gold-main);
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 5;
     }
 
     .card-image-area {
       width: 100%;
-      height: 250px;
-      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-      padding-top: 36px;
+      height: 220px;
+      background: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      border-bottom: 1px solid #F0F2F2;
+      border-bottom: 1px solid #f1f5f9;
+      cursor: pointer;
+      overflow: hidden;
     }
 
     .product-img {
-      max-width: 85%;
-      max-height: 85%;
+      max-width: 75%;
+      max-height: 75%;
       object-fit: contain;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.05);
     }
 
     .card-discount-tag {
       position: absolute;
-      top: 38px;
+      top: 12px;
       right: 12px;
       background: var(--red-accent);
       color: #FFFFFF;
-      font-size: 12.5px;
+      font-size: 11px;
       font-weight: 800;
-      padding: 5px 9px;
-      border-radius: 4px;
-    }
-
-    .price-drop-indicator {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      background: var(--green-accent);
-      color: #FFFFFF;
-      font-size: 10.5px;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 4px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      z-index: 5;
     }
 
     .card-body {
@@ -611,32 +589,32 @@
     .card-brand-row {
       display: flex;
       justify-content: space-between;
-      font-size: 11.5px;
-      font-weight: 800;
+      font-size: 11px;
+      font-weight: 600;
       color: var(--text-sub);
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
     }
 
     .card-product-name {
-      font-size: 17px;
-      font-weight: 800;
+      font-size: 16px;
+      font-weight: 700;
       color: var(--text-main);
       margin-bottom: 8px;
-      line-height: 1.35;
-      text-decoration: none;
+      line-height: 1.4;
       cursor: pointer;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      height: 46px;
+      height: 44px;
+      transition: color 0.15s ease;
     }
 
     .card-product-name:hover {
-      color: #C7511F;
+      color: var(--blue-accent);
     }
 
     .card-rating-row {
@@ -646,122 +624,54 @@
       margin-bottom: 12px;
     }
 
-    .card-stars {
-      display: flex;
-      gap: 1px;
+    .rating-stars {
+      color: #eab308;
+      font-weight: 700;
+      font-size: 13px;
     }
 
-    .star-filled-svg { width: 15px; height: 15px; fill: var(--gold-main); }
-    .star-empty-svg { width: 15px; height: 15px; fill: #E3E6E6; }
-
-    .card-rating-text {
-      font-size: 12.5px;
-      color: var(--blue-accent);
-      font-weight: 600;
-      cursor: pointer;
+    .rating-count {
+      color: var(--text-sub);
+      font-size: 12px;
+      font-weight: 500;
     }
 
     .card-price-row {
       display: flex;
       align-items: baseline;
-      gap: 6px;
-      margin-bottom: 10px;
+      gap: 8px;
+      margin-bottom: 16px;
     }
 
     .card-price {
-      font-size: 26px;
-      font-weight: 900;
+      font-size: 22px;
+      font-weight: 800;
       color: var(--text-main);
     }
 
-    .card-mrp-group {
-      font-size: 12.5px;
+    .card-mrp {
+      text-decoration: line-through;
       color: var(--text-sub);
+      font-size: 13px;
+      font-weight: 500;
     }
-
-    .card-mrp { text-decoration: line-through; }
 
     .card-savings {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--red-accent);
-      margin-left: auto;
-      background: #FDF0F2;
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
-    .card-urgency-box {
-      border-top: 1px dashed #E3E6E6;
-      border-bottom: 1px dashed #E3E6E6;
-      padding: 10px 0;
-      margin-bottom: 16px;
-      font-size: 12.5px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .speed-delivery {
+      font-size: 11px;
+      font-weight: 700;
       color: var(--green-accent);
-      font-weight: 700;
+      margin-left: auto;
+      background: #ecfdf5;
+      padding: 2px 8px;
+      border-radius: 6px;
     }
-
-    .kindle-badge-tag {
-      background: var(--bg-slate);
-      color: var(--gold-main);
-      font-size: 9.5px;
-      font-weight: 900;
-      padding: 1px 6px;
-      border-radius: 3px;
-    }
-
-    .stock-indicator {
-      color: var(--blue-accent);
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .stock-dot-pulse {
-      width: 7px;
-      height: 7px;
-      background-color: var(--green-accent);
-      border-radius: 50%;
-      animation: pulse-dot-green 1.4s infinite;
-    }
-
-    @keyframes pulse-dot-green {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.3); opacity: 0.4; }
-    }
-
-    .card-specs-list {
-      list-style: none;
-      font-size: 13px;
-      margin-bottom: 16px;
-      background: #F7F8F8;
-      border-radius: 8px;
-      padding: 10px 12px;
-      border: 1px solid #F0F2F2;
-    }
-
-    .card-specs-list li {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 600;
-      color: #333333;
-    }
-
-    .specs-check-svg { width: 14px; height: 14px; stroke: var(--green-accent); }
 
     .card-cta-area {
       margin-top: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
     .card-btn {
@@ -769,65 +679,76 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 11px 16px;
+      padding: 10px 12px;
       border-radius: 100px;
-      font-weight: 800;
-      font-size: 13.5px;
+      font-weight: 700;
+      font-size: 12px;
       text-decoration: none;
       text-align: center;
       cursor: pointer;
       border: 1px solid;
+      transition: all 0.2s ease;
     }
 
     .card-btn-amazon {
-      background: linear-gradient(to bottom, #FFE093, #FFC43D);
-      border-color: var(--gold-dark);
-      color: var(--text-main);
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      border-color: #d97706;
+      color: #FFFFFF;
+    }
+
+    .card-btn-amazon:hover {
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+      transform: translateY(-1px);
     }
 
     .card-btn-flipkart {
-      background: linear-gradient(to bottom, #FFB84D, var(--gold-main));
-      border-color: #C47F00;
-      color: var(--text-main);
+      background: #FFFFFF;
+      border-color: #e2e8f0;
+      color: var(--bg-slate);
     }
 
-    .quick-view-btn {
-      background: transparent;
-      border: 1px solid #D5D9D9;
-      color: var(--blue-accent);
-      font-size: 12.5px;
-      font-weight: 700;
-      padding: 8px 12px;
-      border-radius: 100px;
-      cursor: pointer;
+    .card-btn-flipkart:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
     }
 
-    .quick-view-btn:hover {
-      background: #F0F2F2;
-      color: #C7511F;
-    }
-
-    .card-compare-row {
-      border-top: 1px solid #E3E6E6;
-      padding-top: 10px;
-      margin-top: 8px;
+    .card-footer-row {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 12px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .quick-specs-link {
+      background: none;
+      border: none;
+      color: var(--blue-accent);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+
+    .quick-specs-link:hover {
+      color: var(--gold-dark);
+      text-decoration: underline;
     }
 
     .card-compare-label {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
-      color: #4B5563;
+      color: var(--text-sub);
       cursor: pointer;
     }
 
     .card-compare-checkbox {
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       accent-color: var(--gold-main);
       cursor: pointer;
     }
@@ -1366,12 +1287,12 @@
   <!-- ════════════ VIEW 1: HOME STOREFRONT VIEW ════════════ -->
   <div id="view-home" class="spa-view active-view">
     <header class="hero-section">
-      <span class="hero-eyebrow">📚 Curated Kindle E-Book Directory</span>
+      <span class="hero-eyebrow">⚡ Live Price Tracker</span>
       <h1 class="hero-title">
-        Bestselling E-Books &amp; Kindle Deals <span class="hero-title-highlight">Starting at ₹99</span>
+        Premium E-Book Deals <span class="hero-title-highlight">Starting at ₹99</span>
       </h1>
       <p class="hero-subtitle">
-        We track verified lowest pricing across Amazon Kindle and Flipkart Kobo hourly so you read more while spending less.
+        Hourly price drop monitoring across Amazon Kindle &amp; Flipkart Kobo.
       </p>
 
       <div class="hero-search-box">
@@ -1846,35 +1767,35 @@
 
           html += 
             '<article class="product-card">' +
-              '<div class="product-badge-bar"><span class="product-badge" style="background:' + p.badgeColor + '">' + esc(p.badge) + '</span></div>' +
-              '<div class="choice-badge-container"><span>Choice</span> <span class="choice-highlight">Verified</span></div>' +
-              '<div class="card-image-area">' +
-                '<span class="price-drop-indicator">Lowest 30D Price</span>' +
+              '<div class="card-image-area" onclick="navigateTo(\'product\', \'' + p.slug + '\')">' +
                 '<img class="product-img" src="' + esc(p.image) + '" alt="' + esc(p.name) + '">' +
                 '<span class="card-discount-tag">-' + p.discount + '%</span>' +
+                (p.badge ? '<span class="card-badge-top" style="background:' + p.badgeColor + '">' + esc(p.badge) + '</span>' : '') +
               '</div>' +
               '<div class="card-body">' +
-                '<div class="card-brand-row"><span>' + esc(p.brand) + '</span><span>' + esc(p.category) + '</span></div>' +
+                '<div class="card-brand-row">' +
+                  '<span class="card-author">' + esc(p.brand) + '</span>' +
+                  '<span class="card-category">' + esc(p.category) + '</span>' +
+                '</div>' +
                 '<div class="card-product-name" onclick="navigateTo(\'product\', \'' + p.slug + '\')">' + esc(p.name) + '</div>' +
-                '<div class="card-rating-row"><span class="card-rating-text" onclick="navigateTo(\'product\', \'' + p.slug + '\')">★ ' + p.rating + ' (' + p.ratingCount.toLocaleString('en-IN') + ' votes)</span></div>' +
+                '<div class="card-rating-row">' +
+                  '<span class="rating-stars">★ ' + p.rating.toFixed(1) + '</span>' +
+                  '<span class="rating-count">(' + p.ratingCount.toLocaleString('en-IN') + ' reviews)</span>' +
+                '</div>' +
                 '<div class="card-price-row">' +
                   '<span class="card-price">₹' + p.price.toLocaleString('en-IN') + '</span>' +
-                  '<span class="card-mrp-group">MRP <span class="card-mrp">₹' + p.mrp.toLocaleString('en-IN') + '</span></span>' +
+                  '<span class="card-mrp">₹' + p.mrp.toLocaleString('en-IN') + '</span>' +
                   '<span class="card-savings">Save ₹' + savings.toLocaleString('en-IN') + '</span>' +
                 '</div>' +
-                '<div class="card-urgency-box">' +
-                  '<div class="speed-delivery">Instant Cloud Sync ⚡ <span class="kindle-badge-tag">KINDLE</span></div>' +
-                  '<div class="stock-indicator"><span class="stock-dot-pulse"></span>Verified Deal ⚡ Instant Reading</div>' +
-                '</div>' +
                 '<div class="card-cta-area">' +
-                  '<a href="/go/' + p.slug + '?platform=amazon&utm_source=home_card" class="card-btn card-btn-amazon" target="_blank">Buy on Amazon Kindle</a>' +
-                  '<a href="/go/' + p.slug + '?platform=flipkart&utm_source=home_card" class="card-btn card-btn-flipkart" target="_blank">Buy on Flipkart Kobo</a>' +
-                  '<button class="quick-view-btn" onclick="navigateTo(\'product\', \'' + p.slug + '\')">⚡ Full Specs &amp; Honest Review &rarr;</button>' +
+                  '<a href="/go/' + p.slug + '?platform=amazon&utm_source=home_card" class="card-btn card-btn-amazon" target="_blank">Amazon Kindle</a>' +
+                  '<a href="/go/' + p.slug + '?platform=flipkart&utm_source=home_card" class="card-btn card-btn-flipkart" target="_blank">Flipkart Kobo</a>' +
                 '</div>' +
-                '<div class="card-compare-row">' +
+                '<div class="card-footer-row">' +
+                  '<button class="quick-specs-link" onclick="navigateTo(\'product\', \'' + p.slug + '\')">Specs &amp; Review &rarr;</button>' +
                   '<label class="card-compare-label">' +
                     '<input type="checkbox" class="card-compare-checkbox" data-slug="' + p.slug + '" ' + checkedAttr + ' onchange="toggleCompare(this)">' +
-                    '<span>Add to Compare Specs</span>' +
+                    '<span>Compare</span>' +
                   '</label>' +
                 '</div>' +
               '</div>' +
