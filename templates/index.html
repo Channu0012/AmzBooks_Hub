@@ -1255,9 +1255,102 @@
       }
       .nav-links.show { display: flex; }
     }
+    /* FLASH COUNTDOWN PROMO BANNER */
+    .countdown-promo-banner {
+      background: linear-gradient(90deg, #0f172a 0%, #1e293b 50%, #d97706 100%);
+      color: #FFFFFF;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1002;
+      font-size: 13.5px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-weight: 500;
+    }
+
+    .promo-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .promo-tag {
+      background: var(--red-accent, #ef4444);
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      animation: pulse-red-banner 1.5s infinite;
+    }
+
+    @keyframes pulse-red-banner {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.9; }
+    }
+
+    .promo-timer {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-weight: 800;
+      color: var(--gold-main);
+    }
+
+    .promo-cta-btn {
+      background: #FFFFFF;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 11px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .promo-cta-btn:hover {
+      background: var(--gold-main);
+      color: #0f172a;
+      transform: translateY(-1px);
+    }
+
+    .promo-close {
+      position: absolute;
+      right: 16px;
+      background: none;
+      border: none;
+      color: #FFFFFF;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+
+    .promo-close:hover {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+  
+  <!-- Dynamic Countdown Promo Banner -->
+  <div class="countdown-promo-banner" id="countdownPromoBanner">
+    <div class="promo-content">
+      <span class="promo-tag">FLASH DEAL ⚡</span>
+      <span class="promo-text">Get <b>Atomic Habits</b> Kindle Edition at 70% Off! Offer ends in <span class="promo-timer" id="promoTimer">05:00</span></span>
+      <a href="/go/atomic-habits?platform=amazon&utm_source=countdown_banner" class="promo-cta-btn" target="_blank">Claim Deal Now &rarr;</a>
+    </div>
+    <button class="promo-close" onclick="closePromoBanner(event)">&times;</button>
+  </div>
 
   <!-- TOP NAVIGATION BAR -->
   <nav class="top-nav">
