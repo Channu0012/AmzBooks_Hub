@@ -1338,6 +1338,140 @@
     .promo-close:hover {
       opacity: 1;
     }
+    /* EXIT INTENT MODAL OVERLAY */
+    .exit-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 4000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .exit-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .exit-card {
+      background: #FFFFFF;
+      border-radius: var(--radius);
+      max-width: 500px;
+      width: 90%;
+      padding: 40px 32px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-main);
+      transform: scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .exit-overlay.active .exit-card {
+      transform: scale(1);
+    }
+
+    .exit-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: var(--text-sub);
+      font-size: 24px;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.2s ease;
+    }
+
+    .exit-close:hover {
+      opacity: 1;
+    }
+
+    .exit-gift-emoji {
+      font-size: 54px;
+      margin-bottom: 16px;
+      animation: bounce-gift 2s infinite;
+    }
+
+    @keyframes bounce-gift {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .exit-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .exit-subtitle {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .exit-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .exit-input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 100px;
+      border: 1px solid #cbd5e1;
+      font-size: 14px;
+      outline: none;
+      text-align: center;
+      transition: border-color 0.2s ease;
+    }
+
+    .exit-input:focus {
+      border-color: var(--gold-main);
+    }
+
+    .exit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      border: none;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .exit-btn:hover {
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .exit-msg {
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      min-height: 18px;
+    }
+
+    .exit-trust-footer {
+      font-size: 11px;
+      color: var(--text-sub);
+      margin-top: 16px;
+    }
   </style>
 </head>
 <body>
@@ -1649,6 +1783,23 @@
     <div class="toast-body">
       <span class="toast-text" id="toastText">Someone from Mumbai unlocked a secret discount on Atomic Habits!</span>
       <span class="toast-time" id="toastTime">2 mins ago</span>
+    </div>
+  </div>
+
+  <!-- Exit Intent Discount Overlay -->
+  <div class="exit-overlay" id="exitOverlay">
+    <div class="exit-card">
+      <button class="exit-close" onclick="closeExitIntent()">&times;</button>
+      <div class="exit-gift-emoji">🎁</div>
+      <h2 class="exit-title">Wait! Get Free Kindle Deal Hacks</h2>
+      <p class="exit-subtitle">Don't leave empty-handed. Enter your email to instantly receive our <b>Kindle Deal Alert Guide</b> + claim 70% off secret deals!</p>
+      
+      <form class="exit-form" id="exitForm">
+        <input type="email" class="exit-input" id="exitEmail" placeholder="Enter your best email address" required>
+        <button type="submit" class="exit-btn" id="exitSubmitBtn">Secure My Secret Deals &rarr;</button>
+      </form>
+      <p class="exit-msg" id="exitMsg"></p>
+      <div class="exit-trust-footer">🔒 Join 12,450+ bargain readers. No spam ever.</div>
     </div>
   </div>
 
