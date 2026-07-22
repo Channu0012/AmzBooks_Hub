@@ -2305,6 +2305,83 @@
       setTimeout(showSocialProof, 3500);
       setInterval(showSocialProof, 16000);
 
+      /* ── promo countdown banner ── */
+      var promoTime = 300; // 5 mins
+      var $promoTimer = document.getElementById('promoTimer');
+      function updatePromoTimer() {
+        if (!$promoTimer) return;
+        var mins = Math.floor(promoTime / 60);
+        var secs = promoTime % 60;
+        $promoTimer.textContent = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+        if (promoTime <= 0) {
+          promoTime = 300; // reset
+        } else {
+          promoTime--;
+        }
+      }
+      setInterval(updatePromoTimer, 1000);
+
+      window.closePromoBanner = function(e) {
+        if (e) e.stopPropagation();
+        var $banner = document.getElementById('countdownPromoBanner');
+        if ($banner) $banner.style.display = 'none';
+      };
+
+      /* ── exit intent logic ── */
+      var exitTriggered = false;
+      try {
+        exitTriggered = sessionStorage.getItem('exit_intent_triggered') === 'true';
+      } catch(e) {}
+
+      document.addEventListener('mouseleave', function(e) {
+        if (e.clientY < 20 && !exitTriggered) {
+          exitTriggered = true;
+          try { sessionStorage.setItem('exit_intent_triggered', 'true'); } catch(err) {}
+          var $overlay = document.getElementById('exitOverlay');
+          if ($overlay) $overlay.classList.add('active');
+        }
+      });
+
+      window.closeExitIntent = function() {
+        var $overlay = document.getElementById('exitOverlay');
+        if ($overlay) $overlay.classList.remove('active');
+      };
+
+      document.getElementById('exitForm').onsubmit = function(e) {
+        e.preventDefault();
+        var $email = document.getElementById('exitEmail');
+        var $btn = document.getElementById('exitSubmitBtn');
+        var $msg = document.getElementById('exitMsg');
+
+        var email = $email.value.trim();
+        $btn.textContent = 'Securing...';
+        $btn.disabled = true;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/subscribe', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+          $btn.textContent = 'Secure My Secret Deals →';
+          $btn.disabled = false;
+          try {
+            var res = JSON.parse(xhr.responseText);
+            if (xhr.status === 200 && res.success) {
+              $msg.style.color = 'var(--green-accent)';
+              $msg.textContent = '✓ Guide secured! Secret deals activated.';
+              $email.value = '';
+              setTimeout(closeExitIntent, 2500);
+            } else {
+              $msg.style.color = 'var(--red-accent)';
+              $msg.textContent = '✗ ERROR: ' + (res.error || 'Failed to subscribe.');
+            }
+          } catch(err) {
+            $msg.style.color = 'var(--red-accent)';
+            $msg.textContent = '✗ Connection failed.';
+          }
+        };
+        xhr.send(JSON.stringify({ email: email, categories: ['Exit Intent Guide'] }));
+      };
+
       function esc(s) {
         if (!s) return '';
         var d = document.createElement('div');
